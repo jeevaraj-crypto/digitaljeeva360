@@ -1,0 +1,728 @@
+/* About, Services index, Portfolio, Results, Contact, Blog, Legal & 404 pages */
+"use strict";
+
+const T = require("../templates");
+const { blogCover } = require("./home");
+
+/* ============ ABOUT ============ */
+function renderAbout() {
+  const crumbs = [{ name: "Home", path: "/" }, { name: "About", path: "/about.html" }];
+  const body = `
+<section class="hero-page">
+  <div class="container">
+    ${T.breadcrumbs(crumbs)}
+    <div class="split" style="align-items:center">
+      <div>
+        <span class="eyebrow">About Digital Jeeva360</span>
+        <h1>The unfair advantage your competitors <span class="text-gradient">hope you never find</span></h1>
+        <p class="lede">Digital Jeeva360 exists for one reason: to help ambitious businesses grow faster by combining human strategy with AI execution — while everyone else is still doing things the slow way.</p>
+        <div class="hero-ctas" style="justify-content:flex-start">
+          <a class="btn btn-primary btn-lg" href="/contact.html">Work With Us ${T.icons.arrow}</a>
+          <a class="btn btn-ghost btn-lg" href="/results.html">See the Results</a>
+        </div>
+      </div>
+      <div class="glass-card card-static gradient-border" style="padding:2.4rem">
+        <div class="avatar" style="width:84px;height:84px;font-size:1.6rem;margin:0 0 1.2rem">J</div>
+        <h2 style="font-size:1.5rem;margin-bottom:0.4rem">Jeeva</h2>
+        <p style="color:var(--cyan);font-weight:600;font-size:0.92rem">Founder — AI-Powered Digital Marketer &amp; Automation Specialist</p>
+        <p>“I started Digital Jeeva360 after watching brilliant business owners lose evenings, weekends and opportunities to work a machine should be doing. AI finally makes enterprise-level marketing and operations available to every business — my job is making it work for yours.”</p>
+        <div class="footer-social" style="margin-top:0.5rem">
+          <a href="${T.SITE.whatsappUrl}" target="_blank" rel="noopener" aria-label="WhatsApp">${T.icons.whatsapp}</a>
+          <a href="${T.SITE.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${T.icons.instagram}</a>
+          <a href="mailto:${T.SITE.email}" aria-label="Email">${T.icons.mail}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="mission-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Our mission</span>
+      <h2 id="mission-title">Less manual work. More qualified leads. Faster growth.</h2>
+      <p>Every engagement is measured against the same promise: reduce your working hours, generate more qualified leads, increase your traffic and revenue — and get you to 2–3x growth within 6 months using AI systems, SEO, paid ads and premium websites.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="glass-card reveal"><div class="icon-chip">${T.icons.clock}</div><h3>Time back first</h3><p class="mb-0">Before we add anything new, we automate what's stealing your hours. Growth built on a foundation of reclaimed time doesn't burn anyone out.</p></div>
+      <div class="glass-card reveal reveal-d1"><div class="icon-chip">${T.icons.chart}</div><h3>Revenue over vanity</h3><p class="mb-0">Likes, impressions and traffic curves don't pay salaries. Everything we build and report is tied to leads, bookings and revenue.</p></div>
+      <div class="glass-card reveal reveal-d2"><div class="icon-chip">${T.icons.shield}</div><h3>Honesty as strategy</h3><p class="mb-0">If a channel won't work for you, we say so before you spend. Long-term trust beats short-term invoices — it's why clients stay for years.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="story-title">
+  <div class="container-narrow article">
+    <span class="eyebrow reveal">The story</span>
+    <h2 id="story-title" class="reveal">Why "360"?</h2>
+    <div class="reveal">
+      <p>Most businesses don't have a marketing problem — they have a <em>system</em> problem. The ads work, but leads leak away because follow-up is manual. The website looks fine, but it's slow, so rankings suffer. SEO brings traffic, but the site doesn't convert it. Each piece is judged alone; nothing connects.</p>
+      <p>Digital Jeeva360 was built around the opposite idea: treat growth as one connected, 360-degree system. Automation catches and nurtures every lead the ads generate. The website converts the traffic SEO earns. Every channel feeds the others, and AI runs the repetitive parts around the clock.</p>
+      <p>Today we build those systems for service businesses, clinics, e-commerce brands and professional firms across the United States, United Kingdom and Australia — markets where speed of response and quality of experience decide who wins.</p>
+    </div>
+    <h2 class="reveal">How we're different</h2>
+    <ul class="check-list reveal">
+      <li>${T.icons.check}<span><b>AI-native, not AI-curious.</b> Automation isn't a bolt-on service — it's the backbone of every system we design.</span></li>
+      <li>${T.icons.check}<span><b>One accountable partner.</b> Strategy, build and optimisation under one roof. No finger-pointing between vendors.</span></li>
+      <li>${T.icons.check}<span><b>Founder-led work.</b> You work directly with the person responsible for your results — not an account manager reading a dashboard.</span></li>
+      <li>${T.icons.check}<span><b>Month-to-month by choice.</b> No lock-in contracts. Performance is our retention strategy.</span></li>
+    </ul>
+  </div>
+</section>
+
+${T.ctaBand({ title: "Let's build your growth system", text: "A free 30-minute strategy call is the best first step. Come with questions — leave with a plan." })}`;
+
+  return T.page({
+    title: "About Digital Jeeva360 — AI-Powered Growth for Ambitious Businesses",
+    description: "Meet Digital Jeeva360: founder-led, AI-native digital growth agency helping businesses in the US, UK and Australia automate operations and grow 2–3x.",
+    keywords: "about Digital Jeeva360, Jeeva digital marketer, AI automation specialist, digital marketing agency about",
+    path: "/about.html",
+    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+  }, body);
+}
+
+/* ============ SERVICES INDEX ============ */
+function renderServicesIndex(services) {
+  const crumbs = [{ name: "Home", path: "/" }, { name: "Services", path: "/services.html" }];
+  const groups = [
+    { title: "AI Automation", icon: "bot", desc: "Put your operations on autopilot", slugs: ["ai-automation", "ai-chatbots", "workflow-automation", "email-automation", "whatsapp-automation"] },
+    { title: "Websites & Conversion", icon: "code", desc: "Turn your website into your best salesperson", slugs: ["premium-web-design", "landing-pages", "conversion-optimization"] },
+    { title: "SEO & Organic Growth", icon: "search", desc: "Get found by people ready to buy", slugs: ["seo", "local-seo", "technical-seo"] },
+    { title: "Paid Advertising", icon: "target", desc: "Profitable campaigns, not expensive clicks", slugs: ["paid-advertising", "google-ads", "meta-ads"] },
+    { title: "Strategy", icon: "sparkles", desc: "Senior guidance without the senior salary", slugs: ["consulting"] }
+  ];
+  const bySlug = Object.fromEntries(services.map((s) => [s.slug, s]));
+
+  const body = `
+<section class="hero-page">
+  <div class="container">
+    ${T.breadcrumbs(crumbs)}
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h1>Every lever of growth, <span class="text-gradient">under one roof</span></h1>
+      <p class="lede">Fourteen specialist services, one connected system. Start with the lever that pays back fastest for your business — your free strategy call tells you which one that is.</p>
+      <div class="hero-ctas" style="justify-content:flex-start">
+        <a class="btn btn-primary btn-lg" href="/contact.html">Find My Fastest Win ${T.icons.arrow}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+${groups.map((g, gi) => `
+<section class="section-tight" aria-labelledby="group-${gi}">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">${g.desc}</span>
+      <h2 id="group-${gi}" style="font-size:clamp(1.6rem,3vw,2.2rem)">${g.title}</h2>
+    </div>
+    <div class="grid grid-3">
+      ${g.slugs.map((slug, i) => {
+        const s = bySlug[slug];
+        return `
+      <article class="glass-card reveal${i % 3 ? ` reveal-d${i % 3}` : ""}">
+        <div class="icon-chip">${T.icons[g.icon]}</div>
+        <h3><a href="/services/${s.slug}.html" style="color:#fff">${s.name}</a></h3>
+        <p>${s.description.split(". ")[0]}.</p>
+        <a class="read-more" href="/services/${s.slug}.html">Learn more ${T.icons.arrow}</a>
+      </article>`;
+      }).join("")}
+    </div>
+  </div>
+</section>`).join("")}
+
+${T.ctaBand({ title: "Not sure where to start?", text: "That's exactly what the free strategy call is for. We'll look at your business and tell you which lever pays back fastest — honestly, even if the answer is 'not us'." })}`;
+
+  return T.page({
+    title: "Services — AI Automation, Web Design, SEO & Paid Ads | Digital Jeeva360",
+    description: "Explore Digital Jeeva360's services: AI automation, chatbots, workflow automation, premium websites, SEO, local SEO, Google Ads, Meta Ads and growth consulting.",
+    keywords: "digital marketing services, AI automation services, web design services, SEO services, PPC services",
+    path: "/services.html",
+    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+  }, body);
+}
+
+/* ============ PORTFOLIO ============ */
+function caseVisual(i, a, b, label) {
+  return `<svg viewBox="0 0 400 235" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${label} — project mockup">
+  <defs><linearGradient id="cv${i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}" stop-opacity="0.5"/><stop offset="1" stop-color="${b}" stop-opacity="0.15"/></linearGradient></defs>
+  <rect width="400" height="235" fill="url(#cv${i})"/>
+  <rect x="45" y="30" width="310" height="185" rx="10" fill="#0a1124" stroke="rgba(255,255,255,0.14)"/>
+  <rect x="45" y="30" width="310" height="26" rx="10" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="60" cy="43" r="4" fill="#f87171"/><circle cx="74" cy="43" r="4" fill="#fbbf24"/><circle cx="88" cy="43" r="4" fill="#34d399"/>
+  <rect x="65" y="72" width="130" height="12" rx="6" fill="rgba(255,255,255,0.25)"/>
+  <rect x="65" y="94" width="200" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
+  <rect x="65" y="108" width="170" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
+  <rect x="65" y="130" width="86" height="26" rx="13" fill="${a}"/>
+  <rect x="240" y="72" width="95" height="84" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)"/>
+  <path d="M250 140 l18 -20 14 10 22 -28 16 12" stroke="${b}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <rect x="65" y="172" width="270" height="28" rx="8" fill="rgba(255,255,255,0.05)"/>
+</svg>`;
+}
+
+function renderPortfolio() {
+  const crumbs = [{ name: "Home", path: "/" }, { name: "Portfolio", path: "/portfolio.html" }];
+  const cases = [
+    {
+      title: "Property management firm — Texas, USA",
+      tags: [["AI Automation", ""], ["CRM", "violet"]],
+      challenge: "Two full-time staff consumed by repetitive tenant emails; after-hours enquiries lost daily.",
+      solution: "AI assistant across web, email and WhatsApp resolving 78% of queries, routing maintenance and automating lease renewals.",
+      metrics: [{ b: "34 hrs", s: "saved weekly" }, { b: "78%", s: "AI-resolved" }, { b: "$94k", s: "annual savings" }],
+      colors: ["#2563eb", "#8b5cf6"]
+    },
+    {
+      title: "Commercial law firm — Chicago, USA",
+      tags: [["Web Design", ""], ["SEO", "green"]],
+      challenge: "Dated 8-second-load website generating two enquiries a month despite healthy traffic.",
+      solution: "Full conversion-focused redesign with practice-area pages, trust architecture and a 1.4s load time.",
+      metrics: [{ b: "11x", s: "more enquiries" }, { b: "1.4s", s: "load time" }, { b: "+167%", s: "organic traffic" }],
+      colors: ["#7c3aed", "#22d3ee"]
+    },
+    {
+      title: "Cosmetic dental clinic — London, UK",
+      tags: [["AI Chatbot", ""], ["WhatsApp", "green"]],
+      challenge: "High-value treatment enquiries waiting 9 hours for replies; 41% of demand arriving after hours.",
+      solution: "AI assistant answering treatment questions, pre-qualifying by budget and booking consultations 24/7.",
+      metrics: [{ b: "3.2x", s: "consultations" }, { b: "41%", s: "booked after-hours" }, { b: "£67k", s: "revenue in 90 days" }],
+      colors: ["#0e7490", "#2563eb"]
+    },
+    {
+      title: "Solar installation company — Brisbane, AU",
+      tags: [["Google Ads", ""], ["Landing Pages", "violet"]],
+      challenge: "$12k/month in ads pointed at a homepage converting 1.8% — a $210 cost per lead.",
+      solution: "Three message-matched landing pages with quote calculators and suburb-specific proof.",
+      metrics: [{ b: "7.4%", s: "conversion rate" }, { b: "-64%", s: "cost per lead" }, { b: "4.1x", s: "ROAS" }],
+      colors: ["#b45309", "#f59e0b"]
+    },
+    {
+      title: "DTC jewellery brand — London, UK",
+      tags: [["Meta Ads", ""], ["E-commerce", "violet"]],
+      challenge: "Stuck at 1.7x ROAS with stale creative and a single generic retargeting ad.",
+      solution: "Creative testing engine (12 ads/month), Conversions API tracking and sequenced catalogue retargeting.",
+      metrics: [{ b: "4.3x", s: "blended ROAS" }, { b: "+156%", s: "monthly revenue" }, { b: "38%", s: "sales from retargeting" }],
+      colors: ["#be185d", "#8b5cf6"]
+    },
+    {
+      title: "Specialty coffee e-commerce — Portland, USA",
+      tags: [["SEO", ""], ["Content", "green"]],
+      challenge: "Paid-social dependent, with product pages ranking for zero commercial keywords.",
+      solution: "Category architecture rebuild, 40-article content hub, product schema and food-media digital PR.",
+      metrics: [{ b: "+312%", s: "organic traffic" }, { b: "180+", s: "page-1 keywords" }, { b: "$58k", s: "monthly organic revenue" }],
+      colors: ["#15803d", "#22d3ee"]
+    }
+  ];
+
+  const body = `
+<section class="hero-page">
+  <div class="container">
+    ${T.breadcrumbs(crumbs)}
+    <div class="section-head">
+      <span class="eyebrow">Portfolio</span>
+      <h1>Real businesses. <span class="text-gradient">Real numbers.</span></h1>
+      <p class="lede">Every case study below follows the same arc: a specific challenge, a systematic solution, and results measured in revenue, hours and growth — not adjectives.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="grid grid-2">
+      ${cases.map((c, i) => `
+      <article class="glass-card case-card reveal${i % 2 ? " reveal-d1" : ""}">
+        <div class="case-visual">${caseVisual(i, c.colors[0], c.colors[1], c.title)}</div>
+        <div class="case-body">
+          <div class="case-tags">${c.tags.map(([t, v]) => `<span class="pill${v ? " " + v : ""}">${t}</span>`).join("")}</div>
+          <h3>${c.title}</h3>
+          <p style="font-size:0.95rem"><b>Challenge:</b> ${c.challenge}</p>
+          <p style="font-size:0.95rem"><b>Solution:</b> ${c.solution}</p>
+          <div class="case-metrics">
+            ${c.metrics.map((m) => `<div><b>${m.b}</b><span>${m.s}</span></div>`).join("")}
+          </div>
+        </div>
+      </article>`).join("")}
+    </div>
+  </div>
+</section>
+
+${T.ctaBand({ title: "Want results like these?", text: "Every one of these projects started with the same free strategy call. Yours is waiting." })}`;
+
+  return T.page({
+    title: "Portfolio & Case Studies — Client Results | Digital Jeeva360",
+    description: "Case studies with real numbers: 11x more enquiries, 4.3x ROAS, $94k saved through automation. See how Digital Jeeva360 grows businesses in the US, UK and Australia.",
+    keywords: "digital marketing case studies, AI automation case study, web design portfolio, SEO results, PPC case studies",
+    path: "/portfolio.html",
+    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+  }, body);
+}
+
+/* ============ RESULTS ============ */
+function renderResults() {
+  const crumbs = [{ name: "Home", path: "/" }, { name: "Results", path: "/results.html" }];
+  const body = `
+<section class="hero-page">
+  <div class="container">
+    ${T.breadcrumbs(crumbs)}
+    <div class="section-head center" style="margin-inline:auto;text-align:center">
+      <span class="eyebrow">Results</span>
+      <h1>The numbers behind the <span class="text-gradient">promises</span></h1>
+      <p class="lede">Aggregated, real outcomes across our client base in the US, UK and Australia. This is what an AI-powered growth system produces.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" aria-label="Headline results">
+  <div class="container">
+    <div class="stats-band">
+      <div class="stat-item glass-card card-static reveal"><b><span data-count="2.7" data-decimals="1" data-suffix="x">0</span></b><span>Average revenue growth in 6 months</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d1"><b><span data-count="41200" data-suffix="+">0</span></b><span>Hours of manual work automated</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d2"><b><span data-count="12400" data-suffix="+">0</span></b><span>Qualified leads generated</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d3"><b><span data-count="4.6" data-decimals="1" data-suffix="x">0</span></b><span>Average return on ad spend</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="revenue-title">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <span class="eyebrow">Revenue growth</span>
+        <h2 id="revenue-title">Client revenue, indexed over 12 months</h2>
+        <p>The pattern repeats across industries: automation stops the leaks in the first quarter, SEO and ads compound through the second, and by month twelve the average client operates at 2.7x their starting revenue run-rate.</p>
+        <ul class="check-list">
+          <li>${T.icons.check}<span><b>Months 1–3:</b> automation recovers lost leads and hours</span></li>
+          <li>${T.icons.check}<span><b>Months 3–6:</b> paid ads scale on proven unit economics</span></li>
+          <li>${T.icons.check}<span><b>Months 6–12:</b> SEO compounds into free, recurring demand</span></li>
+        </ul>
+      </div>
+      <div class="dash chart-anim reveal reveal-d1">
+        <div class="dash-bar"><i></i><i></i><i></i><span>revenue-index · trailing 12 months</span></div>
+        <div class="dash-body" style="grid-template-columns:1fr">
+          <div class="dash-chart line-chart">
+            <svg viewBox="0 0 560 240" role="img" aria-label="Line chart showing client revenue index rising from 100 to 270 over twelve months">
+              <defs>
+                <linearGradient id="lg-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.35"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
+                <linearGradient id="lg-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+              </defs>
+              <g stroke="rgba(255,255,255,0.07)"><line x1="0" y1="60" x2="560" y2="60"/><line x1="0" y1="120" x2="560" y2="120"/><line x1="0" y1="180" x2="560" y2="180"/></g>
+              <path class="area" d="M20 200 L65 196 L110 188 L155 176 L200 168 L245 152 L290 140 L335 122 L380 104 L425 84 L470 62 L515 40 L515 230 L20 230 Z" fill="url(#lg-area)"/>
+              <path class="line" d="M20 200 L65 196 L110 188 L155 176 L200 168 L245 152 L290 140 L335 122 L380 104 L425 84 L470 62 L515 40" stroke="url(#lg-line)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <circle cx="515" cy="40" r="6" fill="#a78bfa"/><circle cx="515" cy="40" r="11" fill="#a78bfa" opacity="0.25"/>
+              <text x="20" y="225" fill="#5f6a8a" font-size="12">M1</text><text x="255" y="225" fill="#5f6a8a" font-size="12">M6</text><text x="495" y="225" fill="#5f6a8a" font-size="12">M12</text>
+              <text x="440" y="30" fill="#c4b5fd" font-size="14" font-weight="700">index 270</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="channels-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">By channel</span>
+      <h2 id="channels-title">Where the growth comes from</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="glass-card chart-anim reveal">
+        <div class="icon-chip">${T.icons.bot}</div>
+        <h3>AI Automation</h3>
+        <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:30%"></i><i style="height:45%"></i><i style="height:60%"></i><i style="height:74%"></i><i style="height:88%"></i><i style="height:100%" class="alt"></i></div>
+        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="27" data-suffix=" hrs">0</span></b> average weekly hours saved per client, with <b>78%</b> of routine enquiries resolved without human touch.</p>
+      </div>
+      <div class="glass-card chart-anim reveal reveal-d1">
+        <div class="icon-chip">${T.icons.search}</div>
+        <h3>SEO &amp; Organic</h3>
+        <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:20%" class="alt"></i><i style="height:32%" class="alt"></i><i style="height:41%" class="alt"></i><i style="height:58%" class="alt"></i><i style="height:79%" class="alt"></i><i style="height:100%"></i></div>
+        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="184" data-prefix="+" data-suffix="%">0</span></b> average organic traffic growth in 9 months, with <b>640+</b> combined page-one keywords won.</p>
+      </div>
+      <div class="glass-card chart-anim reveal reveal-d2">
+        <div class="icon-chip">${T.icons.target}</div>
+        <h3>Paid Advertising</h3>
+        <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:25%"></i><i style="height:38%" class="alt"></i><i style="height:52%"></i><i style="height:67%" class="alt"></i><i style="height:81%"></i><i style="height:100%" class="alt"></i></div>
+        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="4.6" data-decimals="1" data-suffix="x">0</span></b> average blended ROAS, with cost per lead down <b>-49%</b> on average after account rebuilds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="proof-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Selected outcomes</span>
+      <h2 id="proof-title">Twelve months of client wins</h2>
+    </div>
+    <div class="grid grid-4">
+      ${[
+        ["11x", "enquiry growth after law firm website rebuild"],
+        ["£67k", "added in 90 days by a dental clinic's AI assistant"],
+        ["-64%", "cost per lead for a solar installer's campaigns"],
+        ["+312%", "organic traffic for an e-commerce roaster"],
+        ["3.2x", "consultations booked via 24/7 chatbot"],
+        ["94%", "product indexation after technical SEO rescue"],
+        ["-58%", "no-show rate with WhatsApp reminders"],
+        ["$1.2M", "annualised impact from a SaaS CRO programme"]
+      ].map(([b, s], i) => `
+      <div class="glass-card center reveal${i % 4 ? ` reveal-d${i % 4}` : ""}" style="padding:1.6rem 1.2rem">
+        <b style="font-family:var(--font-display);font-size:2rem;display:block;background:linear-gradient(120deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent">${b}</b>
+        <span style="font-size:0.87rem;color:var(--ink-faint)">${s}</span>
+      </div>`).join("")}
+    </div>
+    <p class="center calc-note mt-2">Results shown are from real client engagements. Individual outcomes vary with market, starting point and execution — your strategy call includes realistic projections for your situation.</p>
+  </div>
+</section>
+
+${T.ctaBand({ title: "Your numbers could be on this page", text: "Book a free strategy call and we'll project what a growth system could realistically produce for your business — before you spend a dollar." })}`;
+
+  return T.page({
+    title: "Client Results — Revenue, Traffic & Automation Wins | Digital Jeeva360",
+    description: "2.7x average revenue growth, 41,200+ hours automated, 4.6x average ROAS. Explore the measurable results Digital Jeeva360 delivers for clients.",
+    keywords: "digital marketing results, agency case study results, marketing ROI, automation savings, SEO growth statistics",
+    path: "/results.html",
+    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+  }, body);
+}
+
+/* ============ CONTACT ============ */
+function renderContact() {
+  const crumbs = [{ name: "Home", path: "/" }, { name: "Contact", path: "/contact.html" }];
+  const body = `
+<section class="hero-page">
+  <div class="container">
+    ${T.breadcrumbs(crumbs)}
+    <div class="section-head center" style="margin-inline:auto;text-align:center">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's talk about your <span class="text-gradient">growth</span></h1>
+      <p class="lede">Book a free 30-minute strategy call, or reach out on whichever channel you prefer. Every message gets a personal reply within one business day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="grid grid-3">
+      <a class="glass-card center reveal" href="${T.SITE.whatsappUrl}?text=${encodeURIComponent("Hi Jeeva, I'd like to talk about growing my business.")}" target="_blank" rel="noopener" style="display:block">
+        <div class="icon-chip" style="margin-inline:auto">${T.icons.whatsapp}</div>
+        <h3>WhatsApp</h3>
+        <p style="color:var(--cyan);font-weight:600">+91 93424 75653</p>
+        <p class="mb-0" style="font-size:0.9rem">Fastest response — usually within minutes</p>
+      </a>
+      <a class="glass-card center reveal reveal-d1" href="mailto:${T.SITE.email}" style="display:block">
+        <div class="icon-chip" style="margin-inline:auto">${T.icons.mail}</div>
+        <h3>Email</h3>
+        <p style="color:var(--cyan);font-weight:600;word-break:break-all">${T.SITE.email}</p>
+        <p class="mb-0" style="font-size:0.9rem">Perfect for briefs and detailed questions</p>
+      </a>
+      <a class="glass-card center reveal reveal-d2" href="${T.SITE.instagram}" target="_blank" rel="noopener" style="display:block">
+        <div class="icon-chip" style="margin-inline:auto">${T.icons.instagram}</div>
+        <h3>Instagram</h3>
+        <p style="color:var(--cyan);font-weight:600">@digitaljeeva360</p>
+        <p class="mb-0" style="font-size:0.9rem">Follow for daily AI marketing ideas</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="book" aria-labelledby="form-title">
+  <div class="container">
+    <div class="split" style="align-items:start">
+      <div class="reveal">
+        <span class="eyebrow">Free strategy call</span>
+        <h2 id="form-title">What happens after you hit send</h2>
+        <div class="timeline mt-2">
+          <div class="timeline-step"><div class="timeline-num">1</div><div><h3>Personal reply within 24h</h3><p>Jeeva reviews your details and replies personally — no autoresponders pretending to be humans.</p></div></div>
+          <div class="timeline-step"><div class="timeline-num">2</div><div><h3>30-minute strategy call</h3><p>We dig into your goals, funnel and operations, and identify your highest-ROI opportunities together.</p></div></div>
+          <div class="timeline-step"><div class="timeline-num">3</div><div><h3>Your growth plan</h3><p>You receive a clear, prioritised plan with honest projections — yours to keep, whoever you build it with.</p></div></div>
+        </div>
+        <div class="glass-card card-static mt-3" style="padding:1.5rem">
+          <p class="mb-0" style="font-size:0.95rem">${T.icons.pin.replace("<svg", '<svg style="width:18px;height:18px;display:inline;vertical-align:-3px;margin-right:6px;color:var(--cyan)"')} <b>Serving clients across time zones</b> — calls available in US, UK and Australian business hours. Based in India, working globally.</p>
+        </div>
+        <div class="mt-2" style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke)">
+          <iframe title="Digital Jeeva360 service regions map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d63443088.85847!2d-33.36!3d27.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="240" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="glass-card card-static gradient-border reveal reveal-d1" style="padding:clamp(1.5rem,4vw,2.5rem)">
+        <h3 style="margin-bottom:1.4rem">Book your free strategy call</h3>
+        ${T.leadForm({ subject: "New strategy call request — Digital Jeeva360" })}
+      </div>
+    </div>
+  </div>
+</section>
+
+${T.faqBlock([
+    { q: "Is the strategy call really free — what's the catch?", a: "Genuinely free, genuinely useful. You'll leave with a prioritised growth plan whether we work together or not. Around half of the businesses we speak to become clients; the other half leave with clarity and goodwill — which tends to come back around." },
+    { q: "What should I prepare before the call?", a: "Nothing is required, but it helps to know your rough monthly revenue, your main lead sources, and the tasks that consume most of your team's time. Access to your website analytics makes projections sharper, but we can work without it." },
+    { q: "Do you work with businesses outside the US, UK and Australia?", a: "Those are our primary markets, but we selectively take on clients elsewhere when the fit is strong. The systems we build — automation, SEO, ads — work in any English-speaking market. Reach out and ask." },
+    { q: "How soon can you start?", a: "Strategy calls are usually available within the week. Project kick-offs typically begin 1–2 weeks after proposal approval, depending on current capacity — automation quick-wins can often start sooner." }
+  ], { title: "Before you reach out" })}`;
+
+  return T.page({
+    title: "Contact Digital Jeeva360 — Book a Free Strategy Call",
+    description: "Book a free 30-minute strategy call with Digital Jeeva360. WhatsApp +91 93424 75653, email, or the contact form — personal reply within one business day.",
+    keywords: "contact digital marketing agency, book strategy call, free marketing consultation, AI automation consultation",
+    path: "/contact.html",
+    noExitPopup: true,
+    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+  }, body);
+}
+
+/* ============ BLOG INDEX ============ */
+function renderBlogIndex(posts) {
+  const crumbs = [{ name: "Home", path: "/" }, { name: "Blog", path: "/blog.html" }];
+  const categories = [...new Set(posts.map((p) => p.category))];
+  const body = `
+<section class="hero-page">
+  <div class="container">
+    ${T.breadcrumbs(crumbs)}
+    <div class="section-head">
+      <span class="eyebrow">Blog</span>
+      <h1>Growth ideas you can <span class="text-gradient">use this week</span></h1>
+      <p class="lede">Practical, no-fluff guides on AI automation, SEO, paid ads and conversion — written from real client work, not recycled listicles.</p>
+      <div class="tag-row mt-2" role="navigation" aria-label="Blog categories">
+        <button class="tool-chip" data-filter="all" style="cursor:pointer;border-color:var(--blue)">All posts</button>
+        ${categories.map((c) => `<button class="tool-chip" data-filter="${c}" style="cursor:pointer">${c}</button>`).join("\n        ")}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="grid grid-3" id="blog-grid">
+      ${posts.map((p, i) => `
+      <article class="glass-card blog-card reveal${i % 3 ? ` reveal-d${i % 3}` : ""}" data-category="${p.category}">
+        <div class="blog-cover" aria-hidden="true">${blogCover(i)}</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="pill">${p.category}</span><time datetime="${p.date}">${fmtDate(p.date)}</time><span>${p.readTime}</span></div>
+          <h3><a href="/blog/${p.slug}.html">${p.title}</a></h3>
+          <p class="excerpt">${p.excerpt}</p>
+          <a class="read-more" href="/blog/${p.slug}.html">Read article ${T.icons.arrow}</a>
+        </div>
+      </article>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container-narrow">
+    <div class="cta-band reveal">
+      <span class="eyebrow">Newsletter</span>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">One practical AI growth idea, every week</h2>
+      <p>Join business owners in the US, UK and Australia getting one actionable idea each week. Two-minute read. Zero spam.</p>
+      <form class="newsletter" style="max-width:420px;margin:1.5rem auto 0" action="${T.SITE.formEndpoint}" method="POST" data-lead-form>
+        <input type="hidden" name="_subject" value="Newsletter signup — blog page">
+        <input type="hidden" name="_captcha" value="false">
+        <label class="skip-link" for="blog-nl">Email address</label>
+        <input id="blog-nl" type="email" name="email" placeholder="you@company.com" required>
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+      <div class="form-success" role="status"><p style="margin-top:1rem"><strong>You're in!</strong> Watch your inbox.</p></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var buttons=document.querySelectorAll("[data-filter]");
+  var cards=document.querySelectorAll("#blog-grid [data-category]");
+  buttons.forEach(function(b){b.addEventListener("click",function(){
+    buttons.forEach(function(x){x.style.borderColor="";});
+    b.style.borderColor="var(--blue)";
+    var f=b.dataset.filter;
+    cards.forEach(function(c){c.style.display=(f==="all"||c.dataset.category===f)?"":"none";});
+  });});
+})();
+</script>`;
+
+  return T.page({
+    title: "Blog — AI Marketing, Automation & SEO Insights | Digital Jeeva360",
+    description: "Practical guides on AI automation, SEO, Google Ads, Meta Ads and conversion optimisation — written from real client work by Digital Jeeva360.",
+    keywords: "AI marketing blog, automation blog, SEO tips, digital marketing insights, PPC guides",
+    path: "/blog.html",
+    schema: [T.breadcrumbSchema(crumbs)]
+  }, body);
+}
+
+/* ============ BLOG POST ============ */
+function renderPost(post, allPosts, index) {
+  const path = `/blog/${post.slug}.html`;
+  const crumbs = [{ name: "Home", path: "/" }, { name: "Blog", path: "/blog.html" }, { name: post.title, path }];
+  const related = post.related
+    .map((slug) => allPosts.find((p) => p.slug === slug))
+    .filter(Boolean);
+
+  const body = `
+<article class="hero-page">
+  <div class="container-narrow">
+    ${T.breadcrumbs(crumbs)}
+    <div class="blog-meta" style="font-size:0.9rem"><span class="pill">${post.category}</span><time datetime="${post.date}">${fmtDate(post.date)}</time><span>${post.readTime}</span></div>
+    <h1 style="font-size:clamp(1.9rem,4.4vw,3.1rem)">${post.title}</h1>
+    <p class="lede" style="font-size:1.15rem">${post.description}</p>
+    <div class="author-card glass-card card-static" style="padding:1.2rem 1.5rem;margin-top:1.6rem">
+      <div class="avatar">J</div>
+      <div><b>Jeeva</b><span>Founder, Digital Jeeva360 — AI-Powered Digital Marketer &amp; Automation Specialist</span></div>
+    </div>
+  </div>
+</article>
+
+<div class="container-narrow article section-tight">
+  ${post.body}
+</div>
+
+<section class="section-tight" aria-label="Share and continue">
+  <div class="container-narrow">
+    <div class="cta-band" style="padding:clamp(2rem,5vw,3rem)">
+      <h2 style="font-size:clamp(1.4rem,2.8vw,1.9rem)">Want this working in your business?</h2>
+      <p>Book a free 30-minute strategy call — we'll turn the ideas in this article into a concrete plan for your situation.</p>
+      <div class="hero-ctas"><a class="btn btn-primary btn-lg" href="/contact.html">Book Free Strategy Call ${T.icons.arrow}</a></div>
+    </div>
+  </div>
+</section>
+
+${related.length ? `
+<section class="section-tight" aria-labelledby="related-title">
+  <div class="container">
+    <h2 id="related-title" class="center" style="font-size:1.6rem;margin-bottom:2rem">Related reading</h2>
+    <div class="grid grid-2" style="max-width:880px;margin-inline:auto">
+      ${related.map((r, i) => `
+      <article class="glass-card blog-card">
+        <div class="blog-cover" aria-hidden="true">${blogCover((index + i + 1) % 3)}</div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="pill">${r.category}</span><span>${r.readTime}</span></div>
+          <h3><a href="/blog/${r.slug}.html">${r.title}</a></h3>
+          <a class="read-more" href="/blog/${r.slug}.html">Read article ${T.icons.arrow}</a>
+        </div>
+      </article>`).join("")}
+    </div>
+  </div>
+</section>` : ""}`;
+
+  return T.page({
+    title: `${post.title} | Digital Jeeva360 Blog`,
+    description: post.description,
+    keywords: post.keywords,
+    path,
+    ogType: "article",
+    schema: [T.articleSchema({ ...post, path }), T.breadcrumbSchema(crumbs)]
+  }, body);
+}
+
+/* ============ LEGAL & 404 ============ */
+function renderPrivacy() {
+  const crumbs = [{ name: "Home", path: "/" }, { name: "Privacy Policy", path: "/privacy.html" }];
+  const body = `
+<section class="hero-page"><div class="container-narrow">
+  ${T.breadcrumbs(crumbs)}
+  <span class="eyebrow">Legal</span>
+  <h1>Privacy Policy</h1>
+  <p class="lede">Last updated: 1 July 2026</p>
+</div></section>
+<div class="container-narrow article section-tight">
+  <p>Digital Jeeva360 ("we", "us") respects your privacy. This policy explains what information we collect through digitaljeeva360.com, how we use it, and the choices you have. It is written to satisfy the requirements of the GDPR (UK/EU), the CCPA (California) and the Australian Privacy Principles.</p>
+  <h2>Information we collect</h2>
+  <ul>
+    <li><strong>Information you provide:</strong> name, company, email address, phone number, country, business details and messages submitted through our contact forms, newsletter signups, chatbot conversations or WhatsApp enquiries.</li>
+    <li><strong>Automatically collected information:</strong> anonymised usage data such as pages visited, approximate location (country/city level), device type and referral source, collected via privacy-respecting analytics.</li>
+  </ul>
+  <h2>How we use your information</h2>
+  <ul>
+    <li>To respond to enquiries and deliver services you request.</li>
+    <li>To send the newsletter you subscribed to (you can unsubscribe at any time via the link in every email).</li>
+    <li>To improve our website, content and services.</li>
+    <li>To comply with legal obligations.</li>
+  </ul>
+  <p>We do not sell, rent or trade your personal information. Ever.</p>
+  <h2>Legal bases (GDPR)</h2>
+  <p>We process personal data on the bases of consent (newsletter, chatbot lead capture), legitimate interest (responding to enquiries, website analytics) and contract performance (delivering services).</p>
+  <h2>Data sharing</h2>
+  <p>We use a small number of trusted processors to operate this website — form delivery, email, analytics and hosting providers — each bound by their own privacy commitments. Data is only shared to the extent needed to provide the service.</p>
+  <h2>Data retention</h2>
+  <p>Enquiry data is retained while relevant to a current or prospective business relationship, then deleted. Newsletter data is retained until you unsubscribe. You may request deletion at any time.</p>
+  <h2>Your rights</h2>
+  <p>Depending on your location, you have the right to access, correct, export, restrict or delete your personal data, and to object to processing. To exercise any right, email <a href="mailto:${T.SITE.email}">${T.SITE.email}</a> — we respond within 30 days.</p>
+  <h2>Cookies</h2>
+  <p>This site uses only essential cookies and privacy-respecting analytics. We do not use advertising trackers or sell data to ad networks.</p>
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:${T.SITE.email}">${T.SITE.email}</a> or WhatsApp <a href="${T.SITE.whatsappUrl}">+91 93424 75653</a>.</p>
+</div>`;
+  return T.page({
+    title: "Privacy Policy | Digital Jeeva360",
+    description: "How Digital Jeeva360 collects, uses and protects your personal information — GDPR, CCPA and Australian Privacy Principles compliant.",
+    path: "/privacy.html",
+    noExitPopup: true,
+    schema: [T.breadcrumbSchema(crumbs)]
+  }, body);
+}
+
+function renderTerms() {
+  const crumbs = [{ name: "Home", path: "/" }, { name: "Terms of Service", path: "/terms.html" }];
+  const body = `
+<section class="hero-page"><div class="container-narrow">
+  ${T.breadcrumbs(crumbs)}
+  <span class="eyebrow">Legal</span>
+  <h1>Terms of Service</h1>
+  <p class="lede">Last updated: 1 July 2026</p>
+</div></section>
+<div class="container-narrow article section-tight">
+  <h2>1. About these terms</h2>
+  <p>These terms govern your use of digitaljeeva360.com and the engagement of services from Digital Jeeva360. By using this website or engaging our services, you agree to these terms.</p>
+  <h2>2. Services</h2>
+  <p>Digital Jeeva360 provides digital marketing and automation services including AI automation, website development, search engine optimisation, paid advertising management and consulting. The specific scope, deliverables, timeline and fees for any engagement are defined in a written proposal or statement of work agreed before commencement.</p>
+  <h2>3. Quotes and payment</h2>
+  <p>Project quotes are fixed-price unless otherwise stated and valid for 30 days. Retainer services are billed monthly in advance and may be cancelled with 30 days' written notice — we do not use lock-in contracts. Third-party costs (advertising spend, software subscriptions, API fees) are the client's responsibility unless expressly included.</p>
+  <h2>4. Results and expectations</h2>
+  <p>We provide good-faith projections based on experience and data, and we work to agreed success metrics. However, marketing outcomes depend on factors beyond any agency's control — market conditions, competition, platform changes and client-side execution. Case study results on this site are real but do not guarantee equivalent outcomes for other businesses.</p>
+  <h2>5. Intellectual property</h2>
+  <p>Upon full payment, clients own the deliverables created specifically for them — websites, content, automations and creative. We retain the right to use general methodologies, know-how and non-confidential techniques. We may reference completed work in our portfolio unless a confidentiality arrangement states otherwise.</p>
+  <h2>6. Client responsibilities</h2>
+  <p>Clients agree to provide timely access, information and approvals reasonably needed to deliver the work, and to use deliverables in compliance with applicable laws and platform policies.</p>
+  <h2>7. Limitation of liability</h2>
+  <p>To the maximum extent permitted by law, Digital Jeeva360's total liability for any claim arising from services is limited to the fees paid for the specific service giving rise to the claim in the preceding three months. We are not liable for indirect or consequential losses, or for actions taken by third-party platforms (e.g. search engines or ad networks) beyond our control.</p>
+  <h2>8. Website content</h2>
+  <p>Content on this website is provided for general information and may change without notice. You may not reproduce substantial portions of this site without permission.</p>
+  <h2>9. Governing law</h2>
+  <p>These terms are governed by the laws of India. For clients engaged under a separate written agreement, the governing law stated in that agreement prevails.</p>
+  <h2>10. Contact</h2>
+  <p>Questions about these terms: <a href="mailto:${T.SITE.email}">${T.SITE.email}</a>.</p>
+</div>`;
+  return T.page({
+    title: "Terms of Service | Digital Jeeva360",
+    description: "The terms governing use of digitaljeeva360.com and engagement of Digital Jeeva360's digital marketing and automation services.",
+    path: "/terms.html",
+    noExitPopup: true,
+    schema: [T.breadcrumbSchema(crumbs)]
+  }, body);
+}
+
+function render404() {
+  const body = `
+<section class="hero" style="min-height:70vh;display:grid;place-items:center">
+  <div class="container center">
+    <div class="err-404" aria-hidden="true">404</div>
+    <h1 style="font-size:clamp(1.6rem,3.5vw,2.4rem)">This page has been automated out of existence</h1>
+    <p class="lede" style="margin-inline:auto">The page you're looking for moved, changed or never existed. The good news: everything useful is one click away.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary btn-lg" href="/">Back to Home ${T.icons.arrow}</a>
+      <a class="btn btn-ghost btn-lg" href="/services.html">Browse Services</a>
+    </div>
+    <div class="trust-badges">
+      <span><a href="/blog.html" style="color:var(--ink-faint)">Read the blog</a></span>
+      <span><a href="/contact.html" style="color:var(--ink-faint)">Contact us</a></span>
+      <span><a href="/portfolio.html" style="color:var(--ink-faint)">See our work</a></span>
+    </div>
+  </div>
+</section>`;
+  return T.page({
+    title: "Page Not Found (404) | Digital Jeeva360",
+    description: "The page you're looking for doesn't exist. Head back to Digital Jeeva360's homepage or explore our services.",
+    path: "/404.html",
+    noExitPopup: true,
+    schema: []
+  }, body);
+}
+
+function fmtDate(iso) {
+  return new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+}
+
+module.exports = { renderAbout, renderServicesIndex, renderPortfolio, renderResults, renderContact, renderBlogIndex, renderPost, renderPrivacy, renderTerms, render404 };
