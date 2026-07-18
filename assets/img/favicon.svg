@@ -1,5 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
-<rect width="64" height="64" rx="15" fill="url(#g)"/>
-<text x="32" y="42" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#fff" text-anchor="middle">DJ</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+<rect width="160" height="160" rx="34" fill="#0a1124"/>
+<g transform="translate(10,10)">
+<defs>
+<linearGradient id="dj-silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#a9b4c6"/></linearGradient>
+<linearGradient id="dj-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+</defs>
+<text x="6" y="98" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="900" font-style="italic" fill="url(#dj-silver)">D</text>
+<text x="60" y="116" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="900" font-style="italic" fill="url(#dj-blue)">J</text>
+<g fill="url(#dj-blue)" opacity="0.95">
+<rect x="36" y="70" width="9" height="18" rx="2"/>
+<rect x="49" y="60" width="9" height="28" rx="2"/>
+<rect x="62" y="50" width="9" height="38" rx="2"/>
+</g>
+<polyline points="38,62 52,50 66,40 80,30" stroke="#7db4fb" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="52" cy="50" r="4" fill="#7db4fb"/><circle cx="66" cy="40" r="4" fill="#7db4fb"/><circle cx="80" cy="30" r="4" fill="#7db4fb"/>
+<path d="M4 106 C 42 124, 94 112, 122 58" fill="none" stroke="url(#dj-blue)" stroke-width="10" stroke-linecap="round"/>
+<polygon points="112,44 134,42 124,64" fill="#3b82f6"/>
+<text x="92" y="96" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800" font-style="italic" fill="url(#dj-blue)">360</text>
+</g>
 </svg>

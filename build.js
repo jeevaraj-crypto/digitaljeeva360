@@ -69,20 +69,20 @@ Allow: /
 Sitemap: ${T.SITE.url}/sitemap.xml
 `);
 
-/* ---------- Favicon ---------- */
-write("assets/img/favicon.svg", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
-<rect width="64" height="64" rx="15" fill="url(#g)"/>
-<text x="32" y="42" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#fff" text-anchor="middle">DJ</text>
+/* ---------- Favicon (brand mark on dark navy tile) ---------- */
+const markInner = T.LOGO_MARK.replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
+write("assets/img/favicon.svg", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+<rect width="160" height="160" rx="34" fill="#0a1124"/>
+<g transform="translate(10,10)">${markInner}</g>
 </svg>
 `);
 
-/* ---------- Logo (schema reference) ---------- */
-write("assets/img/logo.svg", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
-<rect x="4" y="12" width="56" height="56" rx="14" fill="url(#g)"/>
-<text x="32" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">DJ</text>
-<text x="74" y="49" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#e8ecf8">Digital<tspan fill="#3b82f6">Jeeva</tspan>360</text>
+/* ---------- Full logo lockup (schema reference & reuse) ---------- */
+write("assets/img/logo.svg", `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 150">
+<rect width="700" height="150" fill="none"/>
+<g transform="translate(6,5)">${markInner}</g>
+<text x="158" y="80" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#e8ecf8">DIGITAL<tspan fill="#3b82f6">JEEVA</tspan><tspan fill="#e8ecf8">360</tspan></text>
+<text x="160" y="112" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="2" fill="#9aa5c4">DIGITAL MARKETING | AI AUTOMATION | GROWTH SYSTEMS</text>
 </svg>
 `);
 
@@ -97,12 +97,11 @@ write("assets/img/og-cover.svg", `<svg xmlns="http://www.w3.org/2000/svg" width=
 <rect width="1200" height="630" fill="url(#bg)"/>
 <rect width="1200" height="630" fill="url(#glow1)"/>
 <rect width="1200" height="630" fill="url(#glow2)"/>
-<rect x="80" y="96" width="84" height="84" rx="20" fill="url(#ac)"/>
-<text x="122" y="152" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#fff" text-anchor="middle">DJ</text>
-<text x="188" y="150" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#e8ecf8">DigitalJeeva360</text>
-<text x="80" y="310" font-family="Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff">Grow 2–3x in 6 months</text>
-<text x="80" y="390" font-family="Arial, sans-serif" font-size="64" font-weight="800" fill="url(#ac)">with AI that never sleeps</text>
-<text x="80" y="470" font-family="Arial, sans-serif" font-size="28" fill="#9aa5c4">AI Automation · SEO · Paid Ads · Premium Websites</text>
+<g transform="translate(72,74) scale(0.78)">${markInner}</g>
+<text x="200" y="150" font-family="Arial, sans-serif" font-size="40" font-weight="800" fill="#e8ecf8">DIGITAL<tspan fill="#3b82f6">JEEVA</tspan>360</text>
+<text x="80" y="310" font-family="Arial, sans-serif" font-size="60" font-weight="800" fill="#ffffff">AI-Powered Digital Marketing</text>
+<text x="80" y="390" font-family="Arial, sans-serif" font-size="60" font-weight="800" fill="url(#ac)">&amp; AI Automation Agency</text>
+<text x="80" y="470" font-family="Arial, sans-serif" font-size="28" fill="#9aa5c4">Grow 2–3x in 6 months · Automation · SEO · Paid Ads · Premium Websites</text>
 <text x="80" y="545" font-family="Arial, sans-serif" font-size="24" fill="#5f6a8a">digitaljeeva360.com — United States · United Kingdom · Australia</text>
 </svg>
 `);

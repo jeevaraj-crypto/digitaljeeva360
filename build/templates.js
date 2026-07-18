@@ -42,6 +42,26 @@ const icons = {
   sparkles: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M3 12h3M18 12h3M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>'
 };
 
+/* Brand logo mark — DJ monogram with growth swoosh, chart bars and 360 badge */
+const LOGO_MARK = `<svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digital Jeeva360 logo">
+<defs>
+<linearGradient id="dj-silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#a9b4c6"/></linearGradient>
+<linearGradient id="dj-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+</defs>
+<text x="6" y="98" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="900" font-style="italic" fill="url(#dj-silver)">D</text>
+<text x="60" y="116" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="900" font-style="italic" fill="url(#dj-blue)">J</text>
+<g fill="url(#dj-blue)" opacity="0.95">
+<rect x="36" y="70" width="9" height="18" rx="2"/>
+<rect x="49" y="60" width="9" height="28" rx="2"/>
+<rect x="62" y="50" width="9" height="38" rx="2"/>
+</g>
+<polyline points="38,62 52,50 66,40 80,30" stroke="#7db4fb" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="52" cy="50" r="4" fill="#7db4fb"/><circle cx="66" cy="40" r="4" fill="#7db4fb"/><circle cx="80" cy="30" r="4" fill="#7db4fb"/>
+<path d="M4 106 C 42 124, 94 112, 122 58" fill="none" stroke="url(#dj-blue)" stroke-width="10" stroke-linecap="round"/>
+<polygon points="112,44 134,42 124,64" fill="#3b82f6"/>
+<text x="92" y="96" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800" font-style="italic" fill="url(#dj-blue)">360</text>
+</svg>`;
+
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const abs = (p) => SITE.url + (p.startsWith("/") ? p : "/" + p);
 
@@ -211,7 +231,7 @@ function nav(activePath) {
 <header class="site-header">
   <div class="container">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="/"><span class="mark" aria-hidden="true">DJ</span>Digital<em>Jeeva</em>360</a>
+      <a class="brand" href="/"><span class="mark" aria-hidden="true">${LOGO_MARK}</span>Digital<em>Jeeva</em>360</a>
       <ul class="nav-links" id="nav-links">
         <li><a href="/"${cur("/index.html")}>Home</a></li>
         <li><a href="/about.html"${cur("/about.html")}>About</a></li>
@@ -250,7 +270,7 @@ function footer() {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="/"><span class="mark" aria-hidden="true">DJ</span>Digital<em>Jeeva</em>360</a>
+        <a class="brand" href="/"><span class="mark" aria-hidden="true">${LOGO_MARK}</span>Digital<em>Jeeva</em>360</a>
         <p class="mt-1">Helping businesses in the US, UK and Australia grow 2–3x through AI automation, SEO, paid advertising and premium websites.</p>
         <div class="footer-social">
           <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${icons.whatsapp}</a>
@@ -458,7 +478,7 @@ ${scripts()}
 }
 
 module.exports = {
-  SITE, icons, esc, abs, page, head, nav, footer, breadcrumbs,
+  SITE, icons, esc, abs, LOGO_MARK, page, head, nav, footer, breadcrumbs,
   floatingWidgets, exitPopup, leadForm, faqBlock, ctaBand, scripts,
   organizationSchema, localBusinessSchema, websiteSchema,
   breadcrumbSchema, faqSchema, serviceSchema, articleSchema,

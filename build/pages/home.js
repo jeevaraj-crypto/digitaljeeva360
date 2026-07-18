@@ -21,8 +21,8 @@ function renderHome(posts) {
   <div class="container">
     <div class="hero-inner">
       <span class="eyebrow reveal in-view">AI-Powered Growth Systems · US · UK · Australia</span>
-      <h1>Grow your business <span class="text-gradient">2–3x in 6 months</span> with AI that never sleeps</h1>
-      <p class="lede">We build AI automation, SEO, paid ads and premium websites into one connected growth system — so you get more leads, more revenue and 20+ hours of your week back.</p>
+      <h1>AI-Powered <span class="text-gradient">Digital Marketing &amp; AI Automation</span> Agency</h1>
+      <p class="lede">Our mission: grow your business <strong>2–3x in 6 months</strong> with AI that never sleeps — AI automation, SEO, paid advertising and premium websites built into one connected growth system that wins you more leads, more revenue and 20+ hours of your week back.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary btn-lg" href="/contact.html">Book Free Strategy Call ${T.icons.arrow}</a>
         <a class="btn btn-ghost btn-lg" href="/results.html">See Real Results</a>
@@ -278,8 +278,8 @@ ${T.ctaBand({
   })}`;
 
   return T.page({
-    title: "Digital Jeeva360 — AI Automation, SEO & Digital Marketing Agency",
-    description: "Grow 2–3x in 6 months with AI automation, SEO, paid ads and premium websites. Digital Jeeva360 builds AI-powered growth systems for businesses in the US, UK and Australia.",
+    title: "AI-Powered Digital Marketing & AI Automation Agency | Digital Jeeva360",
+    description: "Digital Jeeva360 is an AI-powered digital marketing and AI automation agency helping businesses in the US, UK and Australia grow 2–3x in 6 months with automation, SEO, paid ads and premium websites.",
     keywords: "AI automation agency, digital marketing agency, AI marketing, SEO agency, paid advertising, premium web design, business automation, Digital Jeeva360",
     path: "/index.html",
     schema: [T.localBusinessSchema()]
