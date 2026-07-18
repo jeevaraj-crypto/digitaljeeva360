@@ -3,7 +3,12 @@
 
 const T = require("../templates");
 
-function renderService(svc) {
+function renderService(svc, allServices) {
+  const bySlug = Object.fromEntries((allServices || []).map((s) => [s.slug, s]));
+  const childSlugs = T.SERVICE_FAMILY[svc.slug] || [];
+  const children = childSlugs.map((s) => bySlug[s]).filter(Boolean);
+  const parentSlug = Object.keys(T.SERVICE_FAMILY).find((p) => T.SERVICE_FAMILY[p].includes(svc.slug));
+  const parent = parentSlug ? bySlug[parentSlug] : null;
   const path = `/services/${svc.slug}.html`;
   const crumbs = [
     { name: "Home", path: "/" },
@@ -28,9 +33,28 @@ function renderService(svc) {
         <span>${T.icons.check} No lock-in contracts</span>
         <span>${T.icons.check} Results-first approach</span>
       </div>
+      ${parent ? `<p style="margin-top:1.4rem;font-size:0.92rem;color:var(--ink-faint)">Part of our <a href="/services/${parent.slug}.html"><b>${parent.name}</b></a> service.</p>` : ""}
     </div>
   </div>
 </section>
+
+${children.length ? `
+<section class="section-tight" aria-labelledby="included-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What's included</span>
+      <h2 id="included-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">Everything inside ${svc.name}</h2>
+    </div>
+    <div class="grid grid-3">
+      ${children.map((c, i) => `
+      <article class="glass-card reveal${i % 3 ? ` reveal-d${i % 3}` : ""}">
+        <h3 style="font-size:1.15rem"><a href="/services/${c.slug}.html" style="color:#fff">${c.name}</a></h3>
+        <p style="font-size:0.94rem">${c.description.split(". ")[0]}.</p>
+        <a class="read-more" href="/services/${c.slug}.html">Learn more ${T.icons.arrow}</a>
+      </article>`).join("")}
+    </div>
+  </div>
+</section>` : ""}
 
 <section class="section-tight" aria-labelledby="problem-title">
   <div class="container">

@@ -33,7 +33,7 @@ write("privacy.html", rest.renderPrivacy());
 write("terms.html", rest.renderTerms());
 write("404.html", rest.render404());
 
-services.forEach((svc) => write(`services/${svc.slug}.html`, renderService(svc)));
+services.forEach((svc) => write(`services/${svc.slug}.html`, renderService(svc, services)));
 posts.forEach((p, i) => write(`blog/${p.slug}.html`, rest.renderPost(p, posts, i)));
 
 /* ---------- Sitemap ---------- */

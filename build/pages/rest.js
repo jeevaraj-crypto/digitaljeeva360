@@ -84,14 +84,17 @@ ${T.ctaBand({ title: "Let's build your growth system", text: "A free 30-minute s
 /* ============ SERVICES INDEX ============ */
 function renderServicesIndex(services) {
   const crumbs = [{ name: "Home", path: "/" }, { name: "Services", path: "/services.html" }];
-  const groups = [
-    { title: "AI Automation", icon: "bot", desc: "Put your operations on autopilot", slugs: ["ai-automation", "ai-chatbots", "workflow-automation", "email-automation", "whatsapp-automation"] },
-    { title: "Websites & Conversion", icon: "code", desc: "Turn your website into your best salesperson", slugs: ["premium-web-design", "landing-pages", "conversion-optimization"] },
-    { title: "SEO & Organic Growth", icon: "search", desc: "Get found by people ready to buy", slugs: ["seo", "local-seo", "technical-seo"] },
-    { title: "Paid Advertising", icon: "target", desc: "Profitable campaigns, not expensive clicks", slugs: ["paid-advertising", "google-ads", "meta-ads"] },
-    { title: "Strategy", icon: "sparkles", desc: "Senior guidance without the senior salary", slugs: ["consulting"] }
-  ];
   const bySlug = Object.fromEntries(services.map((s) => [s.slug, s]));
+  const pillars = [
+    { slug: "ai-automation", icon: "bot", tagline: "Put your operations on autopilot",
+      blurb: "AI systems that answer customers, qualify leads, book appointments and run your back office 24/7 — so you reclaim 20–40 hours every week." },
+    { slug: "premium-web-design", icon: "code", tagline: "Turn your website into your best salesperson",
+      blurb: "Custom-designed, conversion-engineered websites that load in under two seconds, rank on Google and make your brand look like the market leader." },
+    { slug: "seo", icon: "search", tagline: "Get found by people ready to buy",
+      blurb: "Full-stack SEO for Google and the AI search era — rankings that compound into a permanent stream of high-intent traffic and leads." },
+    { slug: "paid-advertising", icon: "target", tagline: "Profitable campaigns, not expensive clicks",
+      blurb: "Google and Meta campaigns with bulletproof tracking, tested creative and matched landing pages — reported in revenue, not impressions." }
+  ];
 
   const body = `
 <section class="hero-page">
@@ -99,8 +102,8 @@ function renderServicesIndex(services) {
     ${T.breadcrumbs(crumbs)}
     <div class="section-head">
       <span class="eyebrow">Services</span>
-      <h1>Every lever of growth, <span class="text-gradient">under one roof</span></h1>
-      <p class="lede">Fourteen specialist services, one connected system. Start with the lever that pays back fastest for your business — your free strategy call tells you which one that is.</p>
+      <h1>Four services. <span class="text-gradient">One growth system.</span></h1>
+      <p class="lede">Everything we do fits into four core services that work as one connected system. Start with the one that pays back fastest for your business — your free strategy call tells you which that is.</p>
       <div class="hero-ctas" style="justify-content:flex-start">
         <a class="btn btn-primary btn-lg" href="/contact.html">Find My Fastest Win ${T.icons.arrow}</a>
       </div>
@@ -108,33 +111,36 @@ function renderServicesIndex(services) {
   </div>
 </section>
 
-${groups.map((g, gi) => `
-<section class="section-tight" aria-labelledby="group-${gi}">
+<section class="section-tight" aria-label="Our four core services">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">${g.desc}</span>
-      <h2 id="group-${gi}" style="font-size:clamp(1.6rem,3vw,2.2rem)">${g.title}</h2>
-    </div>
-    <div class="grid grid-3">
-      ${g.slugs.map((slug, i) => {
-        const s = bySlug[slug];
+    <div class="grid grid-2">
+      ${pillars.map((p, i) => {
+        const s = bySlug[p.slug];
+        const kids = T.SERVICE_FAMILY[p.slug].map((k) => bySlug[k]);
         return `
-      <article class="glass-card reveal${i % 3 ? ` reveal-d${i % 3}` : ""}">
-        <div class="icon-chip">${T.icons[g.icon]}</div>
-        <h3><a href="/services/${s.slug}.html" style="color:#fff">${s.name}</a></h3>
-        <p>${s.description.split(". ")[0]}.</p>
-        <a class="read-more" href="/services/${s.slug}.html">Learn more ${T.icons.arrow}</a>
+      <article class="glass-card reveal${i % 2 ? " reveal-d1" : ""}" style="display:flex;flex-direction:column">
+        <div class="icon-chip">${T.icons[p.icon]}</div>
+        <span class="eyebrow" style="margin-bottom:0.8rem">${p.tagline}</span>
+        <h2 style="font-size:clamp(1.4rem,2.6vw,1.8rem)"><a href="/services/${s.slug}.html" style="color:#fff">${s.name}</a></h2>
+        <p>${p.blurb}</p>
+        <p style="font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin-bottom:0.7rem">Includes</p>
+        <ul class="check-list" style="margin-bottom:1.5rem">
+          ${kids.map((k) => `<li>${T.icons.check}<span><a href="/services/${k.slug}.html">${k.name}</a></span></li>`).join("\n          ")}
+        </ul>
+        <div style="margin-top:auto">
+          <a class="btn btn-primary" href="/services/${s.slug}.html">Explore ${s.name} ${T.icons.arrow}</a>
+        </div>
       </article>`;
       }).join("")}
     </div>
   </div>
-</section>`).join("")}
+</section>
 
 ${T.ctaBand({ title: "Not sure where to start?", text: "That's exactly what the free strategy call is for. We'll look at your business and tell you which lever pays back fastest — honestly, even if the answer is 'not us'." })}`;
 
   return T.page({
     title: "Services — AI Automation, Web Design, SEO & Paid Ads | Digital Jeeva360",
-    description: "Explore Digital Jeeva360's services: AI automation, chatbots, workflow automation, premium websites, SEO, local SEO, Google Ads, Meta Ads and growth consulting.",
+    description: "Our four core services: AI Automation (chatbots, WhatsApp, email, workflows), Premium Website Development, SEO & Organic Growth, and Paid Advertising (Google & Meta Ads).",
     keywords: "digital marketing services, AI automation services, web design services, SEO services, PPC services",
     path: "/services.html",
     schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]

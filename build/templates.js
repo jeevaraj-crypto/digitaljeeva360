@@ -208,15 +208,19 @@ ${keywords ? `<meta name="keywords" content="${esc(keywords)}">\n` : ""}<meta na
 }
 
 const NAV_SERVICES = [
-  { path: "/services/ai-automation.html", label: "AI Automation", desc: "Chatbots, agents & workflows that run your ops" },
-  { path: "/services/premium-web-design.html", label: "Premium Website Development", desc: "Conversion-first websites that look world-class" },
-  { path: "/services/seo.html", label: "SEO & Organic Growth", desc: "Rank higher on Google and in AI answers" },
-  { path: "/services/paid-advertising.html", label: "Paid Advertising", desc: "Google & Meta Ads engineered for ROI" },
-  { path: "/services/ai-chatbots.html", label: "AI Chatbots", desc: "24/7 sales assistants that never sleep" },
-  { path: "/services/workflow-automation.html", label: "Workflow Automation", desc: "n8n, Zapier & Make systems that save hours" },
-  { path: "/services/local-seo.html", label: "Local SEO", desc: "Own the map pack in your city" },
-  { path: "/services/conversion-optimization.html", label: "Conversion Optimization", desc: "Turn more visitors into customers" }
+  { path: "/services/ai-automation.html", label: "AI Automation", desc: "Chatbots, WhatsApp, email & workflow automation" },
+  { path: "/services/premium-web-design.html", label: "Premium Website Development", desc: "Websites, landing pages & conversion optimisation" },
+  { path: "/services/seo.html", label: "SEO & Organic Growth", desc: "Local, technical & AI-search SEO that compounds" },
+  { path: "/services/paid-advertising.html", label: "Paid Advertising", desc: "Google & Meta Ads engineered for ROI" }
 ];
+
+/* The 4 core services and the specialisations nested inside each */
+const SERVICE_FAMILY = {
+  "ai-automation": ["ai-chatbots", "workflow-automation", "email-automation", "whatsapp-automation", "consulting"],
+  "premium-web-design": ["landing-pages", "conversion-optimization"],
+  "seo": ["local-seo", "technical-seo"],
+  "paid-advertising": ["google-ads", "meta-ads"]
+};
 
 function nav(activePath) {
   const cur = (p) => {
@@ -285,8 +289,6 @@ function footer() {
           <li><a href="/services/premium-web-design.html">Website Development</a></li>
           <li><a href="/services/seo.html">SEO &amp; Organic Growth</a></li>
           <li><a href="/services/paid-advertising.html">Paid Advertising</a></li>
-          <li><a href="/services/ai-chatbots.html">AI Chatbots</a></li>
-          <li><a href="/services/consulting.html">AI Consulting</a></li>
         </ul>
       </div>
       <div>
@@ -482,5 +484,5 @@ module.exports = {
   floatingWidgets, exitPopup, leadForm, faqBlock, ctaBand, scripts,
   organizationSchema, localBusinessSchema, websiteSchema,
   breadcrumbSchema, faqSchema, serviceSchema, articleSchema,
-  NAV_SERVICES
+  NAV_SERVICES, SERVICE_FAMILY
 };
