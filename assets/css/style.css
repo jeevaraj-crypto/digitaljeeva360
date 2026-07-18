@@ -35,6 +35,11 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+/* iOS Safari ignores overflow-x on body alone; clip avoids creating a scroll container */
+@supports (overflow: clip) {
+  html, body { overflow-x: clip; }
 }
 
 body {
@@ -185,17 +190,26 @@ li { margin-bottom: 0.5rem; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: #fff; background: var(--glass-2); }
 
 .dropdown-menu {
-  position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(8px);
-  min-width: 540px; padding: 0.9rem; border-radius: 18px;
+  padding: 0.9rem; border-radius: 18px;
   background: rgba(10, 15, 30, 0.92); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
   border: 1px solid var(--stroke-2);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255,255,255,0.06);
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem;
-  opacity: 0; visibility: hidden; transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
   list-style: none;
 }
-.dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
-  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+/* Desktop-only dropdown positioning — scoped so the centering transform
+   can never apply on mobile, whatever the selector specificity */
+@media (min-width: 1025px) {
+  .dropdown-menu {
+    position: absolute; top: calc(100% + 10px); left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 540px;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+  }
+  .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
+    opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+  }
 }
 .dropdown-menu li { margin: 0; }
 .dropdown-menu a { display: block; padding: 0.6rem 0.8rem; border-radius: 12px; }
@@ -217,12 +231,15 @@ li { margin-bottom: 0.5rem; }
     flex-direction: column; align-items: stretch; gap: 0.15rem;
     background: rgba(6, 9, 20, 0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--stroke);
-    padding: 1rem 4vw 1.5rem; max-height: calc(100vh - 64px); overflow-y: auto;
+    padding: 1rem 4vw 1.5rem; max-height: calc(100vh - 64px); max-height: calc(100dvh - 64px);
+    overflow-y: auto; overflow-x: hidden;
     transform: translateY(-115%); transition: transform 0.4s var(--ease);
   }
   .nav-links.open { transform: translateY(0); }
-  .dropdown-menu {
-    position: static; transform: none; min-width: 0; opacity: 1; visibility: visible;
+  .dropdown-menu,
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    position: static; transform: none; min-width: 0; width: 100%; opacity: 1; visibility: visible;
     background: transparent; border: 0; box-shadow: none; padding: 0 0 0 0.9rem;
     grid-template-columns: 1fr; display: none;
   }
@@ -322,6 +339,9 @@ li { margin-bottom: 0.5rem; }
 
 /* ---------- Grids ---------- */
 .grid { display: grid; gap: 1.4rem; }
+/* Grid/flex items default to min-width:auto, which lets long content force
+   the track wider than the viewport — clamp it everywhere */
+.grid > *, .split > *, .calc-grid > *, .footer-grid > *, .lead-form > * { min-width: 0; }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
@@ -376,7 +396,7 @@ li { margin-bottom: 0.5rem; }
 .dash-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--stroke); }
 .dash-bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
 .dash-bar i:nth-child(1) { background: #f87171; } .dash-bar i:nth-child(2) { background: #fbbf24; } .dash-bar i:nth-child(3) { background: #34d399; }
-.dash-bar span { margin-left: 0.6rem; font-size: 0.78rem; color: var(--ink-faint); font-weight: 500; }
+.dash-bar span { margin-left: 0.6rem; font-size: 0.78rem; color: var(--ink-faint); font-weight: 500; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .dash-body { padding: clamp(1.1rem, 3vw, 2rem); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .dash-stat { background: var(--glass); border: 1px solid var(--stroke); border-radius: 14px; padding: 1rem 1.2rem; }
 .dash-stat small { color: var(--ink-faint); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
@@ -846,6 +866,36 @@ tr:last-child td { border-bottom: 0; }
 
 .err-404 { font-family: var(--font-display); font-size: clamp(6rem, 20vw, 12rem); font-weight: 800; line-height: 1; margin-bottom: 1rem;
   background: linear-gradient(120deg, #60a5fa, #a78bfa, #22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ---------- Small-screen refinements (414 / 390 / 375 / 320) ---------- */
+@media (max-width: 768px) {
+  .split { gap: 2rem; }
+  .section-head { margin-bottom: 2.25rem; }
+}
+@media (max-width: 430px) {
+  /* Guaranteed 16px side padding on phones (375/390/414) */
+  .container, .container-narrow { width: calc(100% - 32px); }
+  .hero-ctas .btn { width: 100%; }
+  .glass-card { padding: 1.5rem; }
+  .calc { padding: 1.4rem; }
+  .compare-col { padding: 1.4rem; }
+  .testimonial { padding: 1.6rem 1.2rem; }
+  .cta-band { padding: 2.5rem 1.4rem; border-radius: 20px; }
+  .case-metrics { gap: 1rem; flex-wrap: wrap; }
+  .dash-body { padding: 1rem; }
+  .timeline-step { grid-template-columns: 44px 1fr; gap: 1rem; }
+  .timeline-num { width: 44px; height: 44px; font-size: 0.95rem; }
+  .timeline::before { left: 21px; }
+}
+@media (max-width: 360px) {
+  html { font-size: 15px; }
+  .trust-badges { gap: 0.5rem 1rem; font-size: 0.84rem; }
+}
+@media (max-width: 320px) {
+  html { font-size: 14px; }
+  .stats-band { grid-template-columns: 1fr; }
+  .eyebrow { letter-spacing: 0.09em; }
+}
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
