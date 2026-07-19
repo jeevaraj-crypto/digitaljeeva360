@@ -28,6 +28,7 @@ write("index.html", renderHome(posts));
 write("about.html", rest.renderAbout());
 write("services.html", rest.renderServicesIndex(services));
 write("contact.html", rest.renderContact());
+write("results.html", rest.renderResults());
 write("industries.html", renderIndustriesIndex(industries));
 industries.forEach((ind) => write(`industries/${ind.slug}.html`, renderIndustry(ind)));
 write("blog.html", rest.renderBlogIndex(posts));
@@ -45,6 +46,7 @@ const urls = [
   { loc: "/about.html", priority: "0.8", changefreq: "monthly" },
   { loc: "/services.html", priority: "0.9", changefreq: "monthly" },
   { loc: "/industries.html", priority: "0.9", changefreq: "monthly" },
+  { loc: "/results.html", priority: "0.8", changefreq: "monthly" },
   { loc: "/blog.html", priority: "0.8", changefreq: "weekly" },
   { loc: "/contact.html", priority: "0.9", changefreq: "monthly" },
   { loc: "/privacy.html", priority: "0.3", changefreq: "yearly" },

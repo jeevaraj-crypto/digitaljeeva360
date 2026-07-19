@@ -73,15 +73,15 @@ const services = [
   /* ================= AI RECEPTIONIST ================= */
   {
     slug: "ai-receptionist",
-    name: "AI Receptionist",
-    schemaName: "AI Receptionist & Answering Service",
-    title: "AI Receptionist for Dallas Businesses — Answer Every Call 24/7 | Digital Jeeva360",
-    description: "Never miss another call. Our AI receptionist answers in seconds, books appointments and texts back missed calls 24/7 — built for Dallas dental clinics, law firms, HVAC, roofing and real estate.",
-    keywords: "AI receptionist Dallas, AI answering service, AI phone answering for dental office, law firm virtual receptionist, missed call text back, 24/7 answering service Dallas",
+    name: "AI Receptionist & Voice Agent",
+    schemaName: "AI Receptionist & AI Voice Agent Service",
+    title: "AI Receptionist & Voice Agent for Dallas Businesses — 24/7 Call Answering | Digital Jeeva360",
+    description: "Never miss another call. Our AI receptionist and voice agent answers in seconds, speaks naturally, books appointments and texts back missed calls 24/7 — built for Dallas dental clinics, law firms, HVAC, roofing and real estate.",
+    keywords: "AI receptionist Dallas, AI voice agent Dallas, AI answering service, AI phone agent for business, law firm virtual receptionist, missed call text back, 24/7 answering service Dallas",
     hero: {
-      eyebrow: "AI Receptionist",
+      eyebrow: "AI Receptionist & Voice Agent",
       h1: "Every call answered in seconds. <span class='text-gradient'>24/7. In your brand's voice.</span>",
-      lede: "62% of calls to small businesses go unanswered — and 85% of those callers never call back. Our AI receptionist picks up instantly, answers questions, books appointments into your calendar and texts back every missed call, around the clock."
+      lede: "62% of calls to small businesses go unanswered — and 85% of those callers never call back. Our AI voice agent picks up instantly, speaks naturally like a real receptionist, answers questions, books appointments into your calendar and texts back every missed call, around the clock."
     },
     problem: {
       title: "Every missed call is a customer calling your competitor",
@@ -94,7 +94,7 @@ const services = [
     },
     solution: {
       title: "A receptionist that never sleeps, never queues calls, never quits",
-      text: "We build and train an AI receptionist on your business — your services, prices, hours, FAQs and booking rules. It answers every call in about two seconds, speaks naturally, handles the routine 80% completely, and hands genuinely complex calls to your team with a full summary.",
+      text: "We build and train an AI voice agent on your business — your services, prices, hours, FAQs and booking rules. It answers every call in about two seconds with a natural human-sounding voice, handles the routine 80% of calls completely, and hands genuinely complex calls to your team with a full summary.",
       points: [
         "<b>Answers 24/7/365</b> — nights, weekends, holidays, lunch rushes and storm-season surges",
         "<b>Books directly into your calendar</b> — callers hang up with a confirmed appointment",

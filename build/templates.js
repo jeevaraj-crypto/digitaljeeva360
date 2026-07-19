@@ -259,6 +259,7 @@ function nav(activePath) {
             ${INDUSTRIES.map((i) => `<li><a href="/industries/${i.slug}.html"><b>${i.label}</b></a></li>`).join("\n            ")}
           </ul>
         </li>
+        <li><a href="/results.html"${cur("/results.html")}>Results</a></li>
         <li><a href="/blog.html"${cur("/blog.html")}>Blog</a></li>
         <li><a href="/contact.html"${cur("/contact.html")}>Contact</a></li>
       </ul>
@@ -309,6 +310,7 @@ function footer() {
         <ul>
           ${INDUSTRIES.map((i) => `<li><a href="/industries/${i.slug}.html">${i.label}</a></li>`).join("\n          ")}
           <li><a href="/about.html">About</a></li>
+          <li><a href="/results.html">Results</a></li>
           <li><a href="/blog.html">Blog</a></li>
           <li><a href="/contact.html">Contact</a></li>
         </ul>

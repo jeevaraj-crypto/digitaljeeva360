@@ -160,9 +160,11 @@ li { margin-bottom: 0.5rem; }
   border-bottom-color: var(--stroke);
 }
 .nav {
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: flex-start;
   gap: 1.5rem; padding-block: 0.9rem;
 }
+/* Menu sits in the top-right corner: links pushed right, CTA after them */
+.nav-links { margin-left: auto; }
 .brand {
   display: flex; align-items: center; gap: 0.6rem;
   font-family: var(--font-display); font-weight: 800; font-size: 1.15rem;
@@ -227,8 +229,10 @@ li { margin-bottom: 0.5rem; }
 .nav-toggle svg { display: block; }
 
 @media (max-width: 1024px) {
+  /* nav-links is a fixed overlay (out of flex flow), so push the toggle right explicitly */
+  .nav-cta { margin-left: auto; }
   .nav-links {
-    position: fixed; inset: 64px 0 auto 0; z-index: 99;
+    position: fixed; inset: 64px 0 auto 0; z-index: 99; margin-left: 0;
     flex-direction: column; align-items: stretch; gap: 0.15rem;
     background: rgba(6, 9, 20, 0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--stroke);
