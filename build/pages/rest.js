@@ -25,6 +25,7 @@ function renderAbout() {
         <div class="avatar" style="width:84px;height:84px;font-size:1.6rem;margin:0 0 1.2rem">J</div>
         <h2 style="font-size:1.5rem;margin-bottom:0.4rem">Jeeva</h2>
         <p style="color:var(--cyan);font-weight:600;font-size:0.92rem">Founder — AI-Powered Digital Marketer &amp; Automation Specialist</p>
+        <p style="font-size:0.88rem;color:var(--ink-faint)">Based in India · Proudly serving Dallas–Fort Worth, Texas</p>
         <p>“I started Digital Jeeva360 after watching brilliant business owners lose evenings, weekends and opportunities to work a machine should be doing. AI finally makes enterprise-level marketing and operations available to every business — my job is making it work for yours.”</p>
         <div class="footer-social" style="margin-top:0.5rem">
           <a href="${T.SITE.whatsappUrl}" target="_blank" rel="noopener" aria-label="WhatsApp">${T.icons.whatsapp}</a>
@@ -59,6 +60,7 @@ function renderAbout() {
       <p>Most businesses don't have a marketing problem — they have a <em>system</em> problem. The ads work, but leads leak away because follow-up is manual. The website looks fine, but it's slow, so rankings suffer. SEO brings traffic, but the site doesn't convert it. Each piece is judged alone; nothing connects.</p>
       <p>Digital Jeeva360 was built around the opposite idea: treat growth as one connected, 360-degree system. Automation catches and nurtures every lead the ads generate. The website converts the traffic SEO earns. Every channel feeds the others, and AI runs the repetitive parts around the clock.</p>
       <p>Today we build those systems for dental clinics, realtors, law firms, HVAC and roofing companies across Dallas–Fort Worth — industries where speed of response decides who wins the customer, every single day.</p>
+      <p>And yes — I'm from India, serving Dallas. That's not a compromise; it's an advantage. Your automations get built and your campaigns get optimised while Dallas sleeps, and I'm on WhatsApp and calls during Central Time business hours. You get senior-level work at a pace and price a local agency can't match — with results measured in the only currency that matters: Dallas leads and Dallas revenue.</p>
     </div>
     <h2 class="reveal">How we're different</h2>
     <ul class="check-list reveal">

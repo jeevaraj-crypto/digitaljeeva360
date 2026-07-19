@@ -58,6 +58,6 @@ Static output — deploy the repo root to any host (GitHub Pages, Cloudflare Pag
 
 ## Contact
 
-- WhatsApp: +91 93424 75653
-- Email: cheeyan5raj@gmail.com
+- WhatsApp: +91 90877 72803
+- Email: digitaljeeva360@gmail.com
 - Instagram: [@digitaljeeva360](https://instagram.com/digitaljeeva360)

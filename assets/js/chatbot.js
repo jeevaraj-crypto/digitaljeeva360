@@ -12,7 +12,7 @@
   var sendBtn = panel.querySelector(".chatbot-input button");
   var closeBtn = panel.querySelector(".chatbot-close");
   var WHATSAPP = "https://wa.me/919087772803";
-  var EMAIL = "cheeyan5raj@gmail.com";
+  var EMAIL = "digitaljeeva360@gmail.com";
 
   var lead = { stage: null, name: "", email: "", interest: "" };
   var greeted = false;

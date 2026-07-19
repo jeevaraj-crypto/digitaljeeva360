@@ -5,12 +5,12 @@ const SITE = {
   url: "https://digitaljeeva360.com",
   name: "Digital Jeeva360",
   tagline: "AI-Powered Digital Marketing & Automation",
-  email: "cheeyan5raj@gmail.com",
+  email: "digitaljeeva360@gmail.com",
   whatsapp: "+919087772803",
   whatsappUrl: "https://wa.me/919087772803",
   instagram: "https://instagram.com/digitaljeeva360",
   founder: "Jeeva",
-  formEndpoint: "https://formsubmit.co/cheeyan5raj@gmail.com"
+  formEndpoint: "https://formsubmit.co/digitaljeeva360@gmail.com"
 };
 
 /* ---------- Icons (inline SVG, stroke style) ---------- */
@@ -392,7 +392,7 @@ function leadForm({ subject = "New enquiry — Digital Jeeva360", compact = fals
   <div class="field"><label for="lf-name">Full name *</label><input id="lf-name" type="text" name="name" required autocomplete="name" placeholder="Alex Morgan"></div>
   <div class="field"><label for="lf-company">Company</label><input id="lf-company" type="text" name="company" autocomplete="organization" placeholder="Acme Inc."></div>
   <div class="field"><label for="lf-email">Work email *</label><input id="lf-email" type="email" name="email" required autocomplete="email" placeholder="alex@acme.com"></div>
-  <div class="field"><label for="lf-phone">Phone / WhatsApp</label><input id="lf-phone" type="tel" name="phone" autocomplete="tel" placeholder="+1 555 000 1234"></div>
+  <div class="field"><label for="lf-phone">WhatsApp number</label><input id="lf-phone" type="tel" name="whatsapp_number" autocomplete="tel" placeholder="+1 555 000 1234"></div>
   <div class="field"><label for="lf-city">City / Area *</label>
     <select id="lf-city" name="city" required>
       <option value="" disabled selected>Select your area</option>
