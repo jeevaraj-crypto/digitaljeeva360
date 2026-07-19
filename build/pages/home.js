@@ -89,7 +89,7 @@ function renderHome(posts) {
       <article class="glass-card reveal">
         <div class="icon-chip">${T.icons.bot}</div>
         <h3><a href="/services/ai-automation.html" style="color:#fff">AI Automation</a></h3>
-        <p>Chatbots, AI agents and workflow automation that answer, qualify, book and follow up — 24/7. Reclaim 20–40 hours a week and never lose a lead to slow response again.</p>
+        <p>AI receptionists &amp; voice agents, chatbots, WhatsApp, email and workflow automation that answer, qualify, book and follow up — 24/7. Reclaim 20–40 hours a week and never lose a lead to slow response again.</p>
         <a class="read-more" href="/services/ai-automation.html">Explore AI Automation ${T.icons.arrow}</a>
       </article>
       <article class="glass-card reveal reveal-d1">

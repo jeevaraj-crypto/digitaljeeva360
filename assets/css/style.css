@@ -163,8 +163,6 @@ li { margin-bottom: 0.5rem; }
   display: flex; align-items: center; justify-content: flex-start;
   gap: 1.5rem; padding-block: 0.9rem;
 }
-/* Menu sits in the top-right corner: links pushed right, CTA after them */
-.nav-links { margin-left: auto; }
 .brand {
   display: flex; align-items: center; gap: 0.6rem;
   font-family: var(--font-display); font-weight: 800; font-size: 1.15rem;
@@ -181,7 +179,9 @@ li { margin-bottom: 0.5rem; }
 
 .nav-links {
   display: flex; align-items: center; gap: 0.25rem;
-  list-style: none; margin: 0; padding: 0;
+  list-style: none; padding: 0;
+  /* Menu sits flush in the top-right corner: auto margin pushes links + CTA right */
+  margin: 0 0 0 auto;
 }
 .nav-links > li { margin: 0; position: relative; }
 .nav-links a {

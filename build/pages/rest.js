@@ -87,7 +87,7 @@ function renderServicesIndex(services) {
   const bySlug = Object.fromEntries(services.map((s) => [s.slug, s]));
   const pillars = [
     { slug: "ai-automation", icon: "bot", tagline: "Put your operations on autopilot",
-      blurb: "AI systems that answer customers, qualify leads, book appointments and run your back office 24/7 — so you reclaim 20–40 hours every week." },
+      blurb: "AI receptionists & voice agents, chatbots and workflow automation that answer customers, qualify leads and book appointments 24/7 — so you reclaim 20–40 hours every week." },
     { slug: "premium-web-design", icon: "code", tagline: "Turn your website into your best salesperson",
       blurb: "Custom-designed, conversion-engineered websites that load in under two seconds, rank on Google and make your brand look like the market leader." },
     { slug: "seo", icon: "search", tagline: "Get found by people ready to buy",

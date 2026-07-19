@@ -208,7 +208,7 @@ ${keywords ? `<meta name="keywords" content="${esc(keywords)}">\n` : ""}<meta na
 }
 
 const NAV_SERVICES = [
-  { path: "/services/ai-automation.html", label: "AI Automation", desc: "Chatbots, WhatsApp, email & workflow automation" },
+  { path: "/services/ai-automation.html", label: "AI Automation", desc: "AI receptionist, chatbots, WhatsApp, email & workflow automation" },
   { path: "/services/premium-web-design.html", label: "Premium Website Development", desc: "Websites, landing pages & conversion optimisation" },
   { path: "/services/seo.html", label: "SEO & Organic Growth", desc: "Local, technical & AI-search SEO that compounds" },
   { path: "/services/paid-advertising.html", label: "Paid Advertising", desc: "Google & Meta Ads engineered for ROI" }
