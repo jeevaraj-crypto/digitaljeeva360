@@ -77,7 +77,7 @@ function organizationSchema() {
     "@id": SITE.url + "/#organization",
     name: SITE.name,
     url: SITE.url,
-    logo: abs("/assets/img/logo.svg"),
+    logo: abs("/assets/img/logo-full.png"),
     email: SITE.email,
     telephone: SITE.whatsapp,
     founder: { "@type": "Person", name: SITE.founder, jobTitle: "AI-Powered Digital Marketer & AI Automation Specialist" },
@@ -293,7 +293,7 @@ function footer() {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="/"><span class="mark" aria-hidden="true">${LOGO_MARK}</span>Digital<em>Jeeva</em>360</a>
+        <a href="/" aria-label="Digital Jeeva360 home"><img src="/assets/img/logo-full.png?v=${BUILD_V}" alt="Digital Jeeva360 — Digital Marketing, AI Automation, Growth Systems" width="220" height="220" loading="lazy" style="border-radius:18px;border:1px solid var(--stroke)"></a>
         <p class="mt-1">Helping Dallas–Fort Worth businesses grow 2–3x through AI automation, SEO, paid advertising and premium websites. Serving Dallas, Plano, Frisco, Fort Worth, Arlington and the entire DFW Metroplex.</p>
         <div class="footer-social">
           <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${icons.whatsapp}</a>
