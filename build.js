@@ -11,6 +11,8 @@ const posts = require("./build/data/blog");
 const renderService = require("./build/pages/service");
 const renderHome = require("./build/pages/home");
 const rest = require("./build/pages/rest");
+const industries = require("./build/data/industries");
+const { renderIndustriesIndex, renderIndustry } = require("./build/pages/industry");
 
 const ROOT = __dirname;
 
@@ -25,9 +27,9 @@ function write(rel, content) {
 write("index.html", renderHome(posts));
 write("about.html", rest.renderAbout());
 write("services.html", rest.renderServicesIndex(services));
-write("portfolio.html", rest.renderPortfolio());
-write("results.html", rest.renderResults());
 write("contact.html", rest.renderContact());
+write("industries.html", renderIndustriesIndex(industries));
+industries.forEach((ind) => write(`industries/${ind.slug}.html`, renderIndustry(ind)));
 write("blog.html", rest.renderBlogIndex(posts));
 write("privacy.html", rest.renderPrivacy());
 write("terms.html", rest.renderTerms());
@@ -42,13 +44,13 @@ const urls = [
   { loc: "/", priority: "1.0", changefreq: "weekly" },
   { loc: "/about.html", priority: "0.8", changefreq: "monthly" },
   { loc: "/services.html", priority: "0.9", changefreq: "monthly" },
-  { loc: "/portfolio.html", priority: "0.8", changefreq: "monthly" },
-  { loc: "/results.html", priority: "0.8", changefreq: "monthly" },
+  { loc: "/industries.html", priority: "0.9", changefreq: "monthly" },
   { loc: "/blog.html", priority: "0.8", changefreq: "weekly" },
   { loc: "/contact.html", priority: "0.9", changefreq: "monthly" },
   { loc: "/privacy.html", priority: "0.3", changefreq: "yearly" },
   { loc: "/terms.html", priority: "0.3", changefreq: "yearly" },
   ...services.map((s) => ({ loc: `/services/${s.slug}.html`, priority: "0.9", changefreq: "monthly" })),
+  ...industries.map((i) => ({ loc: `/industries/${i.slug}.html`, priority: "0.9", changefreq: "monthly" })),
   ...posts.map((p) => ({ loc: `/blog/${p.slug}.html`, priority: "0.7", changefreq: "monthly", lastmod: p.date }))
 ];
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
@@ -99,11 +101,11 @@ write("assets/img/og-cover.svg", `<svg xmlns="http://www.w3.org/2000/svg" width=
 <rect width="1200" height="630" fill="url(#glow2)"/>
 <g transform="translate(72,74) scale(0.78)">${markInner}</g>
 <text x="200" y="150" font-family="Arial, sans-serif" font-size="40" font-weight="800" fill="#e8ecf8">DIGITAL<tspan fill="#3b82f6">JEEVA</tspan>360</text>
-<text x="80" y="310" font-family="Arial, sans-serif" font-size="60" font-weight="800" fill="#ffffff">AI-Powered Digital Marketing</text>
-<text x="80" y="390" font-family="Arial, sans-serif" font-size="60" font-weight="800" fill="url(#ac)">&amp; AI Automation Agency</text>
-<text x="80" y="470" font-family="Arial, sans-serif" font-size="28" fill="#9aa5c4">Grow 2–3x in 6 months · Automation · SEO · Paid Ads · Premium Websites</text>
-<text x="80" y="545" font-family="Arial, sans-serif" font-size="24" fill="#5f6a8a">digitaljeeva360.com — United States · United Kingdom · Australia</text>
+<text x="80" y="310" font-family="Arial, sans-serif" font-size="60" font-weight="800" fill="#ffffff">Dallas AI Automation</text>
+<text x="80" y="390" font-family="Arial, sans-serif" font-size="60" font-weight="800" fill="url(#ac)">&amp; Digital Marketing Agency</text>
+<text x="80" y="470" font-family="Arial, sans-serif" font-size="28" fill="#9aa5c4">AI Receptionists · Automation · SEO · Google Ads · Premium Websites</text>
+<text x="80" y="545" font-family="Arial, sans-serif" font-size="24" fill="#5f6a8a">digitaljeeva360.com — Serving Dallas–Fort Worth, Texas</text>
 </svg>
 `);
 
-console.log(`\nBuild complete: ${10 + services.length + posts.length} pages + sitemap, robots, assets.`);
+console.log(`\nBuild complete: ${8 + industries.length + 1 + services.length + posts.length} pages + sitemap, robots, assets.`);

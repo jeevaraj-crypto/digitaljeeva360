@@ -29,7 +29,7 @@ function renderService(svc, allServices) {
         <a class="btn btn-ghost btn-lg" href="${T.SITE.whatsappUrl}" target="_blank" rel="noopener">${T.icons.whatsapp} WhatsApp Us</a>
       </div>
       <div class="trust-badges" style="justify-content:flex-start">
-        <span>${T.icons.check} Serving US, UK &amp; Australia</span>
+        <span>${T.icons.check} Serving Dallas–Fort Worth</span>
         <span>${T.icons.check} No lock-in contracts</span>
         <span>${T.icons.check} Results-first approach</span>
       </div>
@@ -154,7 +154,7 @@ ${children.length ? `
             ${svc.caseStudy.results.map((r) => `
             <div class="calc-stat"><span>${r.span}</span><b>${r.b}</b></div>`).join("")}
           </div>
-          <a class="read-more mt-2" style="display:inline-flex" href="/portfolio.html">See more case studies ${T.icons.arrow}</a>
+          <a class="read-more mt-2" style="display:inline-flex" href="/industries.html">See how we help your industry ${T.icons.arrow}</a>
         </div>
       </div>
     </div>

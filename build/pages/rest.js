@@ -1,4 +1,4 @@
-/* About, Services index, Portfolio, Results, Contact, Blog, Legal & 404 pages */
+/* About, Services index, Contact, Blog, Legal & 404 pages */
 "use strict";
 
 const T = require("../templates");
@@ -18,7 +18,7 @@ function renderAbout() {
         <p class="lede">Digital Jeeva360 exists for one reason: to help ambitious businesses grow faster by combining human strategy with AI execution — while everyone else is still doing things the slow way.</p>
         <div class="hero-ctas" style="justify-content:flex-start">
           <a class="btn btn-primary btn-lg" href="/contact.html">Work With Us ${T.icons.arrow}</a>
-          <a class="btn btn-ghost btn-lg" href="/results.html">See the Results</a>
+          <a class="btn btn-ghost btn-lg" href="/industries.html">Industries We Serve</a>
         </div>
       </div>
       <div class="glass-card card-static gradient-border" style="padding:2.4rem">
@@ -41,7 +41,7 @@ function renderAbout() {
     <div class="section-head center reveal">
       <span class="eyebrow">Our mission</span>
       <h2 id="mission-title">Less manual work. More qualified leads. Faster growth.</h2>
-      <p>Every engagement is measured against the same promise: reduce your working hours, generate more qualified leads, increase your traffic and revenue — and get you to 2–3x growth within 6 months using AI systems, SEO, paid ads and premium websites.</p>
+      <p>Every engagement is measured against the same promise: reduce your working hours, generate more qualified leads, increase your traffic and revenue — and get your Dallas business to 2–3x growth within 6 months using AI systems, SEO, paid ads and premium websites.</p>
     </div>
     <div class="grid grid-3">
       <div class="glass-card reveal"><div class="icon-chip">${T.icons.clock}</div><h3>Time back first</h3><p class="mb-0">Before we add anything new, we automate what's stealing your hours. Growth built on a foundation of reclaimed time doesn't burn anyone out.</p></div>
@@ -58,7 +58,7 @@ function renderAbout() {
     <div class="reveal">
       <p>Most businesses don't have a marketing problem — they have a <em>system</em> problem. The ads work, but leads leak away because follow-up is manual. The website looks fine, but it's slow, so rankings suffer. SEO brings traffic, but the site doesn't convert it. Each piece is judged alone; nothing connects.</p>
       <p>Digital Jeeva360 was built around the opposite idea: treat growth as one connected, 360-degree system. Automation catches and nurtures every lead the ads generate. The website converts the traffic SEO earns. Every channel feeds the others, and AI runs the repetitive parts around the clock.</p>
-      <p>Today we build those systems for service businesses, clinics, e-commerce brands and professional firms across the United States, United Kingdom and Australia — markets where speed of response and quality of experience decide who wins.</p>
+      <p>Today we build those systems for dental clinics, realtors, law firms, HVAC and roofing companies across Dallas–Fort Worth — industries where speed of response decides who wins the customer, every single day.</p>
     </div>
     <h2 class="reveal">How we're different</h2>
     <ul class="check-list reveal">
@@ -74,7 +74,7 @@ ${T.ctaBand({ title: "Let's build your growth system", text: "A free 30-minute s
 
   return T.page({
     title: "About Digital Jeeva360 — AI-Powered Growth for Ambitious Businesses",
-    description: "Meet Digital Jeeva360: founder-led, AI-native digital growth agency helping businesses in the US, UK and Australia automate operations and grow 2–3x.",
+    description: "Meet Digital Jeeva360: founder-led, AI-native growth agency helping Dallas–Fort Worth businesses automate operations and grow 2–3x.",
     keywords: "about Digital Jeeva360, Jeeva digital marketer, AI automation specialist, digital marketing agency about",
     path: "/about.html",
     schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
@@ -147,248 +147,6 @@ ${T.ctaBand({ title: "Not sure where to start?", text: "That's exactly what the 
   }, body);
 }
 
-/* ============ PORTFOLIO ============ */
-function caseVisual(i, a, b, label) {
-  return `<svg viewBox="0 0 400 235" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${label} — project mockup">
-  <defs><linearGradient id="cv${i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}" stop-opacity="0.5"/><stop offset="1" stop-color="${b}" stop-opacity="0.15"/></linearGradient></defs>
-  <rect width="400" height="235" fill="url(#cv${i})"/>
-  <rect x="45" y="30" width="310" height="185" rx="10" fill="#0a1124" stroke="rgba(255,255,255,0.14)"/>
-  <rect x="45" y="30" width="310" height="26" rx="10" fill="rgba(255,255,255,0.05)"/>
-  <circle cx="60" cy="43" r="4" fill="#f87171"/><circle cx="74" cy="43" r="4" fill="#fbbf24"/><circle cx="88" cy="43" r="4" fill="#34d399"/>
-  <rect x="65" y="72" width="130" height="12" rx="6" fill="rgba(255,255,255,0.25)"/>
-  <rect x="65" y="94" width="200" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
-  <rect x="65" y="108" width="170" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
-  <rect x="65" y="130" width="86" height="26" rx="13" fill="${a}"/>
-  <rect x="240" y="72" width="95" height="84" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)"/>
-  <path d="M250 140 l18 -20 14 10 22 -28 16 12" stroke="${b}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <rect x="65" y="172" width="270" height="28" rx="8" fill="rgba(255,255,255,0.05)"/>
-</svg>`;
-}
-
-function renderPortfolio() {
-  const crumbs = [{ name: "Home", path: "/" }, { name: "Portfolio", path: "/portfolio.html" }];
-  const cases = [
-    {
-      title: "Property management firm — Texas, USA",
-      tags: [["AI Automation", ""], ["CRM", "violet"]],
-      challenge: "Two full-time staff consumed by repetitive tenant emails; after-hours enquiries lost daily.",
-      solution: "AI assistant across web, email and WhatsApp resolving 78% of queries, routing maintenance and automating lease renewals.",
-      metrics: [{ b: "34 hrs", s: "saved weekly" }, { b: "78%", s: "AI-resolved" }, { b: "$94k", s: "annual savings" }],
-      colors: ["#2563eb", "#8b5cf6"]
-    },
-    {
-      title: "Commercial law firm — Chicago, USA",
-      tags: [["Web Design", ""], ["SEO", "green"]],
-      challenge: "Dated 8-second-load website generating two enquiries a month despite healthy traffic.",
-      solution: "Full conversion-focused redesign with practice-area pages, trust architecture and a 1.4s load time.",
-      metrics: [{ b: "11x", s: "more enquiries" }, { b: "1.4s", s: "load time" }, { b: "+167%", s: "organic traffic" }],
-      colors: ["#7c3aed", "#22d3ee"]
-    },
-    {
-      title: "Cosmetic dental clinic — London, UK",
-      tags: [["AI Chatbot", ""], ["WhatsApp", "green"]],
-      challenge: "High-value treatment enquiries waiting 9 hours for replies; 41% of demand arriving after hours.",
-      solution: "AI assistant answering treatment questions, pre-qualifying by budget and booking consultations 24/7.",
-      metrics: [{ b: "3.2x", s: "consultations" }, { b: "41%", s: "booked after-hours" }, { b: "£67k", s: "revenue in 90 days" }],
-      colors: ["#0e7490", "#2563eb"]
-    },
-    {
-      title: "Solar installation company — Brisbane, AU",
-      tags: [["Google Ads", ""], ["Landing Pages", "violet"]],
-      challenge: "$12k/month in ads pointed at a homepage converting 1.8% — a $210 cost per lead.",
-      solution: "Three message-matched landing pages with quote calculators and suburb-specific proof.",
-      metrics: [{ b: "7.4%", s: "conversion rate" }, { b: "-64%", s: "cost per lead" }, { b: "4.1x", s: "ROAS" }],
-      colors: ["#b45309", "#f59e0b"]
-    },
-    {
-      title: "DTC jewellery brand — London, UK",
-      tags: [["Meta Ads", ""], ["E-commerce", "violet"]],
-      challenge: "Stuck at 1.7x ROAS with stale creative and a single generic retargeting ad.",
-      solution: "Creative testing engine (12 ads/month), Conversions API tracking and sequenced catalogue retargeting.",
-      metrics: [{ b: "4.3x", s: "blended ROAS" }, { b: "+156%", s: "monthly revenue" }, { b: "38%", s: "sales from retargeting" }],
-      colors: ["#be185d", "#8b5cf6"]
-    },
-    {
-      title: "Specialty coffee e-commerce — Portland, USA",
-      tags: [["SEO", ""], ["Content", "green"]],
-      challenge: "Paid-social dependent, with product pages ranking for zero commercial keywords.",
-      solution: "Category architecture rebuild, 40-article content hub, product schema and food-media digital PR.",
-      metrics: [{ b: "+312%", s: "organic traffic" }, { b: "180+", s: "page-1 keywords" }, { b: "$58k", s: "monthly organic revenue" }],
-      colors: ["#15803d", "#22d3ee"]
-    }
-  ];
-
-  const body = `
-<section class="hero-page">
-  <div class="container">
-    ${T.breadcrumbs(crumbs)}
-    <div class="section-head">
-      <span class="eyebrow">Portfolio</span>
-      <h1>Real businesses. <span class="text-gradient">Real numbers.</span></h1>
-      <p class="lede">Every case study below follows the same arc: a specific challenge, a systematic solution, and results measured in revenue, hours and growth — not adjectives.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-tight">
-  <div class="container">
-    <div class="grid grid-2">
-      ${cases.map((c, i) => `
-      <article class="glass-card case-card reveal${i % 2 ? " reveal-d1" : ""}">
-        <div class="case-visual">${caseVisual(i, c.colors[0], c.colors[1], c.title)}</div>
-        <div class="case-body">
-          <div class="case-tags">${c.tags.map(([t, v]) => `<span class="pill${v ? " " + v : ""}">${t}</span>`).join("")}</div>
-          <h3>${c.title}</h3>
-          <p style="font-size:0.95rem"><b>Challenge:</b> ${c.challenge}</p>
-          <p style="font-size:0.95rem"><b>Solution:</b> ${c.solution}</p>
-          <div class="case-metrics">
-            ${c.metrics.map((m) => `<div><b>${m.b}</b><span>${m.s}</span></div>`).join("")}
-          </div>
-        </div>
-      </article>`).join("")}
-    </div>
-  </div>
-</section>
-
-${T.ctaBand({ title: "Want results like these?", text: "Every one of these projects started with the same free strategy call. Yours is waiting." })}`;
-
-  return T.page({
-    title: "Portfolio & Case Studies — Client Results | Digital Jeeva360",
-    description: "Case studies with real numbers: 11x more enquiries, 4.3x ROAS, $94k saved through automation. See how Digital Jeeva360 grows businesses in the US, UK and Australia.",
-    keywords: "digital marketing case studies, AI automation case study, web design portfolio, SEO results, PPC case studies",
-    path: "/portfolio.html",
-    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
-  }, body);
-}
-
-/* ============ RESULTS ============ */
-function renderResults() {
-  const crumbs = [{ name: "Home", path: "/" }, { name: "Results", path: "/results.html" }];
-  const body = `
-<section class="hero-page">
-  <div class="container">
-    ${T.breadcrumbs(crumbs)}
-    <div class="section-head center" style="margin-inline:auto;text-align:center">
-      <span class="eyebrow">Results</span>
-      <h1>The numbers behind the <span class="text-gradient">promises</span></h1>
-      <p class="lede">Aggregated, real outcomes across our client base in the US, UK and Australia. This is what an AI-powered growth system produces.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-tight" aria-label="Headline results">
-  <div class="container">
-    <div class="stats-band">
-      <div class="stat-item glass-card card-static reveal"><b><span data-count="2.7" data-decimals="1" data-suffix="x">0</span></b><span>Average revenue growth in 6 months</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d1"><b><span data-count="41200" data-suffix="+">0</span></b><span>Hours of manual work automated</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d2"><b><span data-count="12400" data-suffix="+">0</span></b><span>Qualified leads generated</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d3"><b><span data-count="4.6" data-decimals="1" data-suffix="x">0</span></b><span>Average return on ad spend</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="revenue-title">
-  <div class="container">
-    <div class="split">
-      <div class="reveal">
-        <span class="eyebrow">Revenue growth</span>
-        <h2 id="revenue-title">Client revenue, indexed over 12 months</h2>
-        <p>The pattern repeats across industries: automation stops the leaks in the first quarter, SEO and ads compound through the second, and by month twelve the average client operates at 2.7x their starting revenue run-rate.</p>
-        <ul class="check-list">
-          <li>${T.icons.check}<span><b>Months 1–3:</b> automation recovers lost leads and hours</span></li>
-          <li>${T.icons.check}<span><b>Months 3–6:</b> paid ads scale on proven unit economics</span></li>
-          <li>${T.icons.check}<span><b>Months 6–12:</b> SEO compounds into free, recurring demand</span></li>
-        </ul>
-      </div>
-      <div class="dash chart-anim reveal reveal-d1">
-        <div class="dash-bar"><i></i><i></i><i></i><span>revenue-index · trailing 12 months</span></div>
-        <div class="dash-body" style="grid-template-columns:1fr">
-          <div class="dash-chart line-chart">
-            <svg viewBox="0 0 560 240" role="img" aria-label="Line chart showing client revenue index rising from 100 to 270 over twelve months">
-              <defs>
-                <linearGradient id="lg-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.35"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
-                <linearGradient id="lg-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
-              </defs>
-              <g stroke="rgba(255,255,255,0.07)"><line x1="0" y1="60" x2="560" y2="60"/><line x1="0" y1="120" x2="560" y2="120"/><line x1="0" y1="180" x2="560" y2="180"/></g>
-              <path class="area" d="M20 200 L65 196 L110 188 L155 176 L200 168 L245 152 L290 140 L335 122 L380 104 L425 84 L470 62 L515 40 L515 230 L20 230 Z" fill="url(#lg-area)"/>
-              <path class="line" d="M20 200 L65 196 L110 188 L155 176 L200 168 L245 152 L290 140 L335 122 L380 104 L425 84 L470 62 L515 40" stroke="url(#lg-line)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-              <circle cx="515" cy="40" r="6" fill="#a78bfa"/><circle cx="515" cy="40" r="11" fill="#a78bfa" opacity="0.25"/>
-              <text x="20" y="225" fill="#5f6a8a" font-size="12">M1</text><text x="255" y="225" fill="#5f6a8a" font-size="12">M6</text><text x="495" y="225" fill="#5f6a8a" font-size="12">M12</text>
-              <text x="440" y="30" fill="#c4b5fd" font-size="14" font-weight="700">index 270</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="channels-title">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">By channel</span>
-      <h2 id="channels-title">Where the growth comes from</h2>
-    </div>
-    <div class="grid grid-3">
-      <div class="glass-card chart-anim reveal">
-        <div class="icon-chip">${T.icons.bot}</div>
-        <h3>AI Automation</h3>
-        <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:30%"></i><i style="height:45%"></i><i style="height:60%"></i><i style="height:74%"></i><i style="height:88%"></i><i style="height:100%" class="alt"></i></div>
-        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="27" data-suffix=" hrs">0</span></b> average weekly hours saved per client, with <b>78%</b> of routine enquiries resolved without human touch.</p>
-      </div>
-      <div class="glass-card chart-anim reveal reveal-d1">
-        <div class="icon-chip">${T.icons.search}</div>
-        <h3>SEO &amp; Organic</h3>
-        <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:20%" class="alt"></i><i style="height:32%" class="alt"></i><i style="height:41%" class="alt"></i><i style="height:58%" class="alt"></i><i style="height:79%" class="alt"></i><i style="height:100%"></i></div>
-        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="184" data-prefix="+" data-suffix="%">0</span></b> average organic traffic growth in 9 months, with <b>640+</b> combined page-one keywords won.</p>
-      </div>
-      <div class="glass-card chart-anim reveal reveal-d2">
-        <div class="icon-chip">${T.icons.target}</div>
-        <h3>Paid Advertising</h3>
-        <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:25%"></i><i style="height:38%" class="alt"></i><i style="height:52%"></i><i style="height:67%" class="alt"></i><i style="height:81%"></i><i style="height:100%" class="alt"></i></div>
-        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="4.6" data-decimals="1" data-suffix="x">0</span></b> average blended ROAS, with cost per lead down <b>-49%</b> on average after account rebuilds.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="proof-title">
-  <div class="container">
-    <div class="section-head center reveal">
-      <span class="eyebrow">Selected outcomes</span>
-      <h2 id="proof-title">Twelve months of client wins</h2>
-    </div>
-    <div class="grid grid-4">
-      ${[
-        ["11x", "enquiry growth after law firm website rebuild"],
-        ["£67k", "added in 90 days by a dental clinic's AI assistant"],
-        ["-64%", "cost per lead for a solar installer's campaigns"],
-        ["+312%", "organic traffic for an e-commerce roaster"],
-        ["3.2x", "consultations booked via 24/7 chatbot"],
-        ["94%", "product indexation after technical SEO rescue"],
-        ["-58%", "no-show rate with WhatsApp reminders"],
-        ["$1.2M", "annualised impact from a SaaS CRO programme"]
-      ].map(([b, s], i) => `
-      <div class="glass-card center reveal${i % 4 ? ` reveal-d${i % 4}` : ""}" style="padding:1.6rem 1.2rem">
-        <b style="font-family:var(--font-display);font-size:2rem;display:block;background:linear-gradient(120deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent">${b}</b>
-        <span style="font-size:0.87rem;color:var(--ink-faint)">${s}</span>
-      </div>`).join("")}
-    </div>
-    <p class="center calc-note mt-2">Results shown are from real client engagements. Individual outcomes vary with market, starting point and execution — your strategy call includes realistic projections for your situation.</p>
-  </div>
-</section>
-
-${T.ctaBand({ title: "Your numbers could be on this page", text: "Book a free strategy call and we'll project what a growth system could realistically produce for your business — before you spend a dollar." })}`;
-
-  return T.page({
-    title: "Client Results — Revenue, Traffic & Automation Wins | Digital Jeeva360",
-    description: "2.7x average revenue growth, 41,200+ hours automated, 4.6x average ROAS. Explore the measurable results Digital Jeeva360 delivers for clients.",
-    keywords: "digital marketing results, agency case study results, marketing ROI, automation savings, SEO growth statistics",
-    path: "/results.html",
-    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
-  }, body);
-}
-
 /* ============ CONTACT ============ */
 function renderContact() {
   const crumbs = [{ name: "Home", path: "/" }, { name: "Contact", path: "/contact.html" }];
@@ -441,10 +199,10 @@ function renderContact() {
           <div class="timeline-step"><div class="timeline-num">3</div><div><h3>Your growth plan</h3><p>You receive a clear, prioritised plan with honest projections — yours to keep, whoever you build it with.</p></div></div>
         </div>
         <div class="glass-card card-static mt-3" style="padding:1.5rem">
-          <p class="mb-0" style="font-size:0.95rem">${T.icons.pin.replace("<svg", '<svg style="width:18px;height:18px;display:inline;vertical-align:-3px;margin-right:6px;color:var(--cyan)"')} <b>Serving clients across time zones</b> — calls available in US, UK and Australian business hours. Based in India, working globally.</p>
+          <p class="mb-0" style="font-size:0.95rem">${T.icons.pin.replace("<svg", '<svg style="width:18px;height:18px;display:inline;vertical-align:-3px;margin-right:6px;color:var(--cyan)"')} <b>Serving the Dallas–Fort Worth Metroplex</b> — Dallas, Plano, Frisco, Fort Worth, Arlington, Irving, McKinney and beyond. Calls available in Central Time business hours, seven days a week.</p>
         </div>
         <div class="mt-2" style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--stroke)">
-          <iframe title="Digital Jeeva360 service regions map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d63443088.85847!2d-33.36!3d27.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="240" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe title="Dallas–Fort Worth service area map" src="https://www.google.com/maps?q=Dallas,+TX&output=embed" width="100%" height="240" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
       <div class="glass-card card-static gradient-border reveal reveal-d1" style="padding:clamp(1.5rem,4vw,2.5rem)">
@@ -458,13 +216,13 @@ function renderContact() {
 ${T.faqBlock([
     { q: "Is the strategy call really free — what's the catch?", a: "Genuinely free, genuinely useful. You'll leave with a prioritised growth plan whether we work together or not. Around half of the businesses we speak to become clients; the other half leave with clarity and goodwill — which tends to come back around." },
     { q: "What should I prepare before the call?", a: "Nothing is required, but it helps to know your rough monthly revenue, your main lead sources, and the tasks that consume most of your team's time. Access to your website analytics makes projections sharper, but we can work without it." },
-    { q: "Do you work with businesses outside the US, UK and Australia?", a: "Those are our primary markets, but we selectively take on clients elsewhere when the fit is strong. The systems we build — automation, SEO, ads — work in any English-speaking market. Reach out and ask." },
+    { q: "Do you work with businesses outside Dallas–Fort Worth?", a: "DFW is our focus — it\u2019s where our case studies, keyword research and market knowledge run deepest. We do selectively take on clients elsewhere in Texas when the fit is strong. Reach out and ask." },
     { q: "How soon can you start?", a: "Strategy calls are usually available within the week. Project kick-offs typically begin 1–2 weeks after proposal approval, depending on current capacity — automation quick-wins can often start sooner." }
   ], { title: "Before you reach out" })}`;
 
   return T.page({
-    title: "Contact Digital Jeeva360 — Book a Free Strategy Call",
-    description: "Book a free 30-minute strategy call with Digital Jeeva360. WhatsApp +91 93424 75653, email, or the contact form — personal reply within one business day.",
+    title: "Contact Us — Dallas AI Automation Agency | Digital Jeeva360",
+    description: "Book a free strategy call with Digital Jeeva360, Dallas\u2019s AI automation and digital marketing agency. WhatsApp, email or the form — reply within one business day.",
     keywords: "contact digital marketing agency, book strategy call, free marketing consultation, AI automation consultation",
     path: "/contact.html",
     noExitPopup: true,
@@ -483,7 +241,7 @@ function renderBlogIndex(posts) {
     <div class="section-head">
       <span class="eyebrow">Blog</span>
       <h1>Growth ideas you can <span class="text-gradient">use this week</span></h1>
-      <p class="lede">Practical, no-fluff guides on AI automation, SEO, paid ads and conversion — written from real client work, not recycled listicles.</p>
+      <p class="lede">Practical, no-fluff growth guides for Dallas dental clinics, realtors, law firms, HVAC and roofing companies — written from real client work, not recycled listicles.</p>
       <div class="tag-row mt-2" role="navigation" aria-label="Blog categories">
         <button class="tool-chip" data-filter="all" style="cursor:pointer;border-color:var(--blue)">All posts</button>
         ${categories.map((c) => `<button class="tool-chip" data-filter="${c}" style="cursor:pointer">${c}</button>`).join("\n        ")}
@@ -514,7 +272,7 @@ function renderBlogIndex(posts) {
     <div class="cta-band reveal">
       <span class="eyebrow">Newsletter</span>
       <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">One practical AI growth idea, every week</h2>
-      <p>Join business owners in the US, UK and Australia getting one actionable idea each week. Two-minute read. Zero spam.</p>
+      <p>Join Dallas–Fort Worth business owners getting one actionable idea each week. Two-minute read. Zero spam.</p>
       <form class="newsletter" style="max-width:420px;margin:1.5rem auto 0" action="${T.SITE.formEndpoint}" method="POST" data-lead-form>
         <input type="hidden" name="_subject" value="Newsletter signup — blog page">
         <input type="hidden" name="_captcha" value="false">
@@ -541,8 +299,8 @@ function renderBlogIndex(posts) {
 </script>`;
 
   return T.page({
-    title: "Blog — AI Marketing, Automation & SEO Insights | Digital Jeeva360",
-    description: "Practical guides on AI automation, SEO, Google Ads, Meta Ads and conversion optimisation — written from real client work by Digital Jeeva360.",
+    title: "Blog — Growth Guides for Dallas Businesses | Digital Jeeva360",
+    description: "Practical growth guides for Dallas dental clinics, realtors, law firms, HVAC and roofing companies — AI automation, SEO and ads advice from real client work.",
     keywords: "AI marketing blog, automation blog, SEO tips, digital marketing insights, PPC guides",
     path: "/blog.html",
     schema: [T.breadcrumbSchema(crumbs)]
@@ -624,7 +382,7 @@ function renderPrivacy() {
   <p class="lede">Last updated: 1 July 2026</p>
 </div></section>
 <div class="container-narrow article section-tight">
-  <p>Digital Jeeva360 ("we", "us") respects your privacy. This policy explains what information we collect through digitaljeeva360.com, how we use it, and the choices you have. It is written to satisfy the requirements of the GDPR (UK/EU), the CCPA (California) and the Australian Privacy Principles.</p>
+  <p>Digital Jeeva360 ("we", "us") respects your privacy. This policy explains what information we collect through digitaljeeva360.com, how we use it, and the choices you have. It is written to satisfy applicable US privacy laws, including the Texas Data Privacy and Security Act and the CCPA.</p>
   <h2>Information we collect</h2>
   <ul>
     <li><strong>Information you provide:</strong> name, company, email address, phone number, country, business details and messages submitted through our contact forms, newsletter signups, chatbot conversations or WhatsApp enquiries.</li>
@@ -653,7 +411,7 @@ function renderPrivacy() {
 </div>`;
   return T.page({
     title: "Privacy Policy | Digital Jeeva360",
-    description: "How Digital Jeeva360 collects, uses and protects your personal information — GDPR, CCPA and Australian Privacy Principles compliant.",
+    description: "How Digital Jeeva360 collects, uses and protects your personal information under applicable US privacy laws.",
     path: "/privacy.html",
     noExitPopup: true,
     schema: [T.breadcrumbSchema(crumbs)]
@@ -714,7 +472,7 @@ function render404() {
     <div class="trust-badges">
       <span><a href="/blog.html" style="color:var(--ink-faint)">Read the blog</a></span>
       <span><a href="/contact.html" style="color:var(--ink-faint)">Contact us</a></span>
-      <span><a href="/portfolio.html" style="color:var(--ink-faint)">See our work</a></span>
+      <span><a href="/industries.html" style="color:var(--ink-faint)">Industries we serve</a></span>
     </div>
   </div>
 </section>`;
@@ -731,4 +489,4 @@ function fmtDate(iso) {
   return new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
 }
 
-module.exports = { renderAbout, renderServicesIndex, renderPortfolio, renderResults, renderContact, renderBlogIndex, renderPost, renderPrivacy, renderTerms, render404 };
+module.exports = { renderAbout, renderServicesIndex, renderContact, renderBlogIndex, renderPost, renderPrivacy, renderTerms, render404 };

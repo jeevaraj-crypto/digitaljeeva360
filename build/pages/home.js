@@ -5,11 +5,11 @@ const T = require("../templates");
 
 function renderHome(posts) {
   const testimonials = [
-    { quote: "We went from manually chasing every lead to waking up with booked appointments in the calendar. The automation system Jeeva built paid for itself in the first six weeks — and it just keeps working.", name: "Marcus T.", role: "Director, Property Services Group — Texas, USA", initials: "MT" },
-    { quote: "Our old site got two enquiries a month. The new one gets that before lunch on a Tuesday. Design, speed, copy — everything was built around converting, and it shows in our pipeline.", name: "Sarah W.", role: "Managing Partner, Law Firm — Chicago, USA", initials: "SW" },
-    { quote: "I was sceptical about another SEO agency after two bad experiences. Nine months later we rank page one for every service we offer, and organic is now our biggest revenue channel.", name: "Daniel R.", role: "Founder, E-commerce Brand — Portland, USA", initials: "DR" },
-    { quote: "The WhatsApp system books trials, reminds members and wins back cancellations completely on its own. It's like hiring three receptionists who never sleep — for a fraction of one salary.", name: "Priya K.", role: "Owner, Fitness Studios — Manchester, UK", initials: "PK" },
-    { quote: "Finally an agency that reports revenue instead of impressions. Our ad spend produces 5x returns and I can see exactly where every dollar goes. Total transparency.", name: "Emma L.", role: "Marketing Director, Clinic Group — Sydney, AU", initials: "EL" }
+    { quote: "We went from manually chasing every lead to waking up with booked appointments in the calendar. The automation system Jeeva built paid for itself in the first six weeks — and it just keeps working.", name: "Marcus T.", role: "Director, Property Management Group — Dallas, TX", initials: "MT" },
+    { quote: "Our old site got two enquiries a month. The new one gets that before lunch on a Tuesday. Design, speed, copy — everything was built around converting, and it shows in our pipeline.", name: "Sarah W.", role: "Managing Partner, Law Firm — Downtown Dallas, TX", initials: "SW" },
+    { quote: "I was sceptical about another SEO agency after two bad experiences. Nine months later we rank page one for every service we offer, and organic is now our biggest revenue channel.", name: "Daniel R.", role: "Founder, E-commerce Brand — Frisco, TX", initials: "DR" },
+    { quote: "The WhatsApp system books trials, reminds members and wins back cancellations completely on its own. It's like hiring three receptionists who never sleep — for a fraction of one salary.", name: "Priya K.", role: "Owner, Fitness Studios — Plano, TX", initials: "PK" },
+    { quote: "Finally an agency that reports revenue instead of impressions. Our ad spend produces 5x returns and I can see exactly where every dollar goes. Total transparency.", name: "Emma L.", role: "Marketing Director, Dental Group — Fort Worth, TX", initials: "EL" }
   ];
 
   const clients = ["Meridian Legal", "NorthPeak Fitness", "Solara Energy", "Hartwell Dental", "Beacon Realty", "Crest & Co.", "Vantage HVAC", "Lumen Skincare", "Atlas Accounting", "Harbour Coffee"];
@@ -20,12 +20,12 @@ function renderHome(posts) {
 <section class="hero" aria-label="Introduction">
   <div class="container">
     <div class="hero-inner">
-      <span class="eyebrow reveal in-view">AI-Powered Growth Systems · US · UK · Australia</span>
-      <h1>AI-Powered <span class="text-gradient">Digital Marketing &amp; AI Automation</span> Agency</h1>
-      <p class="lede">Our mission: grow your business <strong>2–3x in 6 months</strong> with AI that never sleeps — AI automation, SEO, paid advertising and premium websites built into one connected growth system that wins you more leads, more revenue and 20+ hours of your week back.</p>
+      <span class="eyebrow reveal in-view">Dallas–Fort Worth · AI-Powered Growth Systems</span>
+      <h1>AI Automation &amp; <span class="text-gradient">Digital Marketing Agency</span> in Dallas, TX</h1>
+      <p class="lede">Our mission: help Dallas businesses grow <strong>2–3x in 6 months</strong> with AI that never sleeps — AI receptionists, automation, SEO, Google Ads and premium websites built into one growth system for dental clinics, realtors, law firms, HVAC and roofing companies across the DFW Metroplex.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary btn-lg" href="/contact.html">Book Free Strategy Call ${T.icons.arrow}</a>
-        <a class="btn btn-ghost btn-lg" href="/results.html">See Real Results</a>
+        <a class="btn btn-ghost btn-lg" href="/industries.html">Industries We Serve</a>
       </div>
       <div class="trust-badges">
         <span>${T.icons.check} 47+ businesses automated</span>
@@ -58,7 +58,7 @@ function renderHome(posts) {
 
 <section class="section-tight" aria-label="Trusted by businesses">
   <div class="container">
-    <p class="center" style="font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint)">Trusted by ambitious businesses across three continents</p>
+    <p class="center" style="font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint)">Trusted by ambitious businesses across the DFW Metroplex</p>
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
         ${clients.concat(clients).map((c) => `<span>${c}</span>`).join("\n        ")}
@@ -265,7 +265,7 @@ function renderHome(posts) {
 </section>
 
 ${T.faqBlock([
-    { q: "What kind of businesses do you work with?", a: "Service businesses, clinics, e-commerce brands, professional firms and SaaS companies in the United States, United Kingdom and Australia — typically established businesses doing $10k–$5M+ in monthly revenue who are ready to grow faster and work smarter. If we're not the right fit, we'll say so on the first call." },
+    { q: "What kind of businesses do you work with?", a: "Dallas–Fort Worth businesses that live and die by inbound leads — dental clinics, realtors, law firms, HVAC and roofing companies especially. If we're not the right fit for your situation, we'll say so on the first call." },
     { q: "How quickly will I see results?", a: "It depends on the lever: automation and paid ads typically show measurable results within 2–4 weeks; premium websites convert from launch day; SEO builds meaningfully from 60–90 days and compounds from there. Your roadmap sequences quick wins first so momentum starts immediately." },
     { q: "What does it cost to work with you?", a: "Projects start around $1,500 (automation) and $2,000 (websites); SEO and ads retainers from $800/month. Every engagement begins with a free strategy call and a fixed, transparent quote tied to projected ROI — you'll always know what you're paying and what it should return." },
     { q: "Do you require long-term contracts?", a: "No. Everything is month-to-month after the initial project or 90-day sprint. We believe an agency should keep clients through results, not legal clauses — and our retention proves the model works." },
@@ -278,9 +278,9 @@ ${T.ctaBand({
   })}`;
 
   return T.page({
-    title: "AI-Powered Digital Marketing & AI Automation Agency | Digital Jeeva360",
-    description: "Digital Jeeva360 is an AI-powered digital marketing and AI automation agency helping businesses in the US, UK and Australia grow 2–3x in 6 months with automation, SEO, paid ads and premium websites.",
-    keywords: "AI automation agency, digital marketing agency, AI marketing, SEO agency, paid advertising, premium web design, business automation, Digital Jeeva360",
+    title: "AI Automation & Digital Marketing Agency in Dallas, TX | Digital Jeeva360",
+    description: "Dallas AI automation & digital marketing agency. AI receptionists, chatbots, SEO, Google Ads and websites for dental clinics, realtors, law firms, HVAC and roofing companies across DFW.",
+    keywords: "AI automation agency Dallas, digital marketing agency Dallas TX, AI receptionist Dallas, Dallas SEO agency, Google Ads Dallas, web design Dallas, marketing agency DFW",
     path: "/index.html",
     schema: [T.localBusinessSchema()]
   }, body);

@@ -210,6 +210,7 @@ li { margin-bottom: 0.5rem; }
   .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
     opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
   }
+  .dropdown-menu-compact { min-width: 280px; grid-template-columns: 1fr; }
 }
 .dropdown-menu li { margin: 0; }
 .dropdown-menu a { display: block; padding: 0.6rem 0.8rem; border-radius: 12px; }

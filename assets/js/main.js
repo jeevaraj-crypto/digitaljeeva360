@@ -35,16 +35,15 @@
       var open = navLinks.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    // On mobile, tap "Services" toggles the submenu instead of navigating
-    var dd = d.querySelector(".dropdown > a");
-    if (dd) {
+    // On mobile, tapping "Services"/"Industries" toggles the submenu instead of navigating
+    d.querySelectorAll(".dropdown > a").forEach(function (dd) {
       dd.addEventListener("click", function (e) {
         if (window.innerWidth <= 1024) {
           e.preventDefault();
           dd.parentElement.classList.toggle("open");
         }
       });
-    }
+    });
   }
 
   /* ---------- Reveal on scroll ---------- */

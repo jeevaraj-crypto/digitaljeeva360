@@ -7,8 +7,8 @@ const services = [
     slug: "ai-automation",
     name: "AI Automation",
     schemaName: "AI Automation Services",
-    title: "AI Automation Agency for US, UK & Australia | Digital Jeeva360",
-    description: "Cut manual work by 70% with AI automation. Chatbots, workflow automation, CRM pipelines and AI agents for businesses in the US, UK and Australia. Book a free strategy call.",
+    title: "AI Automation Agency for Dallas, TX | Digital Jeeva360",
+    description: "Cut manual work by 70% with AI automation. Chatbots, workflow automation, CRM pipelines and AI agents for Dallas–Fort Worth businesses. Book a free strategy call.",
     keywords: "AI automation agency, business process automation, AI agents, workflow automation, CRM automation, n8n automation, Zapier expert",
     hero: {
       eyebrow: "AI Automation",
@@ -52,7 +52,7 @@ const services = [
     tools: ["n8n", "Make", "Zapier", "OpenAI", "Claude", "WhatsApp Business API", "HubSpot", "GoHighLevel", "Airtable", "Slack", "Google Workspace"],
     caseStudy: {
       client: "Property management firm",
-      location: "Texas, United States",
+      location: "Dallas, Texas",
       challenge: "A 14-person property management company was drowning in tenant enquiries, maintenance requests and lease renewals. Two full-time staff did nothing but answer repetitive emails, and after-hours enquiries went unanswered until the next morning.",
       solution: "We deployed an AI assistant across their website, email and WhatsApp that resolves 78% of tenant queries instantly, routes maintenance requests to contractors with photos and priority levels, and runs the entire lease-renewal sequence automatically.",
       results: [
@@ -70,13 +70,81 @@ const services = [
     ]
   },
 
+  /* ================= AI RECEPTIONIST ================= */
+  {
+    slug: "ai-receptionist",
+    name: "AI Receptionist",
+    schemaName: "AI Receptionist & Answering Service",
+    title: "AI Receptionist for Dallas Businesses — Answer Every Call 24/7 | Digital Jeeva360",
+    description: "Never miss another call. Our AI receptionist answers in seconds, books appointments and texts back missed calls 24/7 — built for Dallas dental clinics, law firms, HVAC, roofing and real estate.",
+    keywords: "AI receptionist Dallas, AI answering service, AI phone answering for dental office, law firm virtual receptionist, missed call text back, 24/7 answering service Dallas",
+    hero: {
+      eyebrow: "AI Receptionist",
+      h1: "Every call answered in seconds. <span class='text-gradient'>24/7. In your brand's voice.</span>",
+      lede: "62% of calls to small businesses go unanswered — and 85% of those callers never call back. Our AI receptionist picks up instantly, answers questions, books appointments into your calendar and texts back every missed call, around the clock."
+    },
+    problem: {
+      title: "Every missed call is a customer calling your competitor",
+      points: [
+        "Your front desk is helping the customer in front of them — so the phone rings out, and that caller books with whoever answers next.",
+        "After 5 pm, on weekends and during lunch, your phone line is effectively a 'closed' sign — while emergencies and after-hours researchers keep calling.",
+        "Traditional answering services cost $1.50+ per minute, follow rigid scripts, and can't actually book anything.",
+        "Voicemail is where leads go to die: fewer than 1 in 5 callers leave a message, and fewer still wait for a callback."
+      ]
+    },
+    solution: {
+      title: "A receptionist that never sleeps, never queues calls, never quits",
+      text: "We build and train an AI receptionist on your business — your services, prices, hours, FAQs and booking rules. It answers every call in about two seconds, speaks naturally, handles the routine 80% completely, and hands genuinely complex calls to your team with a full summary.",
+      points: [
+        "<b>Answers 24/7/365</b> — nights, weekends, holidays, lunch rushes and storm-season surges",
+        "<b>Books directly into your calendar</b> — callers hang up with a confirmed appointment",
+        "<b>Missed-call text-back</b> — any call that can't connect gets an instant SMS that starts the conversation",
+        "<b>Smart transfers</b> — urgent or sensitive calls route to your team with context, instantly"
+      ]
+    },
+    benefits: [
+      { icon: "phone", title: "Zero missed calls", text: "Every caller reaches a helpful voice in seconds — during procedures, after hours, and when all your lines are busy at once." },
+      { icon: "calendar", title: "Bookings while you sleep", text: "The AI checks availability and confirms appointments inside the call. Dallas clients typically see 30–45% of bookings arrive outside office hours." },
+      { icon: "clock", title: "Your staff, freed", text: "Front desk teams spend hours a day on repetitive calls. The AI absorbs them, so your people focus on the customers in the room." },
+      { icon: "message", title: "Missed-call text-back", text: "The single highest-ROI fix in local business: an instant text to every unconnected caller keeps the conversation — and the revenue — with you." },
+      { icon: "users", title: "Sounds like you, not a robot", text: "Trained on your voice, vocabulary and policies. Callers get natural conversation, bilingual support if you need it, and a seamless human handoff." },
+      { icon: "chart", title: "Every call logged & scored", text: "Recordings, transcripts, lead quality and booking outcomes in one dashboard — finally see what your phone line actually produces." }
+    ],
+    process: [
+      { title: "Call audit", text: "We analyse your call volume, missed-call rate and after-hours demand to quantify exactly what unanswered calls cost you." },
+      { title: "Voice & knowledge training", text: "The AI learns your services, pricing, FAQs, booking rules and escalation policies — then we tune the voice until it sounds like your best receptionist." },
+      { title: "Calendar & phone integration", text: "Connected to your existing number, calendar or practice management system. No new phone hardware, no porting headaches." },
+      { title: "Supervised launch", text: "We monitor the first weeks of live calls, refining answers and handoff rules until accuracy is excellent." },
+      { title: "Monthly optimisation", text: "Ongoing review of transcripts and outcomes — the receptionist gets smarter and books more with every month." }
+    ],
+    tools: ["OpenAI", "Claude", "Retell AI", "Vapi", "Twilio", "Cal.com", "Google Calendar", "GoHighLevel", "n8n"],
+    caseStudy: {
+      client: "Two-location dental practice",
+      location: "Plano, Texas",
+      challenge: "The front desk missed 38% of inbound calls during patient hours, and every after-hours caller hit voicemail. New-patient calls — worth $900+ each in first-year value — were quietly leaking to competitors on Preston Road.",
+      solution: "We deployed an AI receptionist on their existing number: it answers every call in two seconds, quotes accepted insurances, books cleanings and consults straight into their PMS, texts back any missed call, and pages the on-call dentist for true emergencies.",
+      results: [
+        { b: "0", span: "missed calls since launch" },
+        { b: "52", span: "appointments booked after-hours in 90 days" },
+        { b: "$46k", span: "added production in the first quarter" }
+      ]
+    },
+    faqs: [
+      { q: "Will callers know they're talking to an AI?", a: "Modern voice AI is remarkably natural — most callers simply get their question answered and their appointment booked without thinking about it. We're never deceptive: if a caller asks, the assistant answers honestly, and anyone who prefers a human is transferred immediately. What callers notice most is that someone finally picked up on the first ring." },
+      { q: "What happens with calls the AI can't handle?", a: "It transfers them — warm, with context. You define the rules: emergencies page your on-call person immediately, pricing negotiations go to the owner, upset callers reach a human fast. The AI handles the repetitive 80% so your team is actually available for the 20% that needs them." },
+      { q: "Does it work with our existing phone number and calendar?", a: "Yes. We connect to your current business number — no porting, no new hardware — and integrate with Google Calendar, Cal.com, and most industry systems (dental PMS, legal intake, field-service software like ServiceTitan or Housecall Pro). Callers see no change except that the phone always gets answered." },
+      { q: "How is this different from an answering service?", a: "Traditional answering services take messages at $1.50–$2.50 per minute and can't book anything — you pay for a middleman who creates a callback task. The AI receptionist costs a flat monthly fee whether it takes 100 calls or 1,000, actually resolves questions, books real appointments, and never has hold times or staffing gaps." },
+      { q: "How much does an AI receptionist cost?", a: "Setup typically starts around $1,000, with flat monthly plans from $300–$800 depending on call volume and integrations — roughly a tenth of one part-time receptionist. Most Dallas clients cover the cost with the first two or three recovered bookings each month. Your strategy call includes an exact quote and an honest projection of recovered revenue." }
+    ]
+  },
+
   /* ================= AI CHATBOTS ================= */
   {
     slug: "ai-chatbots",
     name: "AI Chatbots",
     schemaName: "AI Chatbot Development",
     title: "AI Chatbot Development — 24/7 Lead-Converting Bots | Digital Jeeva360",
-    description: "Custom AI chatbots that answer customers, qualify leads and book appointments 24/7 — on your website, WhatsApp and Instagram. Built for US, UK and Australian businesses.",
+    description: "Custom AI chatbots that answer customers, qualify leads and book appointments 24/7 — on your website, WhatsApp and Instagram. Built for Dallas and DFW businesses.",
     keywords: "AI chatbot development, custom chatbot agency, website chatbot, lead qualification bot, GPT chatbot for business",
     hero: {
       eyebrow: "AI Chatbots",
@@ -86,7 +154,7 @@ const services = [
     problem: {
       title: "Every unanswered message is a lost sale",
       points: [
-        "62% of customers expect a reply within 10 minutes — but your team can't be online at 2 am when a US or UK prospect is browsing.",
+        "62% of customers expect a reply within 10 minutes — but your team can't be online at 2 am when a prospect is browsing at midnight.",
         "Website visitors leave without a trace: no name, no email, no second chance.",
         "Your staff answer the same 20 questions hundreds of times a month instead of doing revenue-generating work.",
         "Generic chat widgets frustrate visitors with canned answers and actually damage trust."
@@ -103,7 +171,7 @@ const services = [
       ]
     },
     benefits: [
-      { icon: "clock", title: "24/7/365 availability", text: "Capture leads from every time zone. While competitors sleep, your AI is answering, qualifying and booking for you." },
+      { icon: "clock", title: "24/7/365 availability", text: "Capture leads at 2 am, on weekends, during holidays. While competitors sleep, your AI is answering, qualifying and booking for you." },
       { icon: "zap", title: "2-second response time", text: "Instant answers keep visitors engaged. Conversations that start immediately convert up to 4x more often than email follow-ups." },
       { icon: "target", title: "Only qualified leads reach you", text: "The bot asks the qualifying questions you would — so your calendar fills with prospects worth your time, not tyre-kickers." },
       { icon: "users", title: "Happier customers", text: "No queues, no hold music, no 'we'll get back to you'. Instant, accurate help — and a human whenever it's genuinely needed." },
@@ -120,13 +188,13 @@ const services = [
     tools: ["OpenAI GPT", "Claude", "Voiceflow", "Botpress", "n8n", "WhatsApp Business API", "Instagram API", "Cal.com", "Calendly", "HubSpot"],
     caseStudy: {
       client: "Cosmetic dental clinic",
-      location: "London, United Kingdom",
-      challenge: "A Harley Street dental clinic was missing after-hours enquiries for high-value treatments. Their reception team was overwhelmed, and web enquiries waited an average of 9 hours for a reply.",
+      location: "Plano, Texas",
+      challenge: "A Legacy West cosmetic dental clinic was missing after-hours enquiries for high-value treatments. Their reception team was overwhelmed, and web enquiries waited an average of 9 hours for a reply.",
       solution: "We built an AI assistant that answers treatment questions, shares pricing guides, pre-qualifies patients by treatment and budget, and books consultations directly into the clinic's diary — on the website and WhatsApp.",
       results: [
         { b: "3.2x", span: "more consultations booked" },
         { b: "41%", span: "of bookings after hours" },
-        { b: "£67k", span: "added revenue in 90 days" }
+        { b: "$61k", span: "added revenue in 90 days" }
       ]
     },
     faqs: [
@@ -144,7 +212,7 @@ const services = [
     name: "Workflow Automation",
     schemaName: "Workflow Automation Services",
     title: "Workflow Automation with n8n, Zapier & Make | Digital Jeeva360",
-    description: "Connect your apps and eliminate repetitive work. Custom workflow automation with n8n, Zapier and Make for growing businesses in the US, UK and Australia.",
+    description: "Connect your apps and eliminate repetitive work. Custom workflow automation with n8n, Zapier and Make for growing businesses across Dallas–Fort Worth.",
     keywords: "workflow automation services, n8n consultant, Zapier expert, Make automation, business process automation agency",
     hero: {
       eyebrow: "Workflow Automation",
@@ -188,7 +256,7 @@ const services = [
     tools: ["n8n", "Make", "Zapier", "Airtable", "Notion", "Google Workspace", "Slack", "HubSpot", "Pipedrive", "Xero", "Stripe"],
     caseStudy: {
       client: "Digital marketing agency",
-      location: "Sydney, Australia",
+      location: "Frisco, Texas",
       challenge: "A 9-person agency spent 25+ hours a week on client onboarding, monthly reporting and invoice chasing. Reports were assembled manually from six different ad platforms.",
       solution: "We automated the full client lifecycle: contracts trigger onboarding sequences, ad platform data flows into live dashboards automatically, monthly reports generate and send themselves, and overdue invoices follow up politely on their own.",
       results: [
@@ -212,7 +280,7 @@ const services = [
     name: "Email Automation",
     schemaName: "Email Marketing Automation",
     title: "Email Automation That Converts — Flows, Nurture & CRM | Digital Jeeva360",
-    description: "Automated email systems that nurture leads and recover revenue on autopilot. Welcome flows, abandoned cart, re-engagement and B2B nurture for US, UK & AU businesses.",
+    description: "Automated email systems that nurture leads and recover revenue on autopilot. Welcome flows, abandoned cart, re-engagement and B2B nurture for Dallas–Fort Worth businesses.",
     keywords: "email automation agency, email marketing flows, klaviyo expert, lead nurture sequences, abandoned cart emails",
     hero: {
       eyebrow: "Email Automation",
@@ -256,7 +324,7 @@ const services = [
     tools: ["Klaviyo", "ActiveCampaign", "Mailchimp", "HubSpot", "Brevo", "ConvertKit", "n8n", "Zapier", "Google Postmaster"],
     caseStudy: {
       client: "Online skincare brand",
-      location: "Melbourne, Australia",
+      location: "McKinney, Texas",
       challenge: "A growing e-commerce brand had 18,000 subscribers but sent only occasional newsletters. No welcome series, no cart recovery — email produced just 4% of revenue.",
       solution: "We built seven automated flows — welcome, cart abandonment, browse abandonment, post-purchase, replenishment reminders, VIP and win-back — with 42 emails written, designed and tested.",
       results: [
@@ -324,13 +392,13 @@ const services = [
     tools: ["WhatsApp Business API", "Meta Business Suite", "WATI", "Twilio", "360dialog", "n8n", "OpenAI", "HubSpot", "Cal.com"],
     caseStudy: {
       client: "Multi-location fitness studio",
-      location: "Manchester, United Kingdom",
+      location: "Arlington, Texas",
       challenge: "Three gym locations lost trial bookings daily — enquiries from ads went to a shared phone answered 'when someone had a minute', and 40% of booked trials never showed up.",
       solution: "We connected their ad campaigns directly to WhatsApp, where an AI assistant answers questions, books trial sessions into each location's calendar and runs a reminder sequence — plus win-back campaigns for lapsed members.",
       results: [
         { b: "2.7x", span: "more trials booked" },
         { b: "-58%", span: "no-show rate" },
-        { b: "£23k", span: "monthly revenue added" }
+        { b: "$27k", span: "monthly revenue added" }
       ]
     },
     faqs: [
@@ -348,7 +416,7 @@ const services = [
     name: "Premium Website Development",
     schemaName: "Website Design & Development",
     title: "Premium Website Development That Converts | Digital Jeeva360",
-    description: "Award-quality websites engineered for speed, SEO and conversion. Business sites, e-commerce and landing pages for ambitious brands in the US, UK and Australia.",
+    description: "Award-quality websites engineered for speed, SEO and conversion. Business sites, e-commerce and landing pages for ambitious Dallas–Fort Worth brands.",
     keywords: "premium web design agency, conversion focused website, business website development, website redesign, ecommerce website design",
     hero: {
       eyebrow: "Premium Website Development",
@@ -392,7 +460,7 @@ const services = [
     tools: ["Figma", "Next.js", "Astro", "WordPress", "Webflow", "Shopify", "Tailwind CSS", "GSAP", "Cloudflare", "Google Analytics 4"],
     caseStudy: {
       client: "Commercial law firm",
-      location: "Chicago, United States",
+      location: "Dallas, Texas",
       challenge: "A respected law firm's dated website generated two enquiries a month despite decent traffic. It loaded in 8 seconds, looked ten years old and buried its contact page three clicks deep.",
       solution: "Complete redesign around client acquisition: premium positioning, practice-area landing pages, attorney profiles built for trust, prominent consultation booking and a 1.4-second load time.",
       results: [
@@ -460,9 +528,9 @@ const services = [
     tools: ["Figma", "Unbounce", "Webflow", "Next.js", "Google Optimize", "Hotjar", "Google Tag Manager", "CallRail"],
     caseStudy: {
       client: "Solar installation company",
-      location: "Brisbane, Australia",
+      location: "Fort Worth, Texas",
       challenge: "A solar installer spent $12k/month on Google Ads pointing at their homepage — converting at 1.8% with a $210 cost per lead that made campaigns barely profitable.",
-      solution: "We built three message-matched landing pages (residential, commercial, battery storage) with instant quote calculators, suburb-specific proof and streamlined forms.",
+      solution: "We built three message-matched landing pages (residential, commercial, battery storage) with instant quote calculators, city-specific DFW proof and streamlined forms.",
       results: [
         { b: "7.4%", span: "conversion rate (from 1.8%)" },
         { b: "-64%", span: "cost per lead" },
@@ -528,7 +596,7 @@ const services = [
     tools: ["Google Analytics 4", "Hotjar", "Microsoft Clarity", "VWO", "Convert", "Google Optimize", "Figma", "Survicate"],
     caseStudy: {
       client: "B2B SaaS platform",
-      location: "Austin, United States",
+      location: "Richardson, Texas",
       challenge: "A project management SaaS spent $40k/month on ads but converted trial signups at just 1.9%. Their funnel had never been systematically tested.",
       solution: "Research revealed three killers: a 9-field signup form, no social proof above the fold, and pricing anxiety. Over five months we ran 14 A/B tests across the homepage, pricing page and signup flow.",
       results: [
@@ -551,7 +619,7 @@ const services = [
     slug: "seo",
     name: "SEO & Organic Growth",
     schemaName: "Search Engine Optimization",
-    title: "SEO Agency for US, UK & Australia — Rank & Get Found | Digital Jeeva360",
+    title: "Dallas SEO Agency — Rank Higher & Get Found in DFW | Digital Jeeva360",
     description: "Enterprise-grade SEO that compounds: technical SEO, content strategy, local SEO, plus GEO & AEO for AI search. Get found on Google — and in ChatGPT answers.",
     keywords: "SEO agency, SEO services, technical SEO, content strategy, GEO generative engine optimization, AEO answer engine optimization, organic growth",
     hero: {
@@ -580,10 +648,10 @@ const services = [
     },
     benefits: [
       { icon: "chart", title: "Compounding returns", text: "Unlike ads, SEO assets appreciate. Content that ranks today keeps producing leads for years at zero marginal cost." },
-      { icon: "target", title: "Highest-intent traffic", text: "Someone searching 'emergency plumber near me' or 'best CRM for agencies' is ready to act. SEO puts you in front of them at that exact moment." },
+      { icon: "target", title: "Highest-intent traffic", text: "Someone searching 'emergency AC repair Dallas' or 'best dental implants Plano' is ready to act. SEO puts you in front of them at that exact moment." },
       { icon: "sparkles", title: "Visible in AI answers", text: "We optimise for the engines answering questions now — Google AI Overviews, ChatGPT and Perplexity — where early movers win outsized visibility." },
       { icon: "shield", title: "Algorithm-resilient", text: "White-hat, user-first SEO that survives every Google update. We build assets, not tricks." },
-      { icon: "globe", title: "US, UK & Australia expertise", text: "Geo-targeted strategies for each market — hreflang, local intent and market-specific competition handled properly." },
+      { icon: "globe", title: "Dallas–Fort Worth expertise", text: "Suburb-level strategy for the DFW Metroplex — local intent, Texas competition and neighborhood trust signals handled properly." },
       { icon: "chart", title: "Revenue reporting", text: "We report leads and revenue attributed to organic — not just rankings and traffic curves." }
     ],
     process: [
@@ -596,9 +664,9 @@ const services = [
     tools: ["Ahrefs", "SEMrush", "Screaming Frog", "Google Search Console", "Google Analytics 4", "Surfer", "Clearscope", "Schema.org"],
     caseStudy: {
       client: "Specialty coffee e-commerce",
-      location: "Portland, United States",
+      location: "Dallas, Texas",
       challenge: "An online coffee roaster relied almost entirely on paid social. Organic brought 3,000 visits/month with product pages that didn't rank for a single commercial keyword.",
-      solution: "Technical rebuild of category architecture, 40-article content hub targeting brewing and buying intent, product schema for rich results, and a digital PR campaign in food media.",
+      solution: "Technical rebuild of category architecture, 40-article content hub targeting brewing and buying intent, product schema for rich results, and a digital PR campaign in Texas food media.",
       results: [
         { b: "+312%", span: "organic traffic in 9 months" },
         { b: "180+", span: "page-one keywords" },
@@ -664,11 +732,11 @@ const services = [
     tools: ["Google Business Profile", "BrightLocal", "Whitespark", "Ahrefs", "Google Search Console", "n8n", "Podium"],
     caseStudy: {
       client: "Emergency plumbing company",
-      location: "Birmingham, United Kingdom",
+      location: "Irving, Texas",
       challenge: "A family plumbing business ranked outside the top 20 in Google Maps while franchises dominated. Emergency calls — their highest-margin work — went almost entirely to competitors.",
-      solution: "Full Business Profile rebuild, 140 citation corrections, automated review requests after every job, and suburb-specific emergency pages for their 12 service areas.",
+      solution: "Full Business Profile rebuild, 140 citation corrections, automated review requests after every job, and suburb-specific emergency pages for their 12 DFW service areas.",
       results: [
-        { b: "#1–3", span: "map pack in 9 of 12 suburbs" },
+        { b: "#1–3", span: "map pack in 9 of 12 DFW suburbs" },
         { b: "+218%", span: "calls from Google" },
         { b: "4.9★", span: "rating (from 3.8, 41 reviews to 287)" }
       ]
@@ -732,7 +800,7 @@ const services = [
     tools: ["Screaming Frog", "Sitebulb", "Google Search Console", "PageSpeed Insights", "Ahrefs", "Schema.org", "Cloudflare", "GTmetrix"],
     caseStudy: {
       client: "Fashion e-commerce retailer",
-      location: "Los Angeles, United States",
+      location: "Garland, Texas",
       challenge: "A 12,000-product store had 60% of products unindexed, failing Core Web Vitals sitewide, and faceted navigation generating 400,000 duplicate URLs that consumed the entire crawl budget.",
       solution: "Faceted navigation rebuilt with proper canonicals and robots rules, image pipeline optimised (WebP, lazy loading, CDN), product schema deployed, and internal linking restructured around category hubs.",
       results: [
@@ -800,7 +868,7 @@ const services = [
     tools: ["Google Ads", "Meta Ads Manager", "Google Tag Manager", "GA4", "CallRail", "Hotjar", "Triple Whale", "Supermetrics"],
     caseStudy: {
       client: "Cosmetic clinic group",
-      location: "Sydney, Australia",
+      location: "Frisco, Texas",
       challenge: "Three clinics spent $28k/month across Google and Meta with no unified tracking — they genuinely couldn't say which half of the budget worked.",
       solution: "Rebuilt tracking end-to-end (calls included), consolidated 23 campaigns into 8, launched treatment-specific landing pages and coordinated search + social retargeting.",
       results: [
@@ -851,7 +919,7 @@ const services = [
       ]
     },
     benefits: [
-      { icon: "target", title: "Highest-intent traffic in marketing", text: "Someone searching 'emergency electrician [city]' needs you now. Google Ads is the only channel that captures that exact moment." },
+      { icon: "target", title: "Highest-intent traffic in marketing", text: "Someone searching 'emergency AC repair Dallas' needs you now. Google Ads is the only channel that captures that exact moment." },
       { icon: "zap", title: "Immediate results", text: "Campaigns can produce qualified leads within 48 hours of launch — the fastest path from budget to pipeline." },
       { icon: "chart", title: "Provable ROI", text: "With tracking done properly, you'll know your exact cost per lead and return per campaign, keyword by keyword." },
       { icon: "shield", title: "Waste eliminated weekly", text: "Continuous search-term mining and negative keywords stop budget bleeding into irrelevant clicks." },
@@ -868,7 +936,7 @@ const services = [
     tools: ["Google Ads", "Google Tag Manager", "GA4", "Google Keyword Planner", "CallRail", "Unbounce", "Optmyzr", "Looker Studio"],
     caseStudy: {
       client: "HVAC services company",
-      location: "Phoenix, United States",
+      location: "Mesquite, Texas",
       challenge: "An HVAC company's self-managed account spent $9k/month at a $310 cost per lead. Broad match keywords sent 40% of budget to searches like 'HVAC salary' and 'how to fix AC yourself'.",
       solution: "Rebuilt account around emergency, repair and install intent with exact/phrase match, 600+ negatives, call tracking, and service-specific landing pages with instant-quote forms.",
       results: [
@@ -878,7 +946,7 @@ const services = [
       ]
     },
     faqs: [
-      { q: "How much should I budget for Google Ads?", a: "It depends on your market's click costs and your goals. Service businesses typically start effectively at $1,500–$3,000/month in ad spend; competitive industries (legal, finance, home services in major cities) need more because CPCs run higher. We'll show you exact CPC data for your keywords before you commit a dollar." },
+      { q: "How much should I budget for Google Ads?", a: "It depends on your market's click costs and your goals. Service businesses typically start effectively at $1,500–$3,000/month in ad spend; competitive industries (legal, finance, home services across DFW) need more because CPCs run higher. We'll show you exact CPC data for your keywords before you commit a dollar." },
       { q: "What is Performance Max and should I use it?", a: "Performance Max is Google's automated campaign type running across Search, YouTube, Display, Gmail and Maps. It can perform brilliantly — for e-commerce especially — but only with strong conversion data and creative assets. We deploy it strategically alongside Search campaigns, never as a lazy set-and-forget replacement." },
       { q: "Why is my cost per click so high?", a: "Usually some mix of: low Quality Scores (irrelevant ads/pages), bidding on overly broad terms, poor account structure, or competing in premium hours without dayparting strategy. Our restructures typically cut CPCs 20–40% — same keywords, better engineering." },
       { q: "Do you handle Google Shopping for e-commerce?", a: "Yes — Shopping and Performance Max are central to our e-commerce work. That includes product feed optimisation (titles, images, attributes), which most agencies ignore despite it being half the battle in Shopping performance." },
@@ -936,7 +1004,7 @@ const services = [
     tools: ["Meta Ads Manager", "Conversions API", "Meta Pixel", "Canva", "CapCut", "Triple Whale", "Motion", "Foreplay"],
     caseStudy: {
       client: "DTC jewellery brand",
-      location: "London, United Kingdom",
+      location: "Plano, Texas",
       challenge: "A jewellery brand was stuck at 1.7x ROAS with two ad creatives running for months and no retargeting beyond a single generic remarketing ad.",
       solution: "Creative testing engine launched (12 new ads monthly), CAPI implemented, catalogue retargeting sequenced by funnel stage, and landing pages matched to each collection's campaign.",
       results: [
@@ -1004,7 +1072,7 @@ const services = [
     tools: ["Notion", "Miro", "Google Analytics 4", "Ahrefs", "n8n", "OpenAI", "Claude", "Looker Studio", "HubSpot"],
     caseStudy: {
       client: "Accounting firm",
-      location: "Melbourne, Australia",
+      location: "McKinney, Texas",
       challenge: "A 22-person accounting firm knew AI would reshape their industry but had no idea where to start. Partners disagreed on priorities, and two previous software purchases sat unused.",
       solution: "Our audit identified 31 automatable processes and ranked them by payback. Phase one automated client onboarding, document collection and appointment scheduling; phase two added an AI knowledge assistant for staff.",
       results: [

@@ -66,6 +66,8 @@ const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 const abs = (p) => SITE.url + (p.startsWith("/") ? p : "/" + p);
 
 /* ---------- Schema builders ---------- */
+const DFW_CITIES = ["Dallas", "Fort Worth", "Plano", "Frisco", "Arlington", "Irving", "McKinney", "Garland", "Richardson", "Carrollton", "Denton", "Addison"];
+
 function organizationSchema() {
   return {
     "@type": "Organization",
@@ -77,17 +79,13 @@ function organizationSchema() {
     telephone: SITE.whatsapp,
     founder: { "@type": "Person", name: SITE.founder, jobTitle: "AI-Powered Digital Marketer & AI Automation Specialist" },
     sameAs: [SITE.instagram],
-    areaServed: [
-      { "@type": "Country", name: "United States" },
-      { "@type": "Country", name: "United Kingdom" },
-      { "@type": "Country", name: "Australia" },
-      { "@type": "Country", name: "India" }
-    ],
+    areaServed: DFW_CITIES.map((c) => ({ "@type": "City", name: c + ", TX" })),
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
       email: SITE.email,
       telephone: SITE.whatsapp,
+      areaServed: "US",
       availableLanguage: ["English"]
     }
   };
@@ -98,14 +96,16 @@ function localBusinessSchema() {
     "@type": "ProfessionalService",
     "@id": SITE.url + "/#localbusiness",
     name: SITE.name,
-    description: "AI-powered digital marketing agency specialising in AI automation, SEO, paid advertising and premium website development for businesses in the US, UK and Australia.",
+    description: "AI automation and digital marketing agency serving Dallas–Fort Worth. AI receptionists, chatbots, SEO, Google Ads and websites for dental clinics, realtors, law firms, HVAC and roofing companies.",
     url: SITE.url,
     email: SITE.email,
     telephone: SITE.whatsapp,
     priceRange: "$$",
     image: abs("/assets/img/og-cover.png"),
-    address: { "@type": "PostalAddress", addressCountry: "IN" },
-    areaServed: ["US", "GB", "AU"],
+    address: { "@type": "PostalAddress", addressLocality: "Dallas", addressRegion: "TX", addressCountry: "US" },
+    geo: { "@type": "GeoCoordinates", latitude: 32.7767, longitude: -96.797 },
+    areaServed: DFW_CITIES.map((c) => ({ "@type": "City", name: c + ", TX" })),
+    knowsAbout: ["AI Automation", "AI Receptionist", "SEO", "Google Ads", "Web Design", "Dental Marketing", "Law Firm Marketing", "HVAC Marketing", "Roofing Marketing", "Real Estate Marketing"],
     aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "47", bestRating: "5" }
   };
 }
@@ -150,7 +150,7 @@ function serviceSchema(svc) {
     serviceType: svc.schemaName || svc.name,
     description: svc.description,
     provider: { "@id": SITE.url + "/#organization" },
-    areaServed: ["United States", "United Kingdom", "Australia"],
+    areaServed: ["Dallas, TX", "Fort Worth, TX", "Plano, TX", "Frisco, TX", "Arlington, TX", "DFW Metroplex"],
     url: abs(svc.path)
   };
 }
@@ -216,16 +216,26 @@ const NAV_SERVICES = [
 
 /* The 4 core services and the specialisations nested inside each */
 const SERVICE_FAMILY = {
-  "ai-automation": ["ai-chatbots", "workflow-automation", "email-automation", "whatsapp-automation", "consulting"],
+  "ai-automation": ["ai-receptionist", "ai-chatbots", "workflow-automation", "email-automation", "whatsapp-automation", "consulting"],
   "premium-web-design": ["landing-pages", "conversion-optimization"],
   "seo": ["local-seo", "technical-seo"],
   "paid-advertising": ["google-ads", "meta-ads"]
 };
 
+/* Industries we serve (Dallas–Fort Worth) */
+const INDUSTRIES = [
+  { slug: "dental-clinics", label: "Dental Clinics" },
+  { slug: "realtors", label: "Realtors" },
+  { slug: "law-firms", label: "Law Firms" },
+  { slug: "hvac-companies", label: "HVAC Companies" },
+  { slug: "roofing-companies", label: "Roofing Companies" }
+];
+
 function nav(activePath) {
   const cur = (p) => {
     if (p === activePath) return ' aria-current="page"';
     if (p === "/services.html" && activePath.startsWith("/services/")) return ' aria-current="page"';
+    if (p === "/industries.html" && activePath.startsWith("/industries/")) return ' aria-current="page"';
     if (p === "/blog.html" && activePath.startsWith("/blog/")) return ' aria-current="page"';
     return "";
   };
@@ -244,8 +254,11 @@ function nav(activePath) {
             ${NAV_SERVICES.map((s) => `<li><a href="${s.path}"><b>${s.label}</b><span>${s.desc}</span></a></li>`).join("\n            ")}
           </ul>
         </li>
-        <li><a href="/portfolio.html"${cur("/portfolio.html")}>Portfolio</a></li>
-        <li><a href="/results.html"${cur("/results.html")}>Results</a></li>
+        <li class="dropdown"><a href="/industries.html"${cur("/industries.html")}>Industries ▾</a>
+          <ul class="dropdown-menu dropdown-menu-compact">
+            ${INDUSTRIES.map((i) => `<li><a href="/industries/${i.slug}.html"><b>${i.label}</b></a></li>`).join("\n            ")}
+          </ul>
+        </li>
         <li><a href="/blog.html"${cur("/blog.html")}>Blog</a></li>
         <li><a href="/contact.html"${cur("/contact.html")}>Contact</a></li>
       </ul>
@@ -275,7 +288,7 @@ function footer() {
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="brand" href="/"><span class="mark" aria-hidden="true">${LOGO_MARK}</span>Digital<em>Jeeva</em>360</a>
-        <p class="mt-1">Helping businesses in the US, UK and Australia grow 2–3x through AI automation, SEO, paid advertising and premium websites.</p>
+        <p class="mt-1">Helping Dallas–Fort Worth businesses grow 2–3x through AI automation, SEO, paid advertising and premium websites. Serving Dallas, Plano, Frisco, Fort Worth, Arlington and the entire DFW Metroplex.</p>
         <div class="footer-social">
           <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${icons.whatsapp}</a>
           <a href="${SITE.instagram}" target="_blank" rel="noopener" aria-label="Follow on Instagram">${icons.instagram}</a>
@@ -292,11 +305,10 @@ function footer() {
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h4>Industries</h4>
         <ul>
+          ${INDUSTRIES.map((i) => `<li><a href="/industries/${i.slug}.html">${i.label}</a></li>`).join("\n          ")}
           <li><a href="/about.html">About</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/results.html">Results</a></li>
           <li><a href="/blog.html">Blog</a></li>
           <li><a href="/contact.html">Contact</a></li>
         </ul>
@@ -374,19 +386,20 @@ function leadForm({ subject = "New enquiry — Digital Jeeva360", compact = fals
   <div class="field"><label for="lf-company">Company</label><input id="lf-company" type="text" name="company" autocomplete="organization" placeholder="Acme Inc."></div>
   <div class="field"><label for="lf-email">Work email *</label><input id="lf-email" type="email" name="email" required autocomplete="email" placeholder="alex@acme.com"></div>
   <div class="field"><label for="lf-phone">Phone / WhatsApp</label><input id="lf-phone" type="tel" name="phone" autocomplete="tel" placeholder="+1 555 000 1234"></div>
-  <div class="field"><label for="lf-country">Country *</label>
-    <select id="lf-country" name="country" required>
-      <option value="" disabled selected>Select your country</option>
-      <option>United States</option><option>United Kingdom</option><option>Australia</option>
-      <option>Canada</option><option>India</option><option>Other</option>
+  <div class="field"><label for="lf-city">City / Area *</label>
+    <select id="lf-city" name="city" required>
+      <option value="" disabled selected>Select your area</option>
+      <option>Dallas</option><option>Fort Worth</option><option>Plano</option>
+      <option>Frisco</option><option>Arlington</option><option>Irving</option>
+      <option>McKinney</option><option>Other DFW</option><option>Outside DFW</option>
     </select>
   </div>
   <div class="field"><label for="lf-type">Business type *</label>
     <select id="lf-type" name="business_type" required>
       <option value="" disabled selected>Select business type</option>
-      <option>E-commerce</option><option>Professional services</option><option>Healthcare / Clinic</option>
-      <option>Real estate</option><option>SaaS / Tech</option><option>Home services</option>
-      <option>Hospitality</option><option>Other</option>
+      <option>Dental clinic</option><option>Real estate</option><option>Law firm</option>
+      <option>HVAC company</option><option>Roofing company</option><option>Other home services</option>
+      <option>E-commerce</option><option>Other</option>
     </select>
   </div>
   <div class="field"><label for="lf-revenue">Monthly revenue</label>
@@ -484,5 +497,5 @@ module.exports = {
   floatingWidgets, exitPopup, leadForm, faqBlock, ctaBand, scripts,
   organizationSchema, localBusinessSchema, websiteSchema,
   breadcrumbSchema, faqSchema, serviceSchema, articleSchema,
-  NAV_SERVICES, SERVICE_FAMILY
+  NAV_SERVICES, SERVICE_FAMILY, INDUSTRIES
 };
