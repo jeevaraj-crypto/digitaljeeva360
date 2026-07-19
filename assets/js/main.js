@@ -4,7 +4,7 @@
 
   var d = document;
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var WHATSAPP = "https://wa.me/919342475653";
+  var WHATSAPP = "https://wa.me/919087772803";
 
   /* ---------- Header scroll state ---------- */
   var header = d.querySelector(".site-header");

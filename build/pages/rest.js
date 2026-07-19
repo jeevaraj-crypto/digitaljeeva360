@@ -296,7 +296,7 @@ function renderContact() {
       <a class="glass-card center reveal" href="${T.SITE.whatsappUrl}?text=${encodeURIComponent("Hi Jeeva, I'd like to talk about growing my business.")}" target="_blank" rel="noopener" style="display:block">
         <div class="icon-chip" style="margin-inline:auto">${T.icons.whatsapp}</div>
         <h3>WhatsApp</h3>
-        <p style="color:var(--cyan);font-weight:600">+91 93424 75653</p>
+        <p style="color:var(--cyan);font-weight:600">+91 90877 72803</p>
         <p class="mb-0" style="font-size:0.9rem">Fastest response — usually within minutes</p>
       </a>
       <a class="glass-card center reveal reveal-d1" href="mailto:${T.SITE.email}" style="display:block">
@@ -535,7 +535,7 @@ function renderPrivacy() {
   <h2>Cookies</h2>
   <p>This site uses only essential cookies and privacy-respecting analytics. We do not use advertising trackers or sell data to ad networks.</p>
   <h2>Contact</h2>
-  <p>Questions about this policy: <a href="mailto:${T.SITE.email}">${T.SITE.email}</a> or WhatsApp <a href="${T.SITE.whatsappUrl}">+91 93424 75653</a>.</p>
+  <p>Questions about this policy: <a href="mailto:${T.SITE.email}">${T.SITE.email}</a> or WhatsApp <a href="${T.SITE.whatsappUrl}">+91 90877 72803</a>.</p>
 </div>`;
   return T.page({
     title: "Privacy Policy | Digital Jeeva360",

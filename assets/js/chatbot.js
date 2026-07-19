@@ -11,7 +11,7 @@
   var input = panel.querySelector(".chatbot-input input");
   var sendBtn = panel.querySelector(".chatbot-input button");
   var closeBtn = panel.querySelector(".chatbot-close");
-  var WHATSAPP = "https://wa.me/919342475653";
+  var WHATSAPP = "https://wa.me/919087772803";
   var EMAIL = "cheeyan5raj@gmail.com";
 
   var lead = { stage: null, name: "", email: "", interest: "" };
@@ -30,6 +30,11 @@
       offer: "call"
     },
     {
+      keys: ["receptionist", "voice agent", "answer calls", "phone answering", "missed call"],
+      reply: "Our <b>AI Receptionist & Voice Agent</b> answers every call in seconds, 24/7 — it speaks naturally, answers questions, books appointments into your calendar and texts back missed calls. Perfect for dental clinics, law firms, HVAC, roofing and real estate. Details: <a href='/services/ai-receptionist.html'>AI Receptionist & Voice Agent</a>.",
+      offer: "call"
+    },
+    {
       keys: ["chatbot", "chat bot", "bot like this", "assistant"],
       reply: "We build AI chatbots (like this one, but connected to your business data) that answer customer questions 24/7, qualify leads and book appointments automatically — on your website, WhatsApp and Instagram. See <a href='/services/ai-chatbots.html'>AI Chatbots</a> for how it works.",
       offer: "call"
@@ -41,12 +46,12 @@
     },
     {
       keys: ["seo", "rank", "google search", "organic", "traffic", "search engine"],
-      reply: "We run enterprise-grade SEO: technical audits, on-page optimisation, content strategy, local SEO, plus GEO and AEO so you appear in AI answers like ChatGPT and Google AI Overviews. Clients in the US, UK and Australia typically see meaningful ranking gains within 90 days. Start at <a href='/services/seo.html'>SEO &amp; Organic Growth</a>.",
+      reply: "We run enterprise-grade SEO: technical audits, on-page optimisation, content strategy, local SEO, plus GEO and AEO so you appear in AI answers like ChatGPT and Google AI Overviews. Dallas–Fort Worth clients typically see meaningful ranking gains within 90 days. Start at <a href='/services/seo.html'>SEO &amp; Organic Growth</a>.",
       offer: "call"
     },
     {
       keys: ["website", "web design", "landing page", "redesign", "ecommerce", "e-commerce", "site"],
-      reply: "We design premium, conversion-focused websites — business sites, landing pages, portfolios and e-commerce — built for Core Web Vitals, 95+ PageSpeed and mobile-first UX. Have a look at <a href='/services/premium-web-design.html'>Premium Website Development</a> and our <a href='/portfolio.html'>portfolio</a>.",
+      reply: "We design premium, conversion-focused websites — business sites, landing pages, portfolios and e-commerce — built for Core Web Vitals, 95+ PageSpeed and mobile-first UX. Have a look at <a href='/services/premium-web-design.html'>Premium Website Development</a> and our <a href='/results.html'>results</a>.",
       offer: "call"
     },
     {
@@ -61,17 +66,17 @@
     },
     {
       keys: ["contact", "email", "phone", "reach", "number"],
-      reply: "You can reach Jeeva directly:<br>• WhatsApp: <a href='" + WHATSAPP + "' target='_blank' rel='noopener'>+91 93424 75653</a><br>• Email: <a href='mailto:" + EMAIL + "'>" + EMAIL + "</a><br>• Instagram: <a href='https://instagram.com/digitaljeeva360' target='_blank' rel='noopener'>@digitaljeeva360</a><br>Or I can book you a free strategy call right here.",
+      reply: "You can reach Jeeva directly:<br>• WhatsApp: <a href='" + WHATSAPP + "' target='_blank' rel='noopener'>+91 90877 72803</a><br>• Email: <a href='mailto:" + EMAIL + "'>" + EMAIL + "</a><br>• Instagram: <a href='https://instagram.com/digitaljeeva360' target='_blank' rel='noopener'>@digitaljeeva360</a><br>Or I can book you a free strategy call right here.",
       offer: "call"
     },
     {
       keys: ["result", "case stud", "proof", "portfolio", "example", "client"],
-      reply: "Fair question — results matter more than promises. Clients have seen 2–3x revenue growth within 6 months, 20–40 hours per week saved through automation, and 150%+ organic traffic increases. Browse the numbers on our <a href='/results.html'>Results page</a> and <a href='/portfolio.html'>case studies</a>.",
+      reply: "Fair question — results matter more than promises. Clients have seen 2–3x revenue growth within 6 months, 20–40 hours per week saved through automation, and 150%+ organic traffic increases. Browse the numbers on our <a href='/results.html'>Results page</a> and see <a href='/industries.html'>how we help your industry</a>.",
       offer: "call"
     },
     {
       keys: ["who", "about", "jeeva", "you", "team", "where"],
-      reply: "Digital Jeeva360 is run by Jeeva — an AI-powered digital marketer and automation specialist helping businesses in the US, UK and Australia grow through AI systems, SEO, paid ads and premium websites. The mission: less manual work, more qualified leads, faster growth. More on the <a href='/about.html'>About page</a>.",
+      reply: "Digital Jeeva360 is run by Jeeva — an AI-powered digital marketer and automation specialist helping Dallas–Fort Worth businesses grow through AI systems, SEO, paid ads and premium websites. The mission: less manual work, more qualified leads, faster growth. More on the <a href='/about.html'>About page</a>.",
       offer: "call"
     },
     {

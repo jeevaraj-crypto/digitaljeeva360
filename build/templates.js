@@ -6,8 +6,8 @@ const SITE = {
   name: "Digital Jeeva360",
   tagline: "AI-Powered Digital Marketing & Automation",
   email: "cheeyan5raj@gmail.com",
-  whatsapp: "+919342475653",
-  whatsappUrl: "https://wa.me/919342475653",
+  whatsapp: "+919087772803",
+  whatsappUrl: "https://wa.me/919087772803",
   instagram: "https://instagram.com/digitaljeeva360",
   founder: "Jeeva",
   formEndpoint: "https://formsubmit.co/cheeyan5raj@gmail.com"
