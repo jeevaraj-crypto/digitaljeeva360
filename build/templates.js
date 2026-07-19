@@ -62,6 +62,9 @@ const LOGO_MARK = `<svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"
 <text x="92" y="96" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800" font-style="italic" fill="url(#dj-blue)">360</text>
 </svg>`;
 
+/* Build stamp — appended to asset URLs so browsers always fetch fresh CSS/JS after a re-upload */
+const BUILD_V = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "");
+
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const abs = (p) => SITE.url + (p.startsWith("/") ? p : "/" + p);
 
@@ -202,7 +205,7 @@ ${keywords ? `<meta name="keywords" content="${esc(keywords)}">\n` : ""}<meta na
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=${BUILD_V}">
 <script type="application/ld+json">${jsonld}</script>
 </head>`;
 }
@@ -251,11 +254,13 @@ function nav(activePath) {
         <li><a href="/about.html"${cur("/about.html")}>About</a></li>
         <li class="dropdown"><a href="/services.html"${cur("/services.html")}>Services ▾</a>
           <ul class="dropdown-menu">
+            <li><a href="/services.html"><b>All Services →</b><span>Our four core services at a glance</span></a></li>
             ${NAV_SERVICES.map((s) => `<li><a href="${s.path}"><b>${s.label}</b><span>${s.desc}</span></a></li>`).join("\n            ")}
           </ul>
         </li>
         <li class="dropdown"><a href="/industries.html"${cur("/industries.html")}>Industries ▾</a>
           <ul class="dropdown-menu dropdown-menu-compact">
+            <li><a href="/industries.html"><b>All Industries →</b></a></li>
             ${INDUSTRIES.map((i) => `<li><a href="/industries/${i.slug}.html"><b>${i.label}</b></a></li>`).join("\n            ")}
           </ul>
         </li>
@@ -473,8 +478,8 @@ function ctaBand({ title = "Ready to grow 2–3x with AI?", text = "Book a free 
 
 function scripts() {
   return `
-<script src="/assets/js/main.js" defer></script>
-<script src="/assets/js/chatbot.js" defer></script>`;
+<script src="/assets/js/main.js?v=${BUILD_V}" defer></script>
+<script src="/assets/js/chatbot.js?v=${BUILD_V}" defer></script>`;
 }
 
 function page(opts, bodyContent) {
