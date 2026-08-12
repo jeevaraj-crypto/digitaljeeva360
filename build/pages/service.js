@@ -64,7 +64,7 @@ ${children.length ? `
         <h2 id="problem-title">${svc.problem.title}</h2>
       </div>
       <ul class="check-list reveal reveal-d1">
-        ${svc.problem.points.map((p) => `<li><svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>${p}</span></li>`).join("\n        ")}
+        ${svc.problem.points.map((p) => `<li><svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span>${p}</span></li>`).join("\n        ")}
       </ul>
     </div>
   </div>

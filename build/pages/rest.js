@@ -194,15 +194,15 @@ function renderResults() {
           <div class="dash-chart line-chart">
             <svg viewBox="0 0 560 240" role="img" aria-label="Line chart showing client revenue index rising from 100 to 270 over twelve months">
               <defs>
-                <linearGradient id="lg-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.35"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
-                <linearGradient id="lg-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+                <linearGradient id="lg-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2ee0a4" stop-opacity="0.35"/><stop offset="1" stop-color="#2ee0a4" stop-opacity="0"/></linearGradient>
+                <linearGradient id="lg-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2ee0a4"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
               </defs>
               <g stroke="rgba(255,255,255,0.07)"><line x1="0" y1="60" x2="560" y2="60"/><line x1="0" y1="120" x2="560" y2="120"/><line x1="0" y1="180" x2="560" y2="180"/></g>
               <path class="area" d="M20 200 L65 196 L110 188 L155 176 L200 168 L245 152 L290 140 L335 122 L380 104 L425 84 L470 62 L515 40 L515 230 L20 230 Z" fill="url(#lg-area)"/>
               <path class="line" d="M20 200 L65 196 L110 188 L155 176 L200 168 L245 152 L290 140 L335 122 L380 104 L425 84 L470 62 L515 40" stroke="url(#lg-line)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-              <circle cx="515" cy="40" r="6" fill="#a78bfa"/><circle cx="515" cy="40" r="11" fill="#a78bfa" opacity="0.25"/>
-              <text x="20" y="225" fill="#5f6a8a" font-size="12">M1</text><text x="255" y="225" fill="#5f6a8a" font-size="12">M6</text><text x="495" y="225" fill="#5f6a8a" font-size="12">M12</text>
-              <text x="440" y="30" fill="#c4b5fd" font-size="14" font-weight="700">index 270</text>
+              <circle cx="515" cy="40" r="6" fill="#34d399"/><circle cx="515" cy="40" r="11" fill="#34d399" opacity="0.25"/>
+              <text x="20" y="225" fill="#6f9089" font-size="12">M1</text><text x="255" y="225" fill="#6f9089" font-size="12">M6</text><text x="495" y="225" fill="#6f9089" font-size="12">M12</text>
+              <text x="440" y="30" fill="#6ee7c7" font-size="14" font-weight="700">index 270</text>
             </svg>
           </div>
         </div>
@@ -258,7 +258,7 @@ function renderResults() {
         ["$1.2M", "annualized impact from a Richardson SaaS CRO program"]
       ].map(([b, s], i) => `
       <div class="glass-card center reveal${i % 4 ? ` reveal-d${i % 4}` : ""}" style="padding:1.6rem 1.2rem">
-        <b style="font-family:var(--font-display);font-size:2rem;display:block;background:linear-gradient(120deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent">${b}</b>
+        <b style="font-family:var(--font-display);font-size:2rem;display:block;background:linear-gradient(120deg,#149b71,#0d9488);-webkit-background-clip:text;background-clip:text;color:transparent">${b}</b>
         <span style="font-size:0.87rem;color:var(--ink-faint)">${s}</span>
       </div>`).join("")}
     </div>

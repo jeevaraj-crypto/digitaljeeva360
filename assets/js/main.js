@@ -6,6 +6,10 @@
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var WHATSAPP = "https://wa.me/919087772803";
 
+  // Reveal animations only arm when JS is actually running — if this file
+  // ever fails to load, every section stays visible (no blank page areas)
+  d.documentElement.classList.add("js");
+
   /* ---------- Header scroll state ---------- */
   var header = d.querySelector(".site-header");
   var progress = d.querySelector(".scroll-progress");
@@ -47,6 +51,9 @@
   }
 
   /* ---------- Reveal on scroll ---------- */
+  // threshold 0: any visible pixel reveals the element. (A threshold above 0
+  // can never fire for elements taller than the viewport — that left whole
+  // sections invisible, which users saw as a blank white screen mid-scroll.)
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (en.isIntersecting) {
@@ -54,8 +61,20 @@
         io.unobserve(en.target);
       }
     });
-  }, { threshold: 0.14, rootMargin: "0px 0px -40px 0px" });
+  }, { threshold: 0, rootMargin: "0px 0px -36px 0px" });
   d.querySelectorAll(".reveal, .chart-anim").forEach(function (el) { io.observe(el); });
+
+  // Safety net: shortly after load, force-reveal anything still hidden so no
+  // content can ever be stuck invisible (observer hiccups, bfcache restores…)
+  function revealAll() {
+    d.querySelectorAll(".reveal:not(.in-view), .chart-anim:not(.in-view)").forEach(function (el) {
+      el.classList.add("in-view");
+      io.unobserve(el);
+    });
+  }
+  window.addEventListener("load", function () { setTimeout(revealAll, 2500); });
+  window.addEventListener("pageshow", function (e) { if (e.persisted) revealAll(); });
+  setTimeout(revealAll, 6000);
 
   /* ---------- Animated counters ---------- */
   function animateCounter(el) {
@@ -231,32 +250,50 @@
     if (!reducedMotion) auto();
   });
 
-  /* ---------- Lead forms (FormSubmit AJAX + graceful fallback) ---------- */
+  /* ---------- Lead forms: WhatsApp-first delivery ----------
+     On submit we open WhatsApp with every field pre-filled so the lead
+     reaches Jeeva instantly (email via FormSubmit is only a background
+     copy — it needs one-time activation and can silently fail). The
+     window.open happens synchronously inside the submit gesture so popup
+     blockers allow it. Newsletter forms stay email-only. */
   d.querySelectorAll("form[data-lead-form]").forEach(function (form) {
+    var isNewsletter = form.classList.contains("newsletter");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
-      var original = btn ? btn.textContent : "";
-      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
       var data = new FormData(form);
+      var waUrl = "";
+
+      if (!isNewsletter) {
+        var lines = ["New lead from digitaljeeva360.com", ""];
+        data.forEach(function (value, key) {
+          if (key.charAt(0) === "_" || !String(value).trim()) return;
+          var label = key.replace(/_/g, " ");
+          label = label.charAt(0).toUpperCase() + label.slice(1);
+          lines.push(label + ": " + value);
+        });
+        waUrl = WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
+        window.open(waUrl, "_blank", "noopener");
+      }
+
+      // Background email copy — fire and forget
       fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } })
-        .then(function (res) { if (!res.ok) throw new Error("send failed"); return res; })
-        .then(function () { showSuccess(form); })
-        .catch(function () {
-          // Fallback: hand the lead off to WhatsApp so it is never lost
-          var msg = "New enquiry from " + (data.get("name") || "website visitor") +
-            " (" + (data.get("email") || "no email") + "): " +
-            (data.get("message") || data.get("goals") || "Requested a strategy call.");
-          window.open(WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
-          showSuccess(form);
-        })
-        .finally(function () { if (btn) { btn.disabled = false; btn.textContent = original; } });
+        .catch(function () { /* WhatsApp is the primary channel */ });
+
+      showSuccess(form, waUrl);
     });
   });
-  function showSuccess(form) {
+  function showSuccess(form, waUrl) {
     var success = form.parentElement.querySelector(".form-success");
-    if (success) { form.style.display = "none"; success.classList.add("show"); }
-    else { form.reset(); alert("Thank you — your message has been sent. We will reply within one business day."); }
+    if (success) {
+      form.style.display = "none";
+      success.classList.add("show");
+      // "Open WhatsApp again" keeps the same pre-filled lead details
+      var resend = success.querySelector("[data-wa-resend]");
+      if (resend && waUrl) resend.href = waUrl;
+    } else {
+      form.reset();
+      alert("Thank you — your message has been sent. We will reply within one business day.");
+    }
   }
 
   /* ---------- Exit intent popup (once per session, desktop only) ---------- */

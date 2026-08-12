@@ -122,7 +122,7 @@ function renderHome(posts) {
     </div>
     <div class="compare">
       <div class="compare-col compare-before reveal">
-        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> Without Digital Jeeva360</h3>
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> Without Digital Jeeva360</h3>
         <ul>
           <li>${T.icons.cross}<span>Leads wait hours for replies — most buy from whoever answered first</span></li>
           <li>${T.icons.cross}<span>Team buried in repetitive admin instead of revenue work</span></li>
@@ -289,9 +289,9 @@ ${T.ctaBand({
 /* Simple abstract SVG covers for blog cards */
 function blogCover(i) {
   const palettes = [
-    ["#2563eb", "#8b5cf6"],
-    ["#0e7490", "#2563eb"],
-    ["#7c3aed", "#22d3ee"]
+    ["#149b71", "#0d9488"],
+    ["#0f766e", "#149b71"],
+    ["#0d9488", "#2dd4a7"]
   ];
   const [a, b] = palettes[i % palettes.length];
   return `<svg viewBox="0 0 400 212" preserveAspectRatio="xMidYMid slice" role="presentation">

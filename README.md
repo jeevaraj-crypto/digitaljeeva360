@@ -1,8 +1,8 @@
 # Digital Jeeva360 — Website
 
-Premium multi-page marketing website for **Digital Jeeva360** — AI-powered digital marketing & automation for businesses in the US, UK and Australia.
+Premium multi-page marketing website for **Digital Jeeva360** — AI-powered digital marketing & automation for businesses across Dallas–Fort Worth, Texas.
 
-Dark-luxury design system (glassmorphism, aurora gradients, neon glow), 32 fully-written pages, enterprise SEO, an interactive automation savings calculator, and a lead-capturing AI chat assistant — all as dependency-free static HTML for maximum speed and a 95+ PageSpeed target.
+Light, professional design system in the brand's green (clean white surfaces, deep-slate headings, emerald accents), 40 fully-written pages, enterprise SEO, an interactive automation savings calculator, and a lead-capturing AI chat assistant — all as dependency-free static HTML for maximum speed and a 95+ PageSpeed target. Lead forms deliver straight to WhatsApp, with FormSubmit email as a backup channel.
 
 ## Structure
 
@@ -12,10 +12,11 @@ Dark-luxury design system (glassmorphism, aurora gradients, neon glow), 32 fully
 ├── services.html            Services hub
 ├── services/*.html          15 dedicated service pages (hero → problem → solution
 │                            → benefits → process → tools → case study → FAQ → form)
-├── portfolio.html           Case studies with mockups & metrics
+├── industries.html          Industries We Serve hub
+├── industries/*.html        5 Dallas industry pages (dental, realtors, law, HVAC, roofing)
 ├── results.html             Animated results dashboard & charts
 ├── blog.html                Blog index with category filter + newsletter
-├── blog/*.html              7 full SEO articles with author card & related posts
+├── blog/*.html              10 Dallas-industry SEO articles with author card & related posts
 ├── contact.html             Lead form, WhatsApp/email/Instagram CTAs, map
 ├── privacy.html, terms.html, 404.html
 ├── sitemap.xml, robots.txt

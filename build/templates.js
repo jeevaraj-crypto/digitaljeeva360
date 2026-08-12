@@ -42,25 +42,22 @@ const icons = {
   sparkles: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M3 12h3M18 12h3M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>'
 };
 
-/* Brand logo mark — DJ monogram with growth swoosh, chart bars and 360 badge */
-const LOGO_MARK = `<svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digital Jeeva360 logo">
+/* Brand logo mark — interlocking tri-shield knot in the brand green gradient */
+const LOGO_MARK = `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digital Jeeva360 logo">
 <defs>
-<linearGradient id="dj-silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#a9b4c6"/></linearGradient>
-<linearGradient id="dj-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+<linearGradient id="djknot" x1="95" y1="15" x2="25" y2="105" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#4fd8a4"/><stop offset="1" stop-color="#14a181"/>
+</linearGradient>
 </defs>
-<text x="6" y="98" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="900" font-style="italic" fill="url(#dj-silver)">D</text>
-<text x="60" y="116" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="900" font-style="italic" fill="url(#dj-blue)">J</text>
-<g fill="url(#dj-blue)" opacity="0.95">
-<rect x="36" y="70" width="9" height="18" rx="2"/>
-<rect x="49" y="60" width="9" height="28" rx="2"/>
-<rect x="62" y="50" width="9" height="38" rx="2"/>
+<g stroke="url(#djknot)" stroke-width="10.5" fill="none">
+<path d="M18 95 Q35 49 66.5 11"/>
+<path d="M18 95 Q35 49 66.5 11" transform="rotate(120 60 63)"/>
+<path d="M18 95 Q35 49 66.5 11" transform="rotate(240 60 63)"/>
 </g>
-<polyline points="38,62 52,50 66,40 80,30" stroke="#7db4fb" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="52" cy="50" r="4" fill="#7db4fb"/><circle cx="66" cy="40" r="4" fill="#7db4fb"/><circle cx="80" cy="30" r="4" fill="#7db4fb"/>
-<path d="M4 106 C 42 124, 94 112, 122 58" fill="none" stroke="url(#dj-blue)" stroke-width="10" stroke-linecap="round"/>
-<polygon points="112,44 134,42 124,64" fill="#3b82f6"/>
-<text x="92" y="96" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800" font-style="italic" fill="url(#dj-blue)">360</text>
 </svg>`;
+
+/* Full brand lockup — emblem + wordmark + tagline (mirrors the official logo) */
+const BRAND_LOCKUP = `<span class="mark" aria-hidden="true">${LOGO_MARK}</span><span class="brand-text">DIGITALJEEVA360<small>DIGITAL RISE</small></span>`;
 
 /* Build stamp — appended to asset URLs so browsers always fetch fresh CSS/JS after a re-upload */
 const BUILD_V = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "");
@@ -200,7 +197,7 @@ ${keywords ? `<meta name="keywords" content="${esc(keywords)}">\n` : ""}<meta na
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${abs("/assets/img/og-cover.png")}">
-<meta name="theme-color" content="#04060e">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -248,7 +245,7 @@ function nav(activePath) {
 <header class="site-header">
   <div class="container">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="/"><span class="mark" aria-hidden="true">${LOGO_MARK}</span>Digital<em>Jeeva</em>360</a>
+      <a class="brand" href="/">${BRAND_LOCKUP}</a>
       <ul class="nav-links" id="nav-links">
         <li><a href="/"${cur("/index.html")}>Home</a></li>
         <li><a href="/about.html"${cur("/about.html")}>About</a></li>
@@ -293,7 +290,7 @@ function footer() {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" aria-label="Digital Jeeva360 home"><img src="/assets/img/logo-full.png?v=${BUILD_V}" alt="Digital Jeeva360 — Digital Marketing, AI Automation, Growth Systems" width="220" height="220" loading="lazy" style="border-radius:18px;border:1px solid var(--stroke)"></a>
+        <a class="brand brand-footer" href="/" aria-label="Digital Jeeva360 home">${BRAND_LOCKUP}</a>
         <p class="mt-1">Helping Dallas–Fort Worth businesses grow 2–3x through AI automation, SEO, paid advertising and premium websites. Serving Dallas, Plano, Frisco, Fort Worth, Arlington and the entire DFW Metroplex.</p>
         <div class="footer-social">
           <a href="${SITE.whatsappUrl}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${icons.whatsapp}</a>
@@ -434,9 +431,9 @@ function leadForm({ subject = "New enquiry — Digital Jeeva360", compact = fals
 </form>
 <div class="form-success" role="status">
   <div class="tick">${icons.check}</div>
-  <h3>Request received!</h3>
-  <p>Thank you — Jeeva will personally reply within one business day to schedule your free strategy call.</p>
-  <a class="btn btn-whatsapp" href="${SITE.whatsappUrl}" target="_blank" rel="noopener">${icons.whatsapp} Get a faster reply on WhatsApp</a>
+  <h3>One last step — press Send on WhatsApp</h3>
+  <p>WhatsApp has opened with your details pre-filled. Just press <strong>Send</strong> and they reach Jeeva instantly. A copy also goes to our inbox, and you'll hear back within one business day.</p>
+  <a class="btn btn-whatsapp" href="${SITE.whatsappUrl}" target="_blank" rel="noopener" data-wa-resend>${icons.whatsapp} Open WhatsApp again</a>
 </div>`;
 }
 
