@@ -717,7 +717,7 @@ input[type="range"]::-moz-range-thumb {
 .footer-grid a:hover { color: #ffffff; }
 .footer-brand p { font-size: 0.94rem; max-width: 34ch; color: #9db3bb; }
 .brand-footer { margin-bottom: 0.9rem; }
-.brand-footer .mark { width: 54px; height: 54px; }
+.brand-footer .mark { width: 54px; height: 54px; background: #ffffff; border-radius: 14px; padding: 5px; }
 .brand-footer .brand-text { font-size: 1.12rem; }
 .footer-social { display: flex; gap: 0.7rem; margin-top: 1.2rem; }
 .footer-social a {

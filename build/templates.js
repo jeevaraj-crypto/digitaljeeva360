@@ -42,17 +42,21 @@ const icons = {
   sparkles: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M3 12h3M18 12h3M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>'
 };
 
-/* Brand logo mark — downward-pointing shield with peak, in brand green gradient */
+/* Brand logo mark — three outlined interlocking shields (tri-shield knot), brand green gradient */
 const LOGO_MARK = `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digital Jeeva360 logo">
 <defs>
-<linearGradient id="djshield" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-<stop offset="0" stop-color="#4fd8a4"/><stop offset="1" stop-color="#14a181"/>
+<linearGradient id="djknot" x1="30" y1="14" x2="94" y2="106" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#3fd39d"/><stop offset="1" stop-color="#17a884"/>
 </linearGradient>
 </defs>
-<g fill="url(#djshield)">
-<path d="M60 8 L75 22 Q85 32 85 50 Q85 70 60 85 Q35 70 35 50 Q35 32 45 22 Z"/>
-<path d="M60 8 L75 22 Q85 32 85 50 Q85 70 60 85 Q35 70 35 50 Q35 32 45 22 Z" transform="rotate(120 60 60)"/>
-<path d="M60 8 L75 22 Q85 32 85 50 Q85 70 60 85 Q35 70 35 50 Q35 32 45 22 Z" transform="rotate(240 60 60)"/>
+<g fill="none" stroke-linejoin="miter" stroke-linecap="butt">
+<path d="M33 83 L60 106 C81 91 91 74 92 49 L91 34" stroke="url(#djknot)" stroke-width="10"/>
+<path d="M33 83 L60 106 C81 91 91 74 92 49 L91 34" transform="rotate(120 60 62)" stroke="#ffffff" stroke-width="14"/>
+<path d="M33 83 L60 106 C81 91 91 74 92 49 L91 34" transform="rotate(120 60 62)" stroke="url(#djknot)" stroke-width="10"/>
+<path d="M33 83 L60 106 C81 91 91 74 92 49 L91 34" transform="rotate(240 60 62)" stroke="#ffffff" stroke-width="14"/>
+<path d="M33 83 L60 106 C81 91 91 74 92 49 L91 34" transform="rotate(240 60 62)" stroke="url(#djknot)" stroke-width="10"/>
+<path d="M33 83 L60 106 C71 98 79 90 84 80" stroke="#ffffff" stroke-width="14"/>
+<path d="M33 83 L60 106 C71 98 79 90 84 80" stroke="url(#djknot)" stroke-width="10"/>
 </g>
 </svg>`;
 
