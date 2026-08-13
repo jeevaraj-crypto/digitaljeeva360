@@ -251,13 +251,11 @@ function nav(activePath) {
         <li><a href="/about.html"${cur("/about.html")}>About</a></li>
         <li class="dropdown"><a href="/services.html"${cur("/services.html")}>Services ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="/services.html"><b>All Services →</b><span>Our four core services at a glance</span></a></li>
             ${NAV_SERVICES.map((s) => `<li><a href="${s.path}"><b>${s.label}</b><span>${s.desc}</span></a></li>`).join("\n            ")}
           </ul>
         </li>
         <li class="dropdown"><a href="/industries.html"${cur("/industries.html")}>Industries ▾</a>
           <ul class="dropdown-menu dropdown-menu-compact">
-            <li><a href="/industries.html"><b>All Industries →</b></a></li>
             ${INDUSTRIES.map((i) => `<li><a href="/industries/${i.slug}.html"><b>${i.label}</b></a></li>`).join("\n            ")}
           </ul>
         </li>
