@@ -289,9 +289,9 @@ ${T.ctaBand({
 /* Simple abstract SVG covers for blog cards */
 function blogCover(i) {
   const palettes = [
-    ["#149b71", "#0d9488"],
-    ["#0f766e", "#149b71"],
-    ["#0d9488", "#2dd4a7"]
+    ["#2563eb", "#8b5cf6"],
+    ["#1d4ed8", "#2563eb"],
+    ["#8b5cf6", "#38bdf8"]
   ];
   const [a, b] = palettes[i % palettes.length];
   return `<svg viewBox="0 0 400 212" preserveAspectRatio="xMidYMid slice" role="presentation">

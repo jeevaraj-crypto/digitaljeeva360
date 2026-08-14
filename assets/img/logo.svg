@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160">
 <defs>
-<linearGradient id="djword" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#17a57d"/><stop offset="1" stop-color="#2ec49b"/></linearGradient>
+<linearGradient id="djword" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient>
 </defs>
 <g transform="translate(14,17)">
 <defs>
 <linearGradient id="djknot" x1="30" y1="14" x2="94" y2="106" gradientUnits="userSpaceOnUse">
-<stop offset="0" stop-color="#3fd39d"/><stop offset="1" stop-color="#17a884"/>
+<stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/>
 </linearGradient>
 </defs>
 <g fill="none" stroke-linejoin="miter" stroke-linecap="butt">
@@ -19,5 +19,5 @@
 </g>
 </g>
 <text x="168" y="88" font-family="Sora, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="52" font-weight="800" letter-spacing="2" fill="url(#djword)">DIGITALJEEVA360</text>
-<text x="172" y="126" font-family="Sora, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="600" letter-spacing="12" fill="#52bfa6">DIGITAL RISE</text>
+<text x="172" y="126" font-family="Sora, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="600" letter-spacing="12" fill="#3b82f6">DIGITAL RISE</text>
 </svg>

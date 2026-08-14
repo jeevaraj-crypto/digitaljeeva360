@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
 <defs>
-<linearGradient id="djword" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#17a57d"/><stop offset="1" stop-color="#2ec49b"/></linearGradient>
-<radialGradient id="glow1" cx="0.88" cy="0" r="0.6"><stop offset="0" stop-color="#2ec49b" stop-opacity="0.18"/><stop offset="1" stop-color="#2ec49b" stop-opacity="0"/></radialGradient>
-<radialGradient id="glow2" cx="0" cy="1" r="0.6"><stop offset="0" stop-color="#0d9488" stop-opacity="0.14"/><stop offset="1" stop-color="#0d9488" stop-opacity="0"/></radialGradient>
+<linearGradient id="djword" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient>
+<radialGradient id="glow1" cx="0.88" cy="0" r="0.6"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0.18"/><stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow2" cx="0" cy="1" r="0.6"><stop offset="0" stop-color="#8b5cf6" stop-opacity="0.14"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
 </defs>
 <rect width="1200" height="630" fill="#ffffff"/>
 <rect width="1200" height="630" fill="url(#glow1)"/>
@@ -10,7 +10,7 @@
 <g transform="translate(240,150) scale(1.25)">
 <defs>
 <linearGradient id="djknot" x1="30" y1="14" x2="94" y2="106" gradientUnits="userSpaceOnUse">
-<stop offset="0" stop-color="#3fd39d"/><stop offset="1" stop-color="#17a884"/>
+<stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/>
 </linearGradient>
 </defs>
 <g fill="none" stroke-linejoin="miter" stroke-linecap="butt">
@@ -24,7 +24,7 @@
 </g>
 </g>
 <text x="420" y="245" font-family="Sora, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="2" fill="url(#djword)">DIGITALJEEVA360</text>
-<text x="424" y="292" font-family="Sora, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="13" fill="#52bfa6">DIGITAL RISE</text>
-<text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#0e2836">AI Automation &amp; Digital Marketing Agency — <tspan fill="#149b71">Dallas, TX</tspan></text>
+<text x="424" y="292" font-family="Sora, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="13" fill="#3b82f6">DIGITAL RISE</text>
+<text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#0e2836">AI Automation &amp; Digital Marketing Agency — <tspan fill="#2563eb">Dallas, TX</tspan></text>
 <text x="600" y="478" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" fill="#7d8f9a">digitaljeeva360.com</text>
 </svg>

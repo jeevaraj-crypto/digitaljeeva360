@@ -46,7 +46,7 @@ const icons = {
 const LOGO_MARK = `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Digital Jeeva360 logo">
 <defs>
 <linearGradient id="djknot" x1="30" y1="14" x2="94" y2="106" gradientUnits="userSpaceOnUse">
-<stop offset="0" stop-color="#3fd39d"/><stop offset="1" stop-color="#17a884"/>
+<stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/>
 </linearGradient>
 </defs>
 <g fill="none" stroke-linejoin="miter" stroke-linecap="butt">
