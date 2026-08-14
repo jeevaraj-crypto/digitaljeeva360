@@ -737,8 +737,7 @@ const services = [
       solution: "Full Business Profile rebuild, 140 citation corrections, automated review requests after every job, and suburb-specific emergency pages for their 12 DFW service areas.",
       results: [
         { b: "#1–3", span: "map pack in 9 of 12 DFW suburbs" },
-        { b: "+218%", span: "calls from Google" },
-        { b: "4.9★", span: "rating (from 3.8, 41 reviews to 287)" }
+        { b: "+218%", span: "calls from Google" }
       ]
     },
     faqs: [

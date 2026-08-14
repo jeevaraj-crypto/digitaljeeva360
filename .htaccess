@@ -10,6 +10,12 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
+# Retired pages -> 301 (must sit ABOVE the clean-URL rule)
+# /results.html was removed Aug 2026; redirect rather than 404 so any
+# existing index entry or inbound link lands somewhere useful.
+RewriteRule ^results\.html$ / [R=301,L]
+RewriteRule ^results/?$ / [R=301,L]
+
 # Clean URLs: /contact -> /contact.html, /services -> /services.html,
 # /services/seo -> /services/seo.html (also handles trailing slashes)
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -126,7 +126,7 @@ function renderIndustry(ind) {
       ${ind.proof.map((p, i) => `
       <div class="stat-item glass-card card-static reveal${i ? ` reveal-d${i}` : ""}"><b>${p.b}</b><span>${p.s}</span></div>`).join("")}
     </div>
-    <p class="center calc-note mt-2">These are the targets we build toward and the industry benchmarks behind them — not results from a past client. Digital Jeeva360 is a new agency and we publish no outcome we cannot show you the account for. <a href="/results.html">See our benchmarks and sources</a>.</p>
+    <p class="center calc-note mt-2">These are the targets we build toward and the industry benchmarks behind them — not results from a past client. Digital Jeeva360 is a new agency and we publish no outcome we cannot show you the account for.</p>
   </div>
 </section>
 

@@ -4,14 +4,6 @@
 const T = require("../templates");
 
 function renderHome(posts) {
-  const testimonials = [
-    { quote: "We went from manually chasing every lead to waking up with booked appointments in the calendar. The automation system Jeeva built paid for itself in the first six weeks — and it just keeps working.", name: "Marcus T.", role: "Director, Property Management Group — Dallas, TX", initials: "MT" },
-    { quote: "Our old site got two enquiries a month. The new one gets that before lunch on a Tuesday. Design, speed, copy — everything was built around converting, and it shows in our pipeline.", name: "Sarah W.", role: "Managing Partner, Law Firm — Downtown Dallas, TX", initials: "SW" },
-    { quote: "I was sceptical about another SEO agency after two bad experiences. Nine months later we rank page one for every service we offer, and organic is now our biggest revenue channel.", name: "Daniel R.", role: "Founder, E-commerce Brand — Frisco, TX", initials: "DR" },
-    { quote: "The WhatsApp system books trials, reminds members and wins back cancellations completely on its own. It's like hiring three receptionists who never sleep — for a fraction of one salary.", name: "Priya K.", role: "Owner, Fitness Studios — Plano, TX", initials: "PK" },
-    { quote: "Finally an agency that reports revenue instead of impressions. Our ad spend produces 5x returns and I can see exactly where every dollar goes. Total transparency.", name: "Emma L.", role: "Marketing Director, Dental Group — Fort Worth, TX", initials: "EL" }
-  ];
-
   /* Industries we build for. Deliberately NOT a client logo wall — we don't
      invent client names, and this page shows no client we can't name for real. */
   const builtFor = ["Dental Clinics", "Realtors", "Law Firms", "HVAC Companies", "Roofing Companies", "Med Spas", "Home Services", "Accounting Firms"];
@@ -77,7 +69,7 @@ function renderHome(posts) {
       <div class="stat-item glass-card card-static reveal reveal-d2"><b><span data-count="391" data-prefix="+" data-suffix="%">0</span></b><span>more conversions when leads get a reply inside a minute</span></div>
       <div class="stat-item glass-card card-static reveal reveal-d3"><b>24/7</b><span>hours your AI receptionist is awake</span></div>
     </div>
-    <p class="center calc-note mt-1" style="font-size:0.82rem">Industry benchmarks, not client results — <a href="/results.html">sources here</a>.</p>
+    <p class="center calc-note mt-1" style="font-size:0.82rem">Published industry benchmarks — not Digital Jeeva360 client results.</p>
   </div>
 </section>
 
@@ -204,30 +196,34 @@ function renderHome(posts) {
   </div>
 </section>
 
-<section class="section" aria-labelledby="testimonials-title">
+<section class="section" aria-labelledby="founding-title">
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow">Client stories</span>
-      <h2 id="testimonials-title">Don't take our word for it</h2>
+      <span class="eyebrow">Where we are</span>
+      <h2 id="founding-title">No testimonials here yet &mdash; <span class="text-gradient">and we won't invent any</span></h2>
+      <p>Digital Jeeva360 is new. Most agency sites in this market show a wall of five-star quotes; we would rather you could verify ours, so this section stays empty until we have named clients who agreed to be quoted.</p>
     </div>
-    <div class="slider-wrap reveal">
-      <div class="slider">
-        <div class="slider-track">
-          ${testimonials.map((t) => `
-          <div class="slide">
-            <div class="testimonial glass-card card-static">
-              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <blockquote>“${t.quote}”</blockquote>
-              <div class="avatar" aria-hidden="true">${t.initials}</div>
-              <cite><b>${t.name}</b><span>${t.role}</span></cite>
-            </div>
-          </div>`).join("")}
-        </div>
+    <div class="split" style="align-items:start">
+      <div class="reveal">
+        <h3>What you get instead</h3>
+        <p>Proof you can check yourself, on the call: the actual automations and campaign structures we build, walked through live, applied to your business with your numbers.</p>
+        <ul class="check-list">
+          <li>${T.icons.check}<span>A worked plan for your business, not a slide deck</span></li>
+          <li>${T.icons.check}<span>Honest answer on whether a channel will work for you</span></li>
+          <li>${T.icons.check}<span>Nothing to sign, and no follow-up sequence you didn't ask for</span></li>
+        </ul>
       </div>
-      <div class="slider-nav">
-        <button class="slider-arrow" data-slide-prev aria-label="Previous testimonial"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
-        <div class="slider-dots" role="tablist" aria-label="Testimonial navigation"></div>
-        <button class="slider-arrow" data-slide-next aria-label="Next testimonial"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="glass-card gradient-border reveal reveal-d1">
+        <div class="icon-chip">${T.icons.rocket}</div>
+        <h3>Founding client places</h3>
+        <p>We're taking on a small number of founding clients at a reduced rate, in exchange for permission to publish the results properly once we have them.</p>
+        <ul class="check-list">
+          <li>${T.icons.check}<span>Reduced rate for the first six months</span></li>
+          <li>${T.icons.check}<span>Direct access to Jeeva, not an account manager</span></li>
+          <li>${T.icons.check}<span>Full reporting in accounts you own</span></li>
+          <li>${T.icons.check}<span>Month to month after the build</span></li>
+        </ul>
+        <a class="btn btn-primary mt-2" href="/contact.html">Ask about a founding place ${T.icons.arrow}</a>
       </div>
     </div>
   </div>
