@@ -12,7 +12,9 @@ function renderHome(posts) {
     { quote: "Finally an agency that reports revenue instead of impressions. Our ad spend produces 5x returns and I can see exactly where every dollar goes. Total transparency.", name: "Emma L.", role: "Marketing Director, Dental Group — Fort Worth, TX", initials: "EL" }
   ];
 
-  const clients = ["Meridian Legal", "NorthPeak Fitness", "Solara Energy", "Hartwell Dental", "Beacon Realty", "Crest & Co.", "Vantage HVAC", "Lumen Skincare", "Atlas Accounting", "Harbour Coffee"];
+  /* Industries we build for. Deliberately NOT a client logo wall — we don't
+     invent client names, and this page shows no client we can't name for real. */
+  const builtFor = ["Dental Clinics", "Realtors", "Law Firms", "HVAC Companies", "Roofing Companies", "Med Spas", "Home Services", "Accounting Firms"];
 
   const blogPreview = posts.slice(0, 3);
 
@@ -22,14 +24,14 @@ function renderHome(posts) {
     <div class="hero-inner">
       <span class="eyebrow reveal in-view">Dallas–Fort Worth · AI-Powered Growth Systems</span>
       <h1>AI Automation &amp; <span class="text-gradient">Digital Marketing Agency</span> in Dallas, TX</h1>
-      <p class="lede">Our mission: help Dallas businesses grow <strong>2–3x in 6 months</strong> with AI that never sleeps — AI receptionists, automation, SEO, Google Ads and premium websites built into one growth system for dental clinics, realtors, law firms, HVAC and roofing companies across the DFW Metroplex.</p>
+      <p class="lede">We build growth systems that <strong>stop leads leaking and answer every enquiry within a minute</strong> — AI receptionists, automation, SEO, Google Ads and premium websites, working as one system for dental clinics, realtors, law firms, HVAC and roofing companies across the DFW Metroplex.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary btn-lg" href="/contact.html">Book Free Strategy Call ${T.icons.arrow}</a>
         <a class="btn btn-ghost btn-lg" href="/industries.html">Industries We Serve</a>
       </div>
       <div class="trust-badges">
-        <span>${T.icons.check} 47+ businesses automated</span>
-        <span>${T.icons.check} 4.9★ average client rating</span>
+        <span>${T.icons.check} Free strategy call, nothing to sign</span>
+        <span>${T.icons.check} You own every account we build</span>
         <span>${T.icons.check} No lock-in contracts</span>
       </div>
     </div>
@@ -39,8 +41,8 @@ function renderHome(posts) {
       <div class="float-card fc-2" data-parallax="22"><span class="dot"></span><div><b>+$12,400 revenue</b><small>This week · automated funnel</small></div></div>
       <div class="float-card fc-3" data-parallax="18"><span class="dot"></span><div><b>34 hrs saved</b><small>Workflow automation · this week</small></div></div>
 
-      <div class="dash chart-anim" data-parallax="6" role="img" aria-label="Live business growth dashboard showing revenue up 214 percent, 1,847 leads generated and 34 hours saved weekly">
-        <div class="dash-bar"><i></i><i></i><i></i><span>growth-dashboard.digitaljeeva360.com</span></div>
+      <div class="dash chart-anim" data-parallax="6" role="img" aria-label="Illustrative example of a client growth dashboard. Sample figures, not real client data.">
+        <div class="dash-bar"><i></i><i></i><i></i><span>example dashboard · sample data</span></div>
         <div class="dash-body">
           <div class="dash-stat"><small>Revenue growth</small><b><span data-count="214" data-prefix="+" data-suffix="%">0%</span></b><em>▲ vs last quarter</em></div>
           <div class="dash-stat"><small>Leads generated</small><b><span data-count="1847">0</span></b><em>▲ 3.1x increase</em></div>
@@ -56,12 +58,12 @@ function renderHome(posts) {
   </div>
 </section>
 
-<section class="section-tight" aria-label="Trusted by businesses">
+<section class="section-tight" aria-label="Industries we build for">
   <div class="container">
-    <p class="center" style="font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint)">Trusted by ambitious businesses across the DFW Metroplex</p>
+    <p class="center" style="font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint)">Growth systems built for service businesses across the DFW Metroplex</p>
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        ${clients.concat(clients).map((c) => `<span>${c}</span>`).join("\n        ")}
+        ${builtFor.concat(builtFor).map((c) => `<span>${c}</span>`).join("\n        ")}
       </div>
     </div>
   </div>
@@ -70,11 +72,12 @@ function renderHome(posts) {
 <section class="section-tight" aria-label="Key statistics">
   <div class="container">
     <div class="stats-band">
-      <div class="stat-item glass-card card-static reveal"><b><span data-count="2.7" data-decimals="1" data-suffix="x">0</span></b><span>Average revenue growth</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d1"><b><span data-count="41200" data-suffix="+">0</span></b><span>Hours automated for clients</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d2"><b><span data-count="184" data-prefix="+" data-suffix="%">0</span></b><span>Avg. organic traffic lift</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d3"><b><span data-count="4.6" data-decimals="1" data-suffix="x">0</span></b><span>Average return on ad spend</span></div>
+      <div class="stat-item glass-card card-static reveal"><b><span data-count="27" data-suffix="%">0</span></b><span>of calls to local service businesses go unanswered</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d1"><b><span data-count="78" data-suffix="%">0</span></b><span>of routine enquiries can be handled without a human</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d2"><b><span data-count="391" data-prefix="+" data-suffix="%">0</span></b><span>more conversions when leads get a reply inside a minute</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d3"><b>24/7</b><span>hours your AI receptionist is awake</span></div>
     </div>
+    <p class="center calc-note mt-1" style="font-size:0.82rem">Industry benchmarks, not client results — <a href="/results.html">sources here</a>.</p>
   </div>
 </section>
 
@@ -268,7 +271,7 @@ ${T.faqBlock([
     { q: "What kind of businesses do you work with?", a: "Dallas–Fort Worth businesses that live and die by inbound leads — dental clinics, realtors, law firms, HVAC and roofing companies especially. If we're not the right fit for your situation, we'll say so on the first call." },
     { q: "How quickly will I see results?", a: "It depends on the lever: automation and paid ads typically show measurable results within 2–4 weeks; premium websites convert from launch day; SEO builds meaningfully from 60–90 days and compounds from there. Your roadmap sequences quick wins first so momentum starts immediately." },
     { q: "What does it cost to work with you?", a: "Projects start around $1,500 (automation) and $2,000 (websites); SEO and ads retainers from $800/month. Every engagement begins with a free strategy call and a fixed, transparent quote tied to projected ROI — you'll always know what you're paying and what it should return." },
-    { q: "Do you require long-term contracts?", a: "No. Everything is month-to-month after the initial project or 90-day sprint. We believe an agency should keep clients through results, not legal clauses — and our retention proves the model works." },
+    { q: "Do you require long-term contracts?", a: "No. Everything is month-to-month after the initial project or 90-day sprint. We believe an agency should keep clients through results, not legal clauses." },
     { q: "I'm not technical. Is that a problem?", a: "Not at all — most of our clients aren't. We handle all the technology and explain everything in plain business language: hours saved, leads generated, revenue added. You never need to touch a workflow or a line of code unless you want to." }
   ], { title: "Questions? Answered." })}
 
@@ -282,7 +285,7 @@ ${T.ctaBand({
     description: "Dallas AI automation & digital marketing agency. AI receptionists, chatbots, SEO, Google Ads and websites for dental clinics, realtors, law firms, HVAC and roofing companies across DFW.",
     keywords: "AI automation agency Dallas, digital marketing agency Dallas TX, AI receptionist Dallas, Dallas SEO agency, Google Ads Dallas, web design Dallas, marketing agency DFW",
     path: "/index.html",
-    schema: [T.localBusinessSchema()]
+    schema: []
   }, body);
 }
 

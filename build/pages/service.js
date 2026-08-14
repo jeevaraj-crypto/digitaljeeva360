@@ -139,21 +139,23 @@ ${children.length ? `
 <section class="section" aria-labelledby="case-title">
   <div class="container">
     <div class="glass-card card-static" style="padding:clamp(1.8rem,4vw,3.2rem)">
-      <span class="eyebrow">Case study</span>
-      <h2 id="case-title" style="font-size:clamp(1.5rem,2.8vw,2.1rem)">${svc.caseStudy.client} — ${svc.caseStudy.location}</h2>
+      <span class="eyebrow">Worked example</span>
+      <h2 id="case-title" style="font-size:clamp(1.5rem,2.8vw,2.1rem)">A typical engagement: ${svc.caseStudy.client.toLowerCase()}</h2>
+      <p class="calc-note" style="margin-top:0.6rem">Illustrative scenario showing how we scope this work — not a past client. Digital Jeeva360 is a new agency and we publish no result we cannot show you the account for.</p>
       <div class="split" style="align-items:start;margin-top:1.5rem">
         <div class="reveal">
-          <h3>The challenge</h3>
+          <h3>The situation</h3>
           <p>${svc.caseStudy.challenge}</p>
-          <h3>What we did</h3>
+          <h3>How we would approach it</h3>
           <p class="mb-0">${svc.caseStudy.solution}</p>
         </div>
         <div class="reveal reveal-d1">
-          <h3>The results</h3>
+          <h3>What we would target</h3>
           <div class="stats-band" style="grid-template-columns:1fr;gap:0.9rem">
             ${svc.caseStudy.results.map((r) => `
             <div class="calc-stat"><span>${r.span}</span><b>${r.b}</b></div>`).join("")}
           </div>
+          <p class="calc-note mt-1" style="font-size:0.8rem">Targets, not achieved results. Your realistic range depends on your market and starting position — we model it from your own numbers on the call.</p>
           <a class="read-more mt-2" style="display:inline-flex" href="/industries.html">See how we help your industry ${T.icons.arrow}</a>
         </div>
       </div>
@@ -189,8 +191,7 @@ ${T.ctaBand({
     schema: [
       T.serviceSchema({ ...svc, path, description: svc.description }),
       T.breadcrumbSchema(crumbs.map((c) => ({ name: c.name, path: c.path === "/" ? "/" : c.path }))),
-      T.faqSchema(svc.faqs),
-      T.localBusinessSchema()
+      T.faqSchema(svc.faqs)
     ]
   }, body);
 }

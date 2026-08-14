@@ -79,7 +79,7 @@ ${T.ctaBand({ title: "Let's build your growth system", text: "A free 30-minute s
     description: "Meet Digital Jeeva360: founder-led, AI-native growth agency helping Dallas–Fort Worth businesses automate operations and grow 2–3x.",
     keywords: "about Digital Jeeva360, Jeeva digital marketer, AI automation specialist, digital marketing agency about",
     path: "/about.html",
-    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+    schema: [T.breadcrumbSchema(crumbs)]
   }, body);
 }
 
@@ -145,7 +145,7 @@ ${T.ctaBand({ title: "Not sure where to start?", text: "That's exactly what the 
     description: "Our four core services: AI Automation (chatbots, WhatsApp, email, workflows), Premium Website Development, SEO & Organic Growth, and Paid Advertising (Google & Meta Ads).",
     keywords: "digital marketing services, AI automation services, web design services, SEO services, PPC services",
     path: "/services.html",
-    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+    schema: [T.breadcrumbSchema(crumbs)]
   }, body);
 }
 
@@ -157,20 +157,21 @@ function renderResults() {
   <div class="container">
     ${T.breadcrumbs(crumbs)}
     <div class="section-head center" style="margin-inline:auto;text-align:center">
-      <span class="eyebrow">Results</span>
-      <h1>The numbers behind the <span class="text-gradient">promises</span></h1>
-      <p class="lede">Aggregated, real outcomes across our client base — the kind of numbers an AI-powered growth system produces for Dallas–Fort Worth businesses.</p>
+      <span class="eyebrow">Benchmarks</span>
+      <h1>What a growth system can <span class="text-gradient">realistically produce</span></h1>
+      <p class="lede">Digital Jeeva360 is a new agency and we are not going to invent a client roster. Instead, here is what published industry research says these systems achieve — the same benchmarks we use to set targets on a strategy call.</p>
     </div>
   </div>
 </section>
 
-<section class="section-tight" aria-label="Headline results">
+<section class="section-tight" aria-label="Industry benchmarks">
   <div class="container">
+    <p class="center calc-note" style="margin-bottom:1.2rem"><b>These are industry benchmarks, not our client results.</b> Sources are listed at the foot of this page.</p>
     <div class="stats-band">
-      <div class="stat-item glass-card card-static reveal"><b><span data-count="2.7" data-decimals="1" data-suffix="x">0</span></b><span>Average revenue growth in 6 months</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d1"><b><span data-count="41200" data-suffix="+">0</span></b><span>Hours of manual work automated</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d2"><b><span data-count="12400" data-suffix="+">0</span></b><span>Qualified leads generated</span></div>
-      <div class="stat-item glass-card card-static reveal reveal-d3"><b><span data-count="4.6" data-decimals="1" data-suffix="x">0</span></b><span>Average return on ad spend</span></div>
+      <div class="stat-item glass-card card-static reveal"><b><span data-count="78" data-suffix="%">0</span></b><span>of routine enquiries resolvable without a human</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d1"><b><span data-count="391" data-prefix="+" data-suffix="%">0</span></b><span>lift in conversion when leads are answered within 1 minute</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d2"><b><span data-count="27" data-suffix="%">0</span></b><span>of local service calls go unanswered on average</span></div>
+      <div class="stat-item glass-card card-static reveal reveal-d3"><b><span data-count="2" data-suffix="x">0</span></b><span>typical ROAS floor for a well-structured local Google Ads account</span></div>
     </div>
   </div>
 </section>
@@ -179,9 +180,9 @@ function renderResults() {
   <div class="container">
     <div class="split">
       <div class="reveal">
-        <span class="eyebrow">Revenue growth</span>
-        <h2 id="revenue-title">Client revenue, indexed over 12 months</h2>
-        <p>The pattern repeats across industries: automation stops the leaks in the first quarter, SEO and ads compound through the second, and by month twelve the average client operates at 2.7x their starting revenue run-rate.</p>
+        <span class="eyebrow">Modelled trajectory</span>
+        <h2 id="revenue-title">How the three channels compound</h2>
+        <p>This is a <b>modelled</b> curve, not a client's books — it shows the sequence we build to, and why the order matters. Automation stops the leaks first because it pays back fastest, ads scale only once unit economics are proven, and SEO is planted early but harvested last.</p>
         <ul class="check-list">
           <li>${T.icons.check}<span><b>Months 1–3:</b> automation recovers lost leads and hours</span></li>
           <li>${T.icons.check}<span><b>Months 3–6:</b> paid ads scale on proven unit economics</span></li>
@@ -189,10 +190,10 @@ function renderResults() {
         </ul>
       </div>
       <div class="dash chart-anim reveal reveal-d1">
-        <div class="dash-bar"><i></i><i></i><i></i><span>revenue-index · trailing 12 months</span></div>
+        <div class="dash-bar"><i></i><i></i><i></i><span>illustrative model · not client data</span></div>
         <div class="dash-body" style="grid-template-columns:1fr">
           <div class="dash-chart line-chart">
-            <svg viewBox="0 0 560 240" role="img" aria-label="Line chart showing client revenue index rising from 100 to 270 over twelve months">
+            <svg viewBox="0 0 560 240" role="img" aria-label="Illustrative model of how automation, paid ads and SEO compound over twelve months. Not client data.">
               <defs>
                 <linearGradient id="lg-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.35"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
                 <linearGradient id="lg-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
@@ -202,7 +203,7 @@ function renderResults() {
               <path class="line" d="M20 200 L65 196 L110 188 L155 176 L200 168 L245 152 L290 140 L335 122 L380 104 L425 84 L470 62 L515 40" stroke="url(#lg-line)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
               <circle cx="515" cy="40" r="6" fill="#34d399"/><circle cx="515" cy="40" r="11" fill="#34d399" opacity="0.25"/>
               <text x="20" y="225" fill="#5f6a8a" font-size="12">M1</text><text x="255" y="225" fill="#5f6a8a" font-size="12">M6</text><text x="495" y="225" fill="#5f6a8a" font-size="12">M12</text>
-              <text x="440" y="30" fill="#c4b5fd" font-size="14" font-weight="700">index 270</text>
+              <text x="392" y="30" fill="#c4b5fd" font-size="13" font-weight="700">modelled</text>
             </svg>
           </div>
         </div>
@@ -215,26 +216,27 @@ function renderResults() {
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow">By channel</span>
-      <h2 id="channels-title">Where the growth comes from</h2>
+      <h2 id="channels-title">What each channel is good for</h2>
+      <p class="lede">Benchmark ranges from published industry research — what these channels typically deliver when they are set up properly.</p>
     </div>
     <div class="grid grid-3">
       <div class="glass-card chart-anim reveal">
         <div class="icon-chip">${T.icons.bot}</div>
         <h3>AI Automation</h3>
         <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:30%"></i><i style="height:45%"></i><i style="height:60%"></i><i style="height:74%"></i><i style="height:88%"></i><i style="height:100%" class="alt"></i></div>
-        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="27" data-suffix=" hrs">0</span></b> average weekly hours saved per client, with <b>78%</b> of routine enquiries resolved without human touch.</p>
+        <p class="mt-1" style="font-size:0.94rem">Answers every call and message 24/7. Industry research puts <b>up to 78%</b> of routine enquiries in scope for resolution without a human, and the average small service business misses <b>around 27%</b> of inbound calls.</p>
       </div>
       <div class="glass-card chart-anim reveal reveal-d1">
         <div class="icon-chip">${T.icons.search}</div>
         <h3>SEO &amp; Organic</h3>
         <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:20%" class="alt"></i><i style="height:32%" class="alt"></i><i style="height:41%" class="alt"></i><i style="height:58%" class="alt"></i><i style="height:79%" class="alt"></i><i style="height:100%"></i></div>
-        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="184" data-prefix="+" data-suffix="%">0</span></b> average organic traffic growth in 9 months, with <b>640+</b> combined page-one keywords won.</p>
+        <p class="mt-1" style="font-size:0.94rem">The slowest channel and the only one that compounds. Realistic horizon for a local service business is <b>6–12 months</b> to meaningful map-pack and organic visibility — anyone promising faster is selling something.</p>
       </div>
       <div class="glass-card chart-anim reveal reveal-d2">
         <div class="icon-chip">${T.icons.target}</div>
         <h3>Paid Advertising</h3>
         <div class="chart-bars" style="height:110px" aria-hidden="true"><i style="height:25%"></i><i style="height:38%" class="alt"></i><i style="height:52%"></i><i style="height:67%" class="alt"></i><i style="height:81%"></i><i style="height:100%" class="alt"></i></div>
-        <p class="mt-1" style="font-size:0.94rem"><b><span data-count="4.6" data-decimals="1" data-suffix="x">0</span></b> average blended ROAS, with cost per lead down <b>-49%</b> on average after account rebuilds.</p>
+        <p class="mt-1" style="font-size:0.94rem">Fastest to switch on, and the easiest to waste money on. A well-structured local account should clear <b>2x ROAS</b> as a floor; below that the problem is usually targeting or the landing page, not the budget.</p>
       </div>
     </div>
   </div>
@@ -243,37 +245,55 @@ function renderResults() {
 <section class="section" aria-labelledby="proof-title">
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow">Selected outcomes</span>
-      <h2 id="proof-title">Twelve months of client wins</h2>
+      <span class="eyebrow">Where we are</span>
+      <h2 id="proof-title">We would rather be honest than impressive</h2>
     </div>
-    <div class="grid grid-4">
-      ${[
-        ["11x", "enquiry growth after a Dallas law firm website rebuild"],
-        ["$46k", "added in one quarter by a Plano dental practice's AI receptionist"],
-        ["-64%", "cost per lead for a Fort Worth solar installer's campaigns"],
-        ["+312%", "organic traffic for a Dallas e-commerce brand"],
-        ["3.2x", "consultations booked via 24/7 AI receptionist"],
-        ["94%", "product indexation after a technical SEO rescue"],
-        ["-58%", "no-show rate with automated reminders"],
-        ["$1.2M", "annualized impact from a Richardson SaaS CRO program"]
-      ].map(([b, s], i) => `
-      <div class="glass-card center reveal${i % 4 ? ` reveal-d${i % 4}` : ""}" style="padding:1.6rem 1.2rem">
-        <b style="font-family:var(--font-display);font-size:2rem;display:block;background:linear-gradient(120deg,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent">${b}</b>
-        <span style="font-size:0.87rem;color:var(--ink-faint)">${s}</span>
-      </div>`).join("")}
+    <div class="split">
+      <div class="reveal">
+        <p>Most agency sites in this market show a wall of case-study numbers. Ours does not, for one reason: Digital Jeeva360 is new, and we are not going to put figures on this page that we cannot show you the account for.</p>
+        <p>What we can show you is the work — the automations, the builds, the campaign structures — and exactly how we would apply them to your business. That conversation is free and there is nothing to sign at the end of it.</p>
+        <p>This page will fill up with real, named, client-approved results as we earn them. Until then it stays a benchmarks page.</p>
+      </div>
+      <div class="glass-card reveal reveal-d1">
+        <div class="icon-chip">${T.icons.rocket}</div>
+        <h3>Founding client places</h3>
+        <p>We are taking on a small number of founding clients at a reduced rate, in exchange for permission to publish the results properly once we have them.</p>
+        <ul class="check-list">
+          <li>${T.icons.check}<span>Reduced engagement rate for the first six months</span></li>
+          <li>${T.icons.check}<span>Direct access to Jeeva, not an account manager</span></li>
+          <li>${T.icons.check}<span>Full reporting you own, in your own ad and analytics accounts</span></li>
+          <li>${T.icons.check}<span>No long contract — month to month after the build</span></li>
+        </ul>
+        <a class="btn btn-primary mt-2" href="/contact.html">Ask about a founding place ${T.icons.arrow}</a>
+      </div>
     </div>
-    <p class="center calc-note mt-2">Results shown are from real client engagements. Individual outcomes vary with market, starting point and execution — your strategy call includes realistic projections for your situation.</p>
   </div>
 </section>
 
-${T.ctaBand({ title: "Your numbers could be on this page", text: "Book a free strategy call and we'll project what a growth system could realistically produce for your business — before you spend a dollar." })}`;
+<section class="section-tight" aria-labelledby="sources-title">
+  <div class="container">
+    <div class="glass-card card-static reveal" style="padding:1.6rem 1.8rem">
+      <h2 id="sources-title" style="font-size:1.1rem;margin-top:0">Where these benchmarks come from</h2>
+      <p style="font-size:0.9rem;color:var(--ink-faint);margin-bottom:0.8rem">Every figure on this page is an industry benchmark drawn from published research, not a Digital Jeeva360 client outcome. Ranges vary by industry, market and starting position — treat them as planning inputs, not promises.</p>
+      <ul class="check-list" style="font-size:0.9rem">
+        <li>${T.icons.check}<span><b>Lead response timing</b> — Harvard Business Review, &ldquo;The Short Life of Online Sales Leads&rdquo;, and the InsideSales/Lead Response Management study on contact rates by response interval.</span></li>
+        <li>${T.icons.check}<span><b>Missed-call rates for local service businesses</b> — aggregated call-tracking industry reporting; varies widely by trade and season.</span></li>
+        <li>${T.icons.check}<span><b>Enquiry deflection by conversational AI</b> — vendor-published containment rates across support and intake use cases; the upper end assumes a well-scoped, well-trained assistant.</span></li>
+        <li>${T.icons.check}<span><b>Paid search ROAS and local SEO timelines</b> — Google Economic Impact reporting and widely-replicated agency benchmarks for local service verticals.</span></li>
+      </ul>
+      <p style="font-size:0.85rem;color:var(--ink-faint);margin-bottom:0">Your strategy call includes a projection built on <em>your</em> numbers — current call volume, close rate and average job value — rather than these averages.</p>
+    </div>
+  </div>
+</section>
+
+${T.ctaBand({ title: "Find out what your numbers could look like", text: "Book a free strategy call. We'll model the realistic upside for your business from your actual call volume, close rate and job value — before you spend a dollar." })}`;
 
   return T.page({
-    title: "Client Results — Revenue, Traffic & Automation Wins in Dallas | Digital Jeeva360",
-    description: "2.7x average revenue growth, 41,200+ hours automated, 4.6x average ROAS. The measurable results Digital Jeeva360 delivers for Dallas–Fort Worth businesses.",
-    keywords: "digital marketing results Dallas, agency case study results, marketing ROI DFW, automation savings, SEO growth statistics",
+    title: "Benchmarks & What to Expect — AI Automation and Marketing | Digital Jeeva360",
+    description: "Honest industry benchmarks for AI automation, SEO and paid ads for Dallas–Fort Worth service businesses — with sources, and no invented case studies.",
+    keywords: "digital marketing benchmarks, AI automation ROI, lead response time statistics, local SEO timeline, marketing agency expectations",
     path: "/results.html",
-    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+    schema: [T.breadcrumbSchema(crumbs)]
   }, body);
 }
 
@@ -356,7 +376,7 @@ ${T.faqBlock([
     keywords: "contact digital marketing agency, book strategy call, free marketing consultation, AI automation consultation",
     path: "/contact.html",
     noExitPopup: true,
-    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+    schema: [T.breadcrumbSchema(crumbs)]
   }, body);
 }
 
@@ -565,7 +585,7 @@ function renderTerms() {
   <h2>3. Quotes and payment</h2>
   <p>Project quotes are fixed-price unless otherwise stated and valid for 30 days. Retainer services are billed monthly in advance and may be cancelled with 30 days' written notice — we do not use lock-in contracts. Third-party costs (advertising spend, software subscriptions, API fees) are the client's responsibility unless expressly included.</p>
   <h2>4. Results and expectations</h2>
-  <p>We provide good-faith projections based on experience and data, and we work to agreed success metrics. However, marketing outcomes depend on factors beyond any agency's control — market conditions, competition, platform changes and client-side execution. Case study results on this site are real but do not guarantee equivalent outcomes for other businesses.</p>
+  <p>We provide good-faith projections based on experience and data, and we work to agreed success metrics. However, marketing outcomes depend on factors beyond any agency's control — market conditions, competition, platform changes and client-side execution. Figures published on this site are industry benchmarks drawn from third-party research, or illustrative targets shown as worked examples. They are <strong>not</strong> results achieved for past Digital Jeeva360 clients, and they are not a promise of any particular outcome for your business. Where a source exists it is cited on our <a href="/results.html">benchmarks page</a>.</p>
   <h2>5. Intellectual property</h2>
   <p>Upon full payment, clients own the deliverables created specifically for them — websites, content, automations and creative. We retain the right to use general methodologies, know-how and non-confidential techniques. We may reference completed work in our portfolio unless a confidentiality arrangement states otherwise.</p>
   <h2>6. Client responsibilities</h2>

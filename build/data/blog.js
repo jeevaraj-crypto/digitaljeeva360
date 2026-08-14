@@ -38,7 +38,7 @@ const posts = [
 <li>Texts back any call that can't connect, keeping the conversation alive instead of losing it to the next Google result</li>
 <li>Routes true emergencies to your on-call dentist immediately, by rules you set</li>
 </ul>
-<blockquote>One Plano practice we work with went from 38% missed calls to zero — and booked 52 after-hours appointments in the first 90 days. That's production that simply didn't exist before.</blockquote>
+<blockquote>Run the arithmetic on your own practice. If you miss 38% of calls and your average new patient is worth $1,200 over the first year, every ten missed calls a week is roughly $237,000 of annual production walking to whoever picked up instead.</blockquote>
 
 <h2>What to do this week</h2>
 <p>Before you change anything, measure. Ask your phone provider for a missed-call report, or forward your line through a free call-tracking number for two weeks. Multiply missed calls by your new-patient value. That number — usually shocking — tells you exactly what fixing your phones is worth.</p>

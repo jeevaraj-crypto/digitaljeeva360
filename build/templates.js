@@ -72,18 +72,29 @@ const abs = (p) => SITE.url + (p.startsWith("/") ? p : "/" + p);
 /* ---------- Schema builders ---------- */
 const DFW_CITIES = ["Dallas", "Fort Worth", "Plano", "Frisco", "Arlington", "Irving", "McKinney", "Garland", "Richardson", "Carrollton", "Denton", "Addison"];
 
+/* Organization — deliberately NOT a LocalBusiness/ProfessionalService.
+   The business is operated remotely and has no Dallas premises, so it must not
+   claim a PostalAddress or geo coordinates: a machine-readable location that
+   contradicts the About page is a local-spam signal, and a LocalBusiness with
+   no street address cannot enter the map pack anyway. `areaServed` is the
+   correct way to say who we serve without asserting where we sit.
+   No aggregateRating either — Google has disallowed self-serving review markup
+   on Organization/LocalBusiness since 2019. Re-add only via third-party reviews. */
 function organizationSchema() {
   return {
     "@type": "Organization",
     "@id": SITE.url + "/#organization",
     name: SITE.name,
+    description: "AI automation and digital marketing agency working with Dallas–Fort Worth businesses. AI receptionists, chatbots, SEO, Google Ads and websites for dental clinics, realtors, law firms, HVAC and roofing companies.",
     url: SITE.url,
     logo: abs("/assets/img/logo-full.png"),
+    image: abs("/assets/img/og-cover.png"),
     email: SITE.email,
     telephone: SITE.whatsapp,
     founder: { "@type": "Person", name: SITE.founder, jobTitle: "AI-Powered Digital Marketer & AI Automation Specialist" },
     sameAs: [SITE.instagram],
     areaServed: DFW_CITIES.map((c) => ({ "@type": "City", name: c + ", TX" })),
+    knowsAbout: ["AI Automation", "AI Receptionist", "SEO", "Google Ads", "Web Design", "Dental Marketing", "Law Firm Marketing", "HVAC Marketing", "Roofing Marketing", "Real Estate Marketing"],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
@@ -92,25 +103,6 @@ function organizationSchema() {
       areaServed: "US",
       availableLanguage: ["English"]
     }
-  };
-}
-
-function localBusinessSchema() {
-  return {
-    "@type": "ProfessionalService",
-    "@id": SITE.url + "/#localbusiness",
-    name: SITE.name,
-    description: "AI automation and digital marketing agency serving Dallas–Fort Worth. AI receptionists, chatbots, SEO, Google Ads and websites for dental clinics, realtors, law firms, HVAC and roofing companies.",
-    url: SITE.url,
-    email: SITE.email,
-    telephone: SITE.whatsapp,
-    priceRange: "$$",
-    image: abs("/assets/img/og-cover.png"),
-    address: { "@type": "PostalAddress", addressLocality: "Dallas", addressRegion: "TX", addressCountry: "US" },
-    geo: { "@type": "GeoCoordinates", latitude: 32.7767, longitude: -96.797 },
-    areaServed: DFW_CITIES.map((c) => ({ "@type": "City", name: c + ", TX" })),
-    knowsAbout: ["AI Automation", "AI Receptionist", "SEO", "Google Ads", "Web Design", "Dental Marketing", "Law Firm Marketing", "HVAC Marketing", "Roofing Marketing", "Real Estate Marketing"],
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "47", bestRating: "5" }
   };
 }
 
@@ -510,7 +502,7 @@ ${scripts()}
 module.exports = {
   SITE, icons, esc, abs, LOGO_MARK, page, head, nav, footer, breadcrumbs,
   floatingWidgets, exitPopup, leadForm, faqBlock, ctaBand, scripts,
-  organizationSchema, localBusinessSchema, websiteSchema,
+  organizationSchema, websiteSchema,
   breadcrumbSchema, faqSchema, serviceSchema, articleSchema,
   NAV_SERVICES, SERVICE_FAMILY, INDUSTRIES
 };

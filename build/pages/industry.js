@@ -54,7 +54,7 @@ ${T.ctaBand({
     description: "AI automation and marketing built for Dallas dental clinics, realtors, law firms, HVAC and roofing companies. Industry-specific systems that answer every call and win every lead.",
     keywords: "dental marketing Dallas, realtor marketing Dallas, law firm marketing Dallas, HVAC marketing Dallas, roofing marketing Dallas, industries served DFW",
     path: "/industries.html",
-    schema: [T.breadcrumbSchema(crumbs), T.localBusinessSchema()]
+    schema: [T.breadcrumbSchema(crumbs)]
   }, body);
 }
 
@@ -120,13 +120,13 @@ function renderIndustry(ind) {
   </div>
 </section>
 
-<section class="section-tight" aria-label="Results">
+<section class="section-tight" aria-label="What we build toward">
   <div class="container">
     <div class="stats-band" style="grid-template-columns:repeat(3,1fr)">
       ${ind.proof.map((p, i) => `
       <div class="stat-item glass-card card-static reveal${i ? ` reveal-d${i}` : ""}"><b>${p.b}</b><span>${p.s}</span></div>`).join("")}
     </div>
-    <p class="center calc-note mt-2">Results from real client engagements. Your numbers depend on market, starting point and execution — your strategy call includes honest projections for your situation.</p>
+    <p class="center calc-note mt-2">These are the targets we build toward and the industry benchmarks behind them — not results from a past client. Digital Jeeva360 is a new agency and we publish no outcome we cannot show you the account for. <a href="/results.html">See our benchmarks and sources</a>.</p>
   </div>
 </section>
 
@@ -158,8 +158,7 @@ ${T.ctaBand({
     schema: [
       T.serviceSchema({ schemaName: `Marketing & AI Automation for ${ind.name}`, name: ind.name, description: ind.description, path }),
       T.breadcrumbSchema(crumbs),
-      T.faqSchema(ind.faqs),
-      T.localBusinessSchema()
+      T.faqSchema(ind.faqs)
     ]
   }, body);
 }

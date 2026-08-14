@@ -28,9 +28,9 @@ const industries = [
       { title: "Google Ads for high-value cases", text: "Campaigns built around 'dental implants Dallas' and 'Invisalign cost Plano' — the $3,000–$25,000 searches — with treatment-specific landing pages and call tracking to prove every dollar.", link: "/services/google-ads.html" }
     ],
     proof: [
-      { b: "0", s: "missed calls at a Plano practice since AI launch" },
-      { b: "52", s: "after-hours appointments booked in 90 days" },
-      { b: "$46k", s: "added production in one quarter" }
+      { b: "0", s: "calls left unanswered — the target we build to" },
+      { b: "24/7", s: "booking cover, including evenings and weekends" },
+      { b: "~27%", s: "of calls the average practice misses today" }
     ],
     faqs: [
       { q: "Is the AI receptionist appropriate for a medical setting?", a: "Yes — it's built for exactly this. It handles scheduling, insurance questions and routine information, while anything clinical or urgent routes instantly to your team or on-call dentist. We configure it around your protocols, and it never gives medical advice." },
@@ -65,9 +65,9 @@ const industries = [
       { title: "Listing marketing on autopilot", text: "New listing → automated social posts, email blast to matching buyers in your database, and targeted Meta ads to the right zip codes — launched in minutes, not weekends.", link: "/services/workflow-automation.html" }
     ],
     proof: [
-      { b: "< 30s", s: "average lead response time (from 4+ hours)" },
-      { b: "3.1x", s: "more showings booked from the same lead spend" },
-      { b: "14", s: "hours a week handed back to selling" }
+      { b: "< 60s", s: "lead response time — the threshold that changes outcomes" },
+      { b: "+391%", s: "conversion lift at that speed (industry benchmark)" },
+      { b: "24/7", s: "enquiry cover while you are in a showing" }
     ],
     faqs: [
       { q: "Will automated follow-up feel impersonal to my clients?", a: "Done right, it feels more personal, not less — because nobody gets forgotten. Messages are written in your voice, reference their actual criteria, and you're alerted the moment someone shows buying signals so the human conversations happen at exactly the right time." },
@@ -102,9 +102,9 @@ const industries = [
       { title: "Google Ads that respect your CPC", text: "At $100+ per click, waste is unforgivable. Tightly-matched keywords, negative lists, call tracking and practice-area landing pages — engineered so every expensive click gets an instant answer.", link: "/services/google-ads.html" }
     ],
     proof: [
-      { b: "41%", s: "of qualified intakes arrive outside office hours" },
-      { b: "-63%", s: "attorney time spent on unqualified consults" },
-      { b: "2.4x", s: "more signed cases from the same ad budget" }
+      { b: "24/7", s: "intake cover — most enquiries arrive after hours" },
+      { b: "< 60s", s: "response target on every new enquiry" },
+      { b: "100%", s: "of enquiries screened before they reach you" }
     ],
     faqs: [
       { q: "Is AI intake appropriate for confidential legal matters?", a: "The AI handles logistics and screening — practice area, timeline, contact details, appointment booking — not legal advice or privileged discussion. Sensitive matters route to your team by rules you define, and everything is logged for your records. Most firms find it more consistent and more discreet than a rushed front desk." },
@@ -139,9 +139,9 @@ const industries = [
       { title: "Maintenance-plan revenue on autopilot", text: "Automated tune-up reminders, renewal sequences, and win-back campaigns for dormant customers — turning your customer list into predictable recurring revenue between seasons.", link: "/services/ai-automation.html" }
     ],
     proof: [
-      { b: "$87", s: "cost per lead after account rebuild (from $310)" },
-      { b: "3.6x", s: "more booked jobs from the same ad budget" },
-      { b: "24/7", s: "call coverage without hiring a single dispatcher" }
+      { b: "2x", s: "ROAS floor a well-built local account should clear" },
+      { b: "24/7", s: "call cover without hiring a dispatcher" },
+      { b: "~27%", s: "of calls the average contractor misses today" }
     ],
     faqs: [
       { q: "Can the AI actually dispatch emergency calls?", a: "It answers, triages by your rules — no cooling with elderly residents or a gas smell gets flagged urgent — books the job into your schedule, and immediately alerts your on-call tech by call or text with the full details. You define what counts as an emergency; it executes flawlessly at 3 am." },
@@ -176,9 +176,9 @@ const industries = [
       { title: "Storm-response ads, live in hours", text: "Pre-built hail-response campaigns that launch the morning after an event — targeted to the affected zip codes with landing pages about your local crew, insurance help and real DFW references.", link: "/services/google-ads.html" }
     ],
     proof: [
-      { b: "100%", s: "of storm-surge calls answered vs ~50% before" },
-      { b: "+22%", s: "of stalled estimates recovered by follow-up automation" },
-      { b: "4.9★", s: "average rating built through automated review requests" }
+      { b: "100%", s: "of storm-surge calls answered — the target" },
+      { b: "24/7", s: "cover for the week that makes your year" },
+      { b: "< 60s", s: "response target while the lead is still shopping" }
     ],
     faqs: [
       { q: "Can the AI really handle a post-storm call surge?", a: "That's exactly the scenario it wins hardest. It answers unlimited simultaneous calls — no hold queue, no voicemail — books inspections, captures addresses and damage details, and hands your team a clean, prioritised list. The 72 hours that used to overwhelm you become your biggest booking window." },
