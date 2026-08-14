@@ -1,0 +1,42 @@
+name: Build and deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - claude/digital-jeeva360-portfolio-jx3f56
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build site
+        run: node build.js
+
+      - name: Deploy over FTPS to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_HOST }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          server-dir: ${{ secrets.HOSTINGER_FTP_DIR }}
+          protocol: ftps
+          # Only upload what a browser actually needs to serve the site.
+          # Excludes the Node build sources, git files, and this workflow
+          # itself so public_html only ever holds the built output.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/build/**
+            **/node_modules/**
+            **/build.js
+            **/README.md
